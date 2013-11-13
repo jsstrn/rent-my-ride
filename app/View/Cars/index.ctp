@@ -1,4 +1,7 @@
-<h1>List of all cars</h1>
+<h2>List of all cars</h2>
+
+<?php echo $this->Html->link('Add a car', array('controller' => 'cars', 'action' => 'add')); ?>
+
 <table>
 	<tr>
 		<th>#</th>
