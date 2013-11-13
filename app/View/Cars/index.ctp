@@ -1,6 +1,6 @@
 <h2>List of all cars</h2>
 
-<?php echo $this->Html->link('Add a car', array('controller' => 'cars', 'action' => 'add')); ?>
+<p><?php echo $this->Html->link('Add another car', 'add/'); ?></p>
 
 <table>
 	<tr>
@@ -10,17 +10,23 @@
 		<th>Transmission</th>
 		<th>Engine Type</th>
 		<th>Engine Capacity</th>
+		<th>Actions</th>
 	</tr>
 
+	<?php $num = 1; ?>
 	<?php foreach ($cars as $car): ?>
 	<tr>
-		<td><?php echo $this->Html->link($car['Car']['id'], array('controller' => 'cars', 'action' => 'view', $car['Car']['id'])) ; ?></td>
+		<td><?php echo $num; ?></td>
 		<td><?php echo $car['Car']['brand']; ?></td>
 		<td><?php echo $car['Car']['model']; ?></td>
 		<td><?php echo $car['Car']['transmission']; ?></td>
 		<td><?php echo $car['Car']['engine_type']; ?></td>
 		<td><?php echo $car['Car']['engine_capacity']; ?></td>
+		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . " | " . 
+			$this->Html->link('Edit', 'view/' . $car['Car']['id']) . " | " . 
+			$this->Html->link('Delete', 'view/' . $car['Car']['id']); ?></td>
 	</tr>
+	<?php $num++; ?>
 	<?php endforeach; ?>
 	<?php unset($car); ?>
 

@@ -1,7 +1,8 @@
 <?php
 class CarsController extends AppController {
 	
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html', 'Form', 'Session');
+	public $components = array('Session');
 
 	public function index() {
 
@@ -24,6 +25,16 @@ class CarsController extends AppController {
 	}
 
 	public function add() {
+
+		if ($this->request->is('post')) {
+			$this->Car->create();
+			if ($this->Car->save($this->request->data)) {
+				$this->Session->setFlash('Your car has been added!');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Unable to add your car. Try again later.');
+			}
+		}
 		
 	}
 }

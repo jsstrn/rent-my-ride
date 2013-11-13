@@ -34,7 +34,7 @@ class Car extends AppModel {
 			'allowEmpty' => 'false',
 			'required' => 'true',
 			'message' => 'Please enter the engine capacity of the car.',
-			'last' => 'false'
+			'last' => 'true'
 			)
 		);
 }
