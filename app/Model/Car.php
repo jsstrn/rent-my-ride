@@ -26,16 +26,30 @@ class Car extends AppModel {
 			'last' => 'false'
 			), 
 		'transmission' => array(
+			'valid' => array(
+				'rule' => array('inList', array('Automatic', 'Manual')),
+				'allowEmpty' => 'false',
+				'message' => 'Please select the type of engine.',
+				'last' => 'false'
+				)
 			), 
 		'engine_type' => array(
+			'valid' => array(
+				'rule' => array('inList', array('Petrol', 'Diesel', 'Hybrid')),
+				'message' => 'Please select the type of engine.',
+				'last' => 'false'
+				)
 			), 
 		'engine_capacity' => array(
-			'rule' => array('naturalNumber', false),
-			'allowEmpty' => 'false',
-			'required' => 'true',
-			'message' => 'Please enter the engine capacity of the car.',
-			'last' => 'true'
-			)
+			'naturalNumber' => array(
+				'rule' => array('naturalNumber', false),
+				'allowEmpty' => 'false',
+				'required' => 'true',
+				'message' => 'Please enter the engine capacity of the car.',
+				'last' => 'true'
+				)
+			),
+		//'image' => array(), //validate proper image format (.jpg, .png, etc)
 		);
 }
 ?>

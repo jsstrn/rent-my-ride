@@ -1,4 +1,4 @@
-<h2>Vehicle #<?php echo h($car['Car']['id']) ?></h2>
+<h1>Car details</h1>
 <table>
 	<tr>
 		<th>Key</th>

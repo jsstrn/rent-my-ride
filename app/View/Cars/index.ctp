@@ -1,4 +1,5 @@
-<h2>List of all cars</h2>
+<h1>Car listing</h1>
+<p>This is a list of all registered cars.</p>
 
 <p><?php echo $this->Html->link('Add another car', 'add/'); ?></p>
 
@@ -23,8 +24,8 @@
 		<td><?php echo $car['Car']['engine_type']; ?></td>
 		<td><?php echo $car['Car']['engine_capacity']; ?></td>
 		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . " | " . 
-			$this->Html->link('Edit', 'view/' . $car['Car']['id']) . " | " . 
-			$this->Html->link('Delete', 'view/' . $car['Car']['id']); ?></td>
+			$this->Html->link('Edit', 'edit/' . $car['Car']['id']) . " | " . 
+			$this->Form->postLink('Delete', 'delete/' . $car['Car']['id']); ?></td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
