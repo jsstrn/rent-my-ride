@@ -87,6 +87,7 @@ class CarsController extends AppController {
 	// public access
 	public function search() {
 		
+		//nothing here yet..
 	}
 }
 ?>

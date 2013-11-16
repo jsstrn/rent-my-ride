@@ -11,6 +11,5 @@
 	echo $this->Form->input('engine_capacity');
 	echo $this->Form->input('image', array('type' => 'file'));
 	echo $this->Form->submit('Save');
-	//echo $this->Form->button('Reset', array('type' => 'reset'));
 	echo $this->Form->button('Cancel', array('type' => 'button', array('action' => 'index')));
 ?>

@@ -36,7 +36,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash('New user added successfully');
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash('Unable to add new user. Please try again.');
 			}
@@ -44,13 +44,45 @@ class UsersController extends AppController {
 	}
 
 	// user and admin access
-	public function edit() {
-		
+	public function edit($id = null) {
+
+		if (!$id) {
+		    throw new NotFoundException(__('Invalid Request'));
+		}
+
+		$user = $this->User->findById($id);
+		if (!$user) {
+		    throw new NotFoundException(__('Invalid Request'));
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+		    $this->User->id = $id;
+		    if ($this->User->save($this->request->data)) {
+		        $this->Session->setFlash(__('Your details have been updated.'));
+		        return $this->redirect(array('action' => 'index'));
+		    }
+		    $this->Session->setFlash(__('Unable to update your user details.'));
+		}
+
+		if (!$this->request->data) {
+		    $this->request->data = $user;
+		}
 	}
 
 	//admin access only 
 	public function delete() {
-		
+		if (!$id) {
+			throw new NotFoundException(__('Invalid Request'));
+		}
+
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+
+		if ($this->User->delete($id)) {
+			$this->Session->setFlash('The user has been removed.');
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 }
 
