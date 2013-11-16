@@ -1,14 +1,18 @@
 <?php
+App::uses('AppController', 'Controller');
+
 class CarsController extends AppController {
 	
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');
 
+	// public access
 	public function index() {
 
 		$this->set('cars', $this->Car->find('all'));
 	}
 
+	//users and admin access
 	public function view($id = null) {
 
 		if (!$id) {
@@ -24,6 +28,7 @@ class CarsController extends AppController {
 		$this->set('car', $car);
 	}
 
+	// users and admin access
 	public function add() {
 
 		if ($this->request->is('post')) {
@@ -37,6 +42,7 @@ class CarsController extends AppController {
 		}
 	}
 
+	// users and admin access
 	public function edit($id = null) {
 	    if (!$id) {
 	        throw new NotFoundException(__('Invalid Request'));
@@ -61,6 +67,7 @@ class CarsController extends AppController {
 	    }
 	}
 
+	// users and admin access
 	public function delete($id = null) {
 		
 		if (!$id) {
@@ -75,6 +82,11 @@ class CarsController extends AppController {
 			$this->Session->setFlash('Your car has been removed.');
 			$this->redirect(array('action' => 'index'));
 		}
+	}
+
+	// public access
+	public function search() {
+		
 	}
 }
 ?>

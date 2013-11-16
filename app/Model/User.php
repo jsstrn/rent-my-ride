@@ -1,5 +1,6 @@
 <?php
 class User extends AppModel {
+	
 	public $validate = array(
 		'username' => array(),
 		'password' => array(),
@@ -10,6 +11,6 @@ class User extends AppModel {
 		'mobile' => array(),
 		'license' => array(),
 		//'picture' => array(), //validate proper image format (.jpg, .png, etc)
-		)
+		);
 }
 ?>
