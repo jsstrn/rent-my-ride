@@ -33,5 +33,16 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-	public $components = array('DebugKit.Toolbar');
+	public $components = array(
+		'DebugKit.Toolbar',
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array('action' => 'index'),
+			'logoutRedirect' => array('action' => 'display', 'home')
+			)
+		);
+
+	public function beforeFilter() {
+		$this->Auth->allow('index', 'view');
+	}
 }

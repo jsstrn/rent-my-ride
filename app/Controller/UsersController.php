@@ -70,7 +70,7 @@ class UsersController extends AppController {
 	}
 
 	//admin access only 
-	public function delete() {
+	public function delete($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Invalid Request'));
 		}
@@ -83,6 +83,27 @@ class UsersController extends AppController {
 			$this->Session->setFlash('The user has been removed.');
 			$this->redirect(array('action' => 'index'));
 		}
+	}
+
+	public function beforeFilter() {
+
+		parent::beforeFilter();
+		$this->Auth->allow('add'); //allows users to add themselves 
+	}
+
+	public function login() {
+
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()) {
+				return $this->redirect($this->Auth->redirect());
+			}
+			$this->Session->setFlash(__('Incorrect username and/or password.'));
+		}
+	}
+
+	public function logout() {
+
+		return $this->redirect($this->Auth->logout());
 	}
 }
 
