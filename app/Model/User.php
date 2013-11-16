@@ -2,9 +2,21 @@
 class User extends AppModel {
 	
 	public $validate = array(
-		'username' => array(),
-		'password' => array(),
-		'role' => array(),
+		'username' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A username is required.'),
+			),
+		'password' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A password is required.'),
+			),
+		'role' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A role is required.'),
+			),
 		'name' => array(),
 		'address' => array(),
 		'email' => array('rule' => 'email'),

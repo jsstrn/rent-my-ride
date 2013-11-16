@@ -30,6 +30,4 @@
 	<?php $num++; ?>
 	<?php endforeach; ?>
 	<?php unset($user); ?>
-	<?php // 	echo 'Location: <br>' . '<iframe width="560" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-
 </table>
