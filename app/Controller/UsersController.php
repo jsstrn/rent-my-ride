@@ -7,6 +7,12 @@ class UsersController extends AppController {
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');
 
+	public function beforeFilter() {
+
+		parent::beforeFilter();
+		$this->Auth->allow('add'); //allows users to add themselves 
+	}
+
 	// public access - rentmyride/users/index
 	public function index() {
 
@@ -83,12 +89,6 @@ class UsersController extends AppController {
 			$this->Session->setFlash('The user has been removed.');
 			$this->redirect(array('action' => 'index'));
 		}
-	}
-
-	public function beforeFilter() {
-
-		parent::beforeFilter();
-		$this->Auth->allow('add'); //allows users to add themselves 
 	}
 
 	public function login() {
