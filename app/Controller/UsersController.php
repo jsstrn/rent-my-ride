@@ -38,7 +38,7 @@ class UsersController extends AppController {
 	// admin access only 
 	public function add() {
 	
-		if ($this->request->is('post')) {
+		if ($this->request->is('POST')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash('New user added successfully');

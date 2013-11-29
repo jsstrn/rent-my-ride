@@ -4,6 +4,7 @@
 */
 class Upload extends AppModel {
 
+	/*
 	public function isUploadedFile($params) {
 	    $val = array_shift($params);
 	    if ((isset($val['error']) && $val['error'] == 0) ||
@@ -13,5 +14,6 @@ class Upload extends AppModel {
 	    }
 	    return false;
 	}
+	*/
 }
 ?>
