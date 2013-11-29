@@ -3,6 +3,8 @@
 
 <p><?php echo $this->Html->link('Add a new user', 'add/'); ?></p>
 
+
+
 <table>
 	<tr>
 		<th>#</th>
@@ -25,9 +27,17 @@
 		<td><?php echo $user['User']['license']; ?></td>
 		<td><?php echo $this->Html->link('View', 'view/' . $user['User']['id']) . " | " . 
 			$this->Html->link('Edit', 'edit/' . $user['User']['id']) . " | " . 
-			$this->Form->postLink('Delete', 'delete/' . $user['User']['id']); ?></td>
+			$this->Form->postLink('Delete',
+				array('action' => 'delete', $user['User']['id']),
+				array('confirm' => 'Are you sure?')); 
+				?></td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
 	<?php unset($user); ?>
 </table>
+
+<?php 
+$camelCase = 'CarCategory';
+echo Inflector::tableize($camelCase);
+?>

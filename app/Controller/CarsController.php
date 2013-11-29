@@ -88,12 +88,23 @@ class CarsController extends AppController {
 			$this->Session->setFlash('Your car has been removed.');
 			$this->redirect(array('action' => 'index'));
 		}
+
+		// // experimenting with SQL transactions
+		// // http://book.cakephp.org/2.0/en/models/transactions.html
+		// $dataSource = $this->getDataSource();
+		// $dataSource->begin();
+		// // Perform some tasks
+		// if (/*all's well*/) {
+		//     $dataSource->commit();
+		// } else {
+		//     $dataSource->rollback();
+		// }
 	}
 
 	// public access
 	public function search() {
 		
-		//nothing here yet..
+		// nothing here yet..
 	}
 }
 ?>

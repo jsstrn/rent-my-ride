@@ -91,6 +91,27 @@ class UsersController extends AppController {
 		}
 	}
 
+	public function upload($id = null) {
+
+		$path = getcwd() . "/img/uploads/users/";
+
+		$capture = $this->request->data();
+		return $capture;
+	}
+
+	public function signup() {
+
+		if ($this->request->is('post')) {
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash('Thank you for signing up with Rent My Ride');
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Oops! Something went wrong. Please try again.');
+			}
+		}
+	}
+
 	public function login() {
 
 		if ($this->request->is('post')) {

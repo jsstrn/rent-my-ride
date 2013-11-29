@@ -27,12 +27,32 @@ class User extends AppModel {
 				'rule' => array('notEmpty'),
 				'message' => 'A role is required.'),
 			),
-		'name' => array(),
-		'address' => array(),
+		'name' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A name is required.'),
+			),
+		'address' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'An address is required.'),
+			),
 		'email' => array('rule' => 'email'),
-		'mobile' => array(),
-		'license' => array(),
-		//'picture' => array(), //validate proper image format (.jpg, .png, etc)
+		'mobile' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A mobile number is required.'),
+			),
+		'license' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A license number is required.'),
+			),
+/*		'picture' => array(
+			'image' => array(
+				'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),
+				'message' => 'Please upload a valid image.'),
+			),*/
 		);
 }
 ?>

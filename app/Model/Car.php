@@ -49,7 +49,10 @@ class Car extends AppModel {
 				'last' => 'true'
 				)
 			),
-		//'image' => array(), //validate proper image format (.jpg, .png, etc)
+		'image' => array(
+			'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),
+			'message' => 'Please upload a valid image.'
+			)
 		);
 }
 ?>
