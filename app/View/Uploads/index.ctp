@@ -3,7 +3,7 @@
 
 <p><?php echo $this->Html->link('Add a new image', 'add/'); ?></p>
 
-<p>This is an <img src="<?echo WWW_ROOT;?>img/uploads/cars/default.png">image</p>
+<p>This is an <img src="../img/uploads/cars/default.png">image</p>
 
 <table>
 	<tr>
