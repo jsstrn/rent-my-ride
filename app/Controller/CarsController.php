@@ -102,9 +102,27 @@ class CarsController extends AppController {
 	}
 
 	// public access
-	public function search() {
-		
-		// nothing here yet..
+	public function search($query = null) {
+
+		$result = $this->Car->findAllByBrand('BMW');
+		$this->set('cars', $result);
+		$this->set('query', $query);
+
 	}
 }
+
+		// $query = strtolower($search); // lowercase letters
+
+		// CarsController::index();
+
+		// if ($this->request->is('post')) {
+
+		// 	if ($query = null) {
+		// 		CarsController::index();
+		// 	} else {
+		// 		$result = $this->Car->findAllByBrand($query);
+		// 		$this->set('cars', $result);
+		// 	}
+		// }
+	
 ?>
