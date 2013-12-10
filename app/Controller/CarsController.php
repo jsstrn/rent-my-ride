@@ -19,6 +19,8 @@ class CarsController extends AppController {
 	}
 
 	//users and admin access
+	/*This is Hafiz
+	commenting*/
 	public function view($id = null) {
 
 		if (!$id) {
