@@ -104,36 +104,17 @@ class CarsController extends AppController {
 	}
 
 	// public access
-	public function search($query = null) {
+	public function search() {
 
-		
+		$query = $this->request->data['Car']['brand'];
 
-		// CarsController::index();
-
-		// if ($this->request->is('post')) {
-
+		if (!$query) {
+			CarsController::index();
+		} else {
 			$result = $this->Car->findAllByBrand($query);
 			$this->set('cars', $result);
-			$this->set('query', $query);
-			// $this->redirect('/cars/search/' . $query);
-			// $this->redirect(array('action' => 'search', $query));
-		// }
+		}
 
 	}
-}
-
-		// $query = strtolower($search); // lowercase letters
-		//Peh Tee Beng Testing 123 !~!~! again
-		// CarsController::index();
-
-		// if ($this->request->is('post')) {
-
-		// 	if ($query = null) {
-		// 		CarsController::index();
-		// 	} else {
-		// 		$result = $this->Car->findAllByBrand($query);
-		// 		$this->set('cars', $result);
-		// 	}
-		// }
-	
+}	
 ?>

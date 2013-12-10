@@ -1,16 +1,13 @@
 <h2>Search a car</h2>
 
 <?php
-
 echo $this->Form->create('Car', array('type' => 'post'));
-echo $this->Form->text('query');
+echo $this->Form->text('brand');
 echo '<br><br>';
 echo $this->Form->submit('Search');
-// echo $this->Form->end();
-
-echo 'Here are your query results: ' . $query . '<br>' ;
-
+echo $this->Form->end();
 ?>
+
 <br>
 <table>
 	<tr>
