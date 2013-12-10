@@ -6,7 +6,7 @@ echo $this->Form->create('Car', array('type' => 'post'));
 echo $this->Form->text('query');
 echo '<br><br>';
 echo $this->Form->submit('Search');
-echo $this->Form->end();
+// echo $this->Form->end();
 
 echo 'Here are your query results: ' . $query . '<br>' ;
 
