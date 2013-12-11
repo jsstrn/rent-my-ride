@@ -6,6 +6,7 @@ echo $this->Form->text('brand');
 echo '<br><br>';
 echo $this->Form->submit('Search');
 echo $this->Form->end();
+
 ?>
 
 <br>
@@ -29,7 +30,8 @@ echo $this->Form->end();
 		<td><?php echo $car['Car']['transmission']; ?></td>
 		<td><?php echo $car['Car']['engine_type']; ?></td>
 		<td><?php echo $car['Car']['engine_capacity']; ?></td>
-		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) ?></td>
+		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . ' | ' .
+			$this->Html->link('Book Now', 'booking/' . $car['Car']['id']) ?></td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
