@@ -4,6 +4,8 @@
 
 <p> <small>Created on: <?php echo $post['Post']['created']; ?> 
 
-Last modified on: <?php echo $post['Post']['modified']; ?> 
+Last modified on: <?php echo $post['Post']['modified']; ?> </p>
 
-</p>
+</br>
+
+<?php echo $this->html->link('Go Back', array('action'=>'index', $post['Post']['id'])); ?>

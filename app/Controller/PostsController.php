@@ -11,20 +11,32 @@ class PostsController extends AppController {
 	*
 	*/
 
-	function Index(){
+	public function index(){
 
 		$this->set('posts', $this->Post->find('all'));
 	}
 
-	function View($id = NULL) {
+	public function view($id = NULL) {
 		
 		$this->set('post', $this->Post->read(NULL, $id));
 	}
 
-	function Comment(){
-
+	public function comment(){
 
 	}
+
+	public function add() {
+	
+		if ($this->request->is('post')) {
+			if ($this->Post->save($this->data)) {
+				$this->Session->setFlash('The comment was added successfully');
+				return $this->redirect(array('action' =>'index'));
+			} else {
+				$this->Session->setFlash('Unable to add comment. Please try again.');
+			}
+		}
+	}
+
 
 }
 
