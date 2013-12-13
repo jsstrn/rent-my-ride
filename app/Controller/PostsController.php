@@ -2,6 +2,14 @@
 
 class PostsController extends AppController {
 
+	/*
+	*	we write a function like this:
+	*
+	*	public function index() {
+	*
+	*	}
+	*
+	*/
 
 	function Index(){
 
