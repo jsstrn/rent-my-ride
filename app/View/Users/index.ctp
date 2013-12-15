@@ -36,8 +36,3 @@
 	<?php endforeach; ?>
 	<?php unset($user); ?>
 </table>
-
-<?php 
-$camelCase = 'CarCategory';
-echo Inflector::tableize($camelCase);
-?>
