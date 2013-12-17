@@ -126,6 +126,25 @@ class UsersController extends AppController {
 
 		return $this->redirect($this->Auth->logout());
 	}
+
+	public function register() {
+
+		if(!empty($this->request->data))
+		{
+			$this->request->data('User.role', 'User');
+			if($this->User->save($this->request->data))
+			{
+				$this->Session->setFlash('Registeration Sucessful');
+				$this->redirect(array('action'=>'/'));
+			}
+			else
+			{
+				$this->Session->setFlash('Registeration Unsucessful, Please Try Again');
+			}
+		}
+	}
+
+	
 }
 
 ?>
