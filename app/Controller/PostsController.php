@@ -30,12 +30,24 @@ class PostsController extends AppController {
 		if ($this->request->is('post')) {
 			if ($this->Post->save($this->data)) {
 				$this->Session->setFlash('The comment was added successfully');
-				return $this->redirect(array('action' =>'index'));
+				$this->redirect(array('action' =>'index'));
 			} else {
 				$this->Session->setFlash('Unable to add comment. Please try again.');
 			}
 		}
 	}
+
+	public function edit($id = NULL) {
+
+		if (empty($this->data)) {
+			$this->data = $this->Post->read(NULL, $id);
+		} else {
+			if($this->Post->save($this->data)) {
+				$this->Session->setFlash('The comment has been updated');
+				$this->redirect(array('action'=>'view', $id));
+			}
+		}	   
+	} 
 
 
 }
