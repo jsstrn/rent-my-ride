@@ -3,7 +3,7 @@
 
 <p><?php echo $this->Html->link('Add another car', 'add/'); ?></p>
 
-<table>
+<table class='table table-striped'>
 	<tr>
 		<th>#</th>
 		<th>Brand</th>

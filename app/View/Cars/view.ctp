@@ -1,5 +1,5 @@
 <h1>Car details</h1>
-<table>
+<table class='table'>
 	<tr>
 		<th>Key</th>
 		<th>Value</th>

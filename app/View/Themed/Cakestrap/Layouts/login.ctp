@@ -33,7 +33,7 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 
 			echo $this->Html->css('bootstrap');
 			echo $this->Html->css('main');
-			echo $this->Html->css('carousel');
+			echo $this->Html->css('signin');
 
 			echo $this->fetch('css');
 			
@@ -51,36 +51,13 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 	<body>
 
 		<div id="main-container">
-		
-			<div id="header" class="container">
-				<?php echo $this->element('menu/top_menu'); ?>
-			</div><!-- /#header .container -->
 			
 			<div id="content" class="container">
 				<?php echo $this->Session->flash(); ?>
 				<?php echo $this->fetch('content'); ?>
 			</div><!-- /#content .container -->
 			
-			<div id="footer" class="container">
-				<footer>
-				  <p class="pull-right"><a href="#">Back to top</a></p>
-				  <p>&copy; <?php echo date('Y'); ?> Rent My Ride, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-				</footer>
-			</div><!-- /#footer .container -->
-			
 		</div><!-- /#main-container -->
-
-		<?php echo $this->Html->script('holder'); ?>
-		
-	<!--
- 		<div class="container">
-			<div class="well well-sm">
-				<small>
-					<?php // echo $this->element('sql_dump'); ?>
-				</small>
-			</div><!-- /.well well-sm 
-		</div><!-- /.container 
-	-->
 		
 	</body>
 

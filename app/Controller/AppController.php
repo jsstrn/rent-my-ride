@@ -33,8 +33,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-	// public $theme = 'Cakestrap';
-	// public $theme = 'RentMyRide';
+	public $theme = 'Cakestrap';
 
 	public $components = array(
 		'DebugKit.Toolbar',

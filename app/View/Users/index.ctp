@@ -5,7 +5,7 @@
 
 
 
-<table>
+<table class="table table-striped">
 	<tr>
 		<th>#</th>
 		<th>Name</th>
