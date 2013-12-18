@@ -1,9 +1,26 @@
-<h2>Dashboard (Testing)</h2>
-<p>This is the dashboard testing site. You should see a chart here.</p>
+<h2>Dashboard</h2>
 
-<div id="chart1" style="width:800px; height:400px; margin:auto;"></div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+    <hr>
+    <div class="panel panel-default" id="chart1" style="width:800px; height:400px; margin:auto;"></div>
+  </div>
+</div>
 
-<div id="chart2" style="width:800px; height:400px; margin:auto;"></div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+    <hr>
+    <div class="panel panel-default" id="chart2" style="width:800px; height:400px; margin:auto;"></div>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -14,6 +31,9 @@
 	        },
 	        title: {
 	            text: 'Total Number of Cars'
+	        },
+	        credits: {
+	            enabled: false
 	        },
 	        xAxis: {
 	            categories: ['BMW', 'Mercedes Benz', 'Audi']
@@ -37,10 +57,13 @@
 	$(function () { 
 	    $('#chart2').highcharts({
 	        chart: {
-	            type: 'spline'
+	            type: 'column'
 	        },
 	        title: {
 	            text: 'Total Number of Cars'
+	        },
+	        credits: {
+	            enabled: false
 	        },
 	        xAxis: {
 	            categories: ['BMW', 'Mercedes Benz', 'Audi']

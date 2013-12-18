@@ -10,7 +10,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 
 		parent::beforeFilter();
-		$this->Auth->allow('add'); //allows users to add themselves 
+		$this->Auth->allow('register'); //allows users to register for an account 
 	}
 
 	// public access - rentmyride/users/index

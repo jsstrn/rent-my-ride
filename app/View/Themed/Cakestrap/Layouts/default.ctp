@@ -34,16 +34,17 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			echo $this->Html->css('bootstrap');
 			echo $this->Html->css('main');
 			echo $this->Html->css('carousel');
+			echo $this->Html->css('fullcalendar');
 
 			echo $this->fetch('css');
 			
 			echo $this->Html->script('libs/jquery-1.10.2.min');
 			echo $this->Html->script('libs/bootstrap.min');
+			echo $this->Html->script('fullcalendar.min');
 			
 			echo $this->fetch('script');
 		?>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="http://code.highcharts.com/highcharts.js"></script>
 
 	</head>

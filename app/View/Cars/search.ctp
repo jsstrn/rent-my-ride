@@ -1,11 +1,15 @@
 <h2>Search a car</h2>
 
-<?php echo $this->Form->create('Car', array('type' => 'post', 'class' => 'form-inline')); ?>
-<div class="col-xs-7">
-<?php echo $this->Form->text('brand', array('class' => 'form-control', 'placeholder' => 'Search for a car')); ?>
+<div class="row">
+	<div class="col-xs-6 col-md-10">
+		<?php echo $this->Form->create('Car', array('type' => 'post', 'class' => 'form-inline')); ?>
+		<?php echo $this->Form->text('brand', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car')); ?>
+	</div>
+	<div class="col-xs-6 col-md-2">
+		<button type="submit" class="btn btn-lg btn-success">Search</button>
+		<?php echo $this->Form->end(); ?>
+	</div>
 </div>
-<button type="submit" class="btn btn-success">Search</button>
-<?php echo $this->Form->end(); ?>
 
 <br>
 

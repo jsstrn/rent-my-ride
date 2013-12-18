@@ -1,6 +1,20 @@
 <?php
 class Car extends AppModel {
 
+	// a car can have many events
+	// many cars belong to a user
+	/*
+	public $hasMany = array(
+		'Event' => array(
+			'className' => 'Event',
+			'order' => 'Event.created ASC',
+			'foreignKey' => 'event_id',
+			'dependent' => true
+			)
+		); */
+
+	public $belongsTo = array();
+
 	public $validate = array(
 		'license_plate' => array(
 			'alphaNumeric' => array(
@@ -49,10 +63,10 @@ class Car extends AppModel {
 				'last' => 'true'
 				)
 			),
-		'image' => array(
-			'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),
-			'message' => 'Please upload a valid image.'
-			)
+		// 'image' => array(
+		// 	'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),
+		// 	'message' => 'Please upload a valid image.'
+		// 	)
 		);
 }
 ?>
