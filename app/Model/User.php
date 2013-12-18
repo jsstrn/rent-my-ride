@@ -48,6 +48,11 @@ class User extends AppModel {
 				'rule' => array('notEmpty'),
 				'message' => 'A license number is required.'),
 			),
+		'postal_code' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'A postal code is required.'),
+			),
 /*		'picture' => array(
 			'image' => array(
 				'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),

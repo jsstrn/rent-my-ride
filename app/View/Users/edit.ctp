@@ -3,11 +3,11 @@
 <?php
 	echo $this->Form->create('User', array('type' => 'post'));
 	echo $this->Form->input('id', array('type' => 'hidden'));
-	echo $this->Form->input('name');
-	echo $this->Form->input('password');
-	echo $this->Form->input('address');
-	echo $this->Form->input('license');
+	echo $this->Form->input('name', array('required'=>'false'));
+	echo $this->Form->input('password', array('required'=>'false'));
+	echo $this->Form->input('address', array('required'=>'false'));
+	echo $this->Form->input('license', array('required'=>'false'));
 	echo $this->Form->input('image', array('type' => 'file'));
 	echo $this->Form->submit('Save');
-	echo $this->Form->button('Cancel', array('type' => 'button', array('action' => 'index')));
+	echo $this->Form->button('Cancel', array('type' => 'button','action' => '/index'));
 ?>

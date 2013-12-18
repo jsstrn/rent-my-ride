@@ -6,18 +6,19 @@
 		'type' => 'select', 
 		'label' => 'Role', 
 		'options' => array('Admin' => 'Admin', 'User' => 'User'),
-		'empty' => 'Choose one'
+		'empty' => 'Choose one',
+		'required'=>'false'
 		));
-	echo $this->Form->input('username');
-	echo $this->Form->input('password');
-	echo $this->Form->input('name');
-	echo $this->Form->input('license', array('label' => 'Driver\'s License'));
-	echo $this->Form->input('email');
-	echo $this->Form->input('mobile');
-	echo $this->Form->input('address');
-	echo $this->Form->input('postal_code');
+	echo $this->Form->input('username', array('required'=>'false'));
+	echo $this->Form->input('password', array('required'=>'false'));
+	echo $this->Form->input('name', array('required'=>'false'));
+	echo $this->Form->input('license', array('label' => 'Driver\'s License', 'required'=>'false'));
+	echo $this->Form->input('email', array('required'=>'false'));
+	echo $this->Form->input('mobile', array('required'=>'false'));
+	echo $this->Form->input('address', array('required'=>'false'));
+	echo $this->Form->input('postal_code', array('required'=>'false'));
 	echo $this->Form->input('picture', array('type' => 'file'));
 	echo $this->Form->submit('Add User');
 	echo $this->Form->button('Reset', array('type' => 'reset'));
-	echo $this->Form->button('Cancel', array('type' => 'button', array('action' => 'index')));
+	echo $this->Form->button('Cancel', array('type' => 'button','action' => '/index'));
 ?>
