@@ -35,12 +35,14 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			echo $this->Html->css('main');
 			echo $this->Html->css('carousel');
 			echo $this->Html->css('fullcalendar');
+			echo $this->Html->css('datepicker');
 
 			echo $this->fetch('css');
 			
 			echo $this->Html->script('libs/jquery-1.10.2.min');
 			echo $this->Html->script('libs/bootstrap.min');
 			echo $this->Html->script('fullcalendar.min');
+			echo $this->Html->script('bootstrap-datepicker');
 			
 			echo $this->fetch('script');
 		?>

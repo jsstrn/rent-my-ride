@@ -1,7 +1,9 @@
 <h1>Car listing</h1>
 <p>This is a list of all registered cars.</p>
 
-<p><?php echo $this->Html->link('Add another car', 'add/'); ?></p>
+<button class="btn btn-lg btn-default"><?php echo $this->Html->link('Add another car', 'add/'); ?></button>
+
+<br><br>
 
 <table class='table table-striped'>
 	<tr>

@@ -1,3 +1,36 @@
+<h1>Date Picker</h1>
+
+<script>
+$(function() {
+  $( ".datepicker" ).datepicker();
+});
+</script>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title text-center">Select Your Dates</h3>
+  </div>
+  <div class="panel-body">
+  	<div class="row">
+  		<div class="col-md-6 text-center">
+  			<h5>Start Date</h5>
+  			<div class="datepicker"></div>
+  			<p>You have selected:</p>
+  		</div>
+  		<div class="col-md-6 text-center">
+  			<h5>End Date</h5>
+  			<div class="datepicker"></div>
+  			<p>You have selected:</p>
+  		</div>
+  	</div><!-- #row-->
+  	<div class="row text-center">
+  		<button class="btn btn-success btn-lg">Book Now</button>
+  	</div>
+  </div><!-- #panel-body -->
+</div><!-- #panel-default -->
+
+<br><br><hr><br>
+
 <h1>User Profile</h1>
 <div class="alert alert-danger">
 	<p><span class="label label-danger">IMPORTANT</span> Users should only be allowed to see their own profile!
@@ -125,7 +158,7 @@
 	</div><!-- #col -->
 </div>
 
-<hr>
+<br><br><hr><br>
 
 <h1>Car snippet</h1>
 
@@ -171,3 +204,43 @@
 	</div>
   </div>
 </div>
+
+<br><br><hr><br>
+
+<h1>Calendar</h1>
+
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+     // page is now ready, initialize the calendar...
+
+     var date = new Date();
+     var d = date.getDate();
+     var m = date.getMonth();
+     var y = date.getFullYear();
+     var h = date.getHours();
+
+     $('#calendar').fullCalendar({
+         // put your options and callbacks here
+         header: {
+         	left: 'prev,next today',
+         	center: 'title',
+         	right: 'month,agendaWeek,agendaDay'
+         },
+         firstDay: 1,
+         editable: true,
+         selectable: true,
+         events: [
+         {
+         	id: 123,
+         	title: 'This is today!',
+         	start: new Date(y,m,d,h),
+         	end: new Date(y,m,d,h+2),
+         	allDay: false
+         }]
+     })
+
+ });
+ </script>
+
+ <div id="calendar"></div>
