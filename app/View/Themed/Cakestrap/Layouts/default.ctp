@@ -35,19 +35,20 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			echo $this->Html->css('main');
 			echo $this->Html->css('carousel');
 			echo $this->Html->css('fullcalendar');
-			echo $this->Html->css('datepicker');
+			// echo $this->Html->css('datepicker');
 
 			echo $this->fetch('css');
 			
 			echo $this->Html->script('libs/jquery-1.10.2.min');
 			echo $this->Html->script('libs/bootstrap.min');
 			echo $this->Html->script('fullcalendar.min');
-			echo $this->Html->script('bootstrap-datepicker');
+			// echo $this->Html->script('bootstrap-datepicker');
 			
 			echo $this->fetch('script');
 		?>
-
-		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
 
 	</head>
 

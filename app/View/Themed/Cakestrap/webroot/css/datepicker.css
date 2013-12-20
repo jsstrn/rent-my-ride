@@ -7,6 +7,13 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
+ .datepicker-container{
+   text-align: center;
+ }
+ .datepicker-center{
+   display: inline-block;
+   margin: 0 auto;
+ }
 .datepicker {
   padding: 4px;
   -webkit-border-radius: 4px;

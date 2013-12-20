@@ -1,33 +1,93 @@
-<h1>Date Picker</h1>
+<h1>UI Design Mockups</h1>
+
+<br><br><hr><br>
+
+<h1>Modal</h1>
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Confirm Booking
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+      	<p>Are you sure you want to proceed with the booking?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Proceed</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<br><br><hr><br>
+
+<h1>Booking System</h1>
 
 <script>
 $(function() {
-  $( ".datepicker" ).datepicker();
+  $( ".datepicker" ).datepicker({
+  	firstDay: 1,
+  	dateFormat: 'dd/mm/yy',
+  	minDate: 0,
+  	maxDate: '+3m',
+  });
 });
 </script>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title text-center">Select Your Dates</h3>
-  </div>
-  <div class="panel-body">
-  	<div class="row">
-  		<div class="col-md-6 text-center">
-  			<h5>Start Date</h5>
-  			<div class="datepicker"></div>
-  			<p>You have selected:</p>
-  		</div>
-  		<div class="col-md-6 text-center">
-  			<h5>End Date</h5>
-  			<div class="datepicker"></div>
-  			<p>You have selected:</p>
-  		</div>
-  	</div><!-- #row-->
-  	<div class="row text-center">
-  		<button class="btn btn-success btn-lg">Book Now</button>
-  	</div>
-  </div><!-- #panel-body -->
-</div><!-- #panel-default -->
+<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Place your booking</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<form class="form-horizontal" role="form">
+		  	  <div class="form-group">
+		  	    <label class="col-sm-2 control-label">Start Date</label>
+		  	    <div class="col-sm-10">
+		  	      <input type="date" class="form-control">
+		  	    </div>
+		  	  </div>
+		  	  <div class="form-group">
+		  	    <label class="col-sm-2 control-label">Start Time</label>
+		  	    <div class="col-sm-10">
+		  	      <input type="time" class="form-control">
+		  	    </div>
+		  	  </div>
+		  	  <hr>
+		  	  <div class="form-group">
+		  	    <label class="col-sm-2 control-label">End Date</label>
+		  	    <div class="col-sm-10">
+		  	      <input type="date" class="form-control">
+		  	    </div>
+		  	  </div>
+		  	  <div class="form-group">
+		  	    <label class="col-sm-2 control-label">End Time</label>
+		  	    <div class="col-sm-10">
+		  	      <input type="time" class="form-control">
+		  	    </div>
+		  	  </div>
+		  	  <hr>
+		  	  <div class="form-group">
+		  	    <div class="col-sm-10 col-sm-offset-2">
+		  	      <button type="submit" class="btn btn-default">Place Booking</button>
+		  	    </div>
+		  	  </div>
+		  	</form>
+
+		  </div><!-- #panel-body -->
+		</div><!-- #panel-default -->
+	</div><!-- #col -->
+</div><!-- #row -->
 
 <br><br><hr><br>
 
@@ -228,6 +288,7 @@ $(function() {
          	right: 'month,agendaWeek,agendaDay'
          },
          firstDay: 1,
+         minDate: 0,
          editable: true,
          selectable: true,
          events: [
