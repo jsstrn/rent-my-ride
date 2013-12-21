@@ -49,6 +49,14 @@ class PostsController extends AppController {
 		}	   
 	} 
 
+	public function delete($id = NULL) {
+
+		$this->Post->delete($id);
+		$this->Session->setFlash('The comment has been deleted');
+		$this->redirect(array('action'=>'index'));
+	}
+
+	//public function
 
 }
 
