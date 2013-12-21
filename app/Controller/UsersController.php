@@ -144,6 +144,20 @@ class UsersController extends AppController {
 		}
 	}
 
+	// public access
+	public function search() {
+
+		$query = $this->request->data['User']['username'];
+
+		if (!$query) {
+			UsersController::index();
+		} else {
+			$result = $this->User->findAllByBrand($query);
+			$this->set('users', $result);
+		}
+
+	}
+
 	
 }
 
