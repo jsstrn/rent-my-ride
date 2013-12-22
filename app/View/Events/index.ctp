@@ -25,7 +25,7 @@ $(document).ready(function() {
         	title: 'This is today!',
         	start: new Date(y,m,d,h),
         	end: new Date(y,m,d,h+2),
-        	allDay: false
+        	allDay: false // $event['Event']['add_day']
         }]
     })
 

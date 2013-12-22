@@ -7,7 +7,7 @@ class Event extends AppModel {
 		'Car' => array(
 			'className' => 'Car',
 			'foreignKey' => 'car_id'
-			)
+			),
 		);
 }
 

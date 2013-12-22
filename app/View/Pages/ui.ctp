@@ -1,8 +1,22 @@
 <h1>UI Design Mockups</h1>
 
+<h2>Button with weblink</h2>
+<h3>Example 1</h3>
+<?php
+echo $this->Form->button('Click me', array(
+	'type' => 'button',
+	'class' => 'btn btn-info',
+	'onclick' => 'location.href=\'http://google.com\';'
+	));
+?>
+<h3>Example 2</h3>
+<input type="button" class="btn btn-primary" value="Click me" onclick="location.href='http://www.google.com';">
+<h3>Example 3</h3>
+<button class="btn btn-success" onclick="location.href='http://www.google.com';">Click me</button>
+
 <br><br><hr><br>
 
-<h1>Modal</h1>
+<h2>Modal</h2>
 
 <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -30,7 +44,7 @@
 
 <br><br><hr><br>
 
-<h1>Booking System</h1>
+<h2>Booking System</h2>
 
 <script>
 $(function() {
@@ -91,7 +105,7 @@ $(function() {
 
 <br><br><hr><br>
 
-<h1>User Profile</h1>
+<h2>User Profile</h2>
 <div class="alert alert-danger">
 	<p><span class="label label-danger">IMPORTANT</span> Users should only be allowed to see their own profile!
 	Redirect users after they register to their profile page (rentmyride/users/profile).</p>
@@ -220,7 +234,7 @@ $(function() {
 
 <br><br><hr><br>
 
-<h1>Car snippet</h1>
+<h2>Car snippet</h2>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -267,7 +281,7 @@ $(function() {
 
 <br><br><hr><br>
 
-<h1>Calendar</h1>
+<h2>Calendar</h2>
 
  <script type="text/javascript">
  $(document).ready(function() {
