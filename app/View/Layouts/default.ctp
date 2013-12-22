@@ -39,7 +39,7 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life');
 	<script src="http://code.highcharts.com/highcharts.js"></script>
 
 	<style type="text/css">
-		.no-link a:link a:visited {
+		a:link a:visited {
 			text-decoration: none;
 		}
 	</style>

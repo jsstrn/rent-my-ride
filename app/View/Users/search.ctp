@@ -49,8 +49,11 @@
 			</form>
 			
 		<?php // echo $this->Html->link('View Details', 'view/' . $user['User']['id']) ; ?>
-			<button class="btn btn-default">
-				<?php $this->Html->link('View', array('action' => 'view' , $user['User']['id'])); ?>
+			<button class="btn btn-default"><?php echo $this->Html->link('View', array('action' => 'view', $user['User']['id'])); ?></button>
+				<?php //$this->Html->link('View', array('action' => 'view' , $user['User']['id'])); ?>
+				<?php //echo $this->Form->('View', array('action' => 'view', $user['User']['id'])); ?>
+				
+
 			</button>
 			<button class="btn btn-primary">Give Rating!</button>
 			<button class="btn btn-primary">Give Comment!</button>
