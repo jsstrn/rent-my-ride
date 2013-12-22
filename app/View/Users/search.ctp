@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-xs-6 col-md-10">
 		<?php echo $this->Form->create('User', array('type' => 'post', 'class' => 'form-inline')); ?>
-		<?php echo $this->Form->text('username', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a user')); ?>
+		<?php echo $this->Form->text('username', array('required'=>'false', 'class' => 'form-control input-lg', 'placeholder' => 'Search for a user, leave blank for all users')); ?>
 	</div>
 	<div class="col-xs-6 col-md-2">
 		<button type="submit" class="btn btn-lg btn-success">Search</button>
@@ -45,7 +45,14 @@
 			</tr>
 		</table>
 		<div class="pull-right">
-			<button class="btn btn-default">View Details</button>
+			<form action="">
+			</form>
+			
+		<?php // echo $this->Html->link('View Details', 'view/' . $user['User']['id']) ; ?>
+			<button class="btn btn-default">
+				<?php $this->Html->link('View', array('action' => 'view' , $user['User']['id'])); ?>
+			</button>
+			<button class="btn btn-primary">Give Rating!</button>
 			<button class="btn btn-primary">Give Comment!</button>
 		</div>
 	</div>

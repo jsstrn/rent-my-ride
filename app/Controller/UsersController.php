@@ -152,7 +152,7 @@ class UsersController extends AppController {
 		if (!$query) {
 			UsersController::index();
 		} else {
-			$result = $this->User->findAllByBrand($query);
+			$result = $this->User->findAllByUsername($query);
 			$this->set('users', $result);
 		}
 
