@@ -20,5 +20,8 @@
 	echo $this->Form->input('picture', array('type' => 'file'));
 	echo $this->Form->submit('Add User');
 	echo $this->Form->button('Reset', array('type' => 'reset'));
-	echo $this->Form->button('Cancel', array('type' => 'button','action' => '/index'));
+	//echo $this->Form->button('Cancel', array('action' => 'index'));
 ?>
+
+</br>
+<?php echo $this->html->link('Back', array('action'=>'index'));?>

@@ -32,7 +32,8 @@
 
 <hr>
 
-<button></button>
+</br>
 
-<br>
-<p><?php echo $this->Html->link('Back', array('controller' => 'users', 'action' => 'index')); ?></p>
+<?php echo $this->html->link('Back', array('action'=>'index')). " | " . 
+		   $this->html->link('Edit', array('action'=>'edit', $user['User']['id'])). " | " . 
+           $this->html->link('Delete', array('action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this comment?'); ?>

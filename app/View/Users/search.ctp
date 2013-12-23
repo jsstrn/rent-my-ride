@@ -53,7 +53,13 @@
 				<?php //$this->Html->link('View', array('action' => 'view' , $user['User']['id'])); ?>
 				<?php //echo $this->Form->('View', array('action' => 'view', $user['User']['id'])); ?>
 				
-
+			<?php
+					echo $this->Form->button('View', array(
+					'type' => 'button',
+					'class' => 'btn btn-info', 
+					'onclick' => 'location.href=\'/rentmyride/users/view/'.$user['User']['id']
+					));
+			?>
 			</button>
 			<button class="btn btn-primary">Give Rating!</button>
 			<button class="btn btn-primary">Give Comment!</button>

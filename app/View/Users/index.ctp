@@ -1,9 +1,9 @@
 <h1>Users listing</h1>
 <p>This is a list of all registered users.</p>
 
-<p><?php echo $this->Html->link('Add a new user', 'add/'); ?></p>
+<button class="btn btn-lg btn-default"><?php echo $this->Html->link('Add a new user', array('action' => 'add')); ?></button>
 
-
+<br><br>
 
 <table class="table table-striped">
 	<tr>

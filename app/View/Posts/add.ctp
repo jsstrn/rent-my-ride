@@ -5,3 +5,5 @@
 	echo $this->Form->input('body', array('required'=>'false'));
 	echo $this->Form->end('Create a Comment');
 ?>
+
+<?php echo $this->html->link('Back', array('action'=>'index'));?>
