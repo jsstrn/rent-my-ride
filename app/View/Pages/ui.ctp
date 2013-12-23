@@ -1,12 +1,16 @@
 <h1>UI Design Mockups</h1>
-
 <h2>Button with weblink</h2>
+
+<button onclick="window.location.href='<?php echo Router::url(array('controller'=>'cars', 'action'=>'view'))?>'">Go Back</button>
+
 <h3>Example 1</h3>
 <?php
+echo $this->Html->link('View', array('controller' => 'users', 'action' => 'view' . $user['User']['id']));
+
 echo $this->Form->button('Click me', array(
 	'type' => 'button',
 	'class' => 'btn btn-info',
-	'onclick' => 'location.href=\'http://google.com\';'
+	'onclick' => 'location.href=\'/rentmyride/users/view/\';',
 	));
 ?>
 <h3>Example 2</h3>

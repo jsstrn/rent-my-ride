@@ -20,28 +20,25 @@ class EventsController extends AppController {
 		$car_exists = $this->Event->Car->findById($car_id);
 
 		if ($car_exists) {
-			$this->data['Event']['car_id'] = $car_id;
-			$this->data['Event']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Event']['car_id'] = $car_id;
+			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
+
+			if ($this->request->is('post')) {
+				$this->Event->create();
+				if ($this->Event->save($this->request->data)) {
+					$this->redirect(array('action' => 'success'));
+				} else {
+					$this->Session->setFlash('Unable to place your booking. Try again later.');
+				}
+			}
+
 		} else {
 			throw new NotFoundException(__('Invalid Request'));
 		}
 
-		// $this->set('test', $this->Event->Car->data['Car']['brand']);
-
-
-
 		$this->set('car', $car_exists);
 
 		$this->set('user_id', $this->Auth->user('id'));
-
-		if ($this->request->is('post')) {
-			$this->Event->create();
-			if ($this->Event->save($this->request->data)) {
-				$this->redirect(array('action' => 'success'));
-			} else {
-				$this->Session->setFlash('Unable to place your booking. Try again later.');
-			}
-		}
 
 	}
 

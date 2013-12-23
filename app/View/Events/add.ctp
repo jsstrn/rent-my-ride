@@ -2,7 +2,7 @@
 
 <?php
 
-echo 'My User ID is: ' . $user_id. '<br>';
+echo 'My User ID is: ' . $user_id . '<br>';
 
 echo 'My Car ID is: ' . $car['Car']['id'] . '<br>';
 
