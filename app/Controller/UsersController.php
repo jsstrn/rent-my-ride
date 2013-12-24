@@ -6,13 +6,11 @@ class UsersController extends AppController {
 
 	public $theme = 'Cakestrap';
 
-	public $helpers = array('Html', 'Form', 'Session');
-	public $components = array('Session');
 
 	public function beforeFilter() {
 
 		parent::beforeFilter();
-		$this->Auth->allow('register'); //allows users to register for an account 
+		$this->Auth->allow(); //allows users to register for an account 
 	}
 
 	// public access - rentmyride/users/index

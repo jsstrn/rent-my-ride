@@ -3,8 +3,6 @@
 class UploadsController extends AppController {
 
 
-	public $helpers = array('Html', 'Form', 'Session');
-
 	public function index() {
 
 		$this->set('uploads', $this->Upload->find('all'));
