@@ -11,6 +11,8 @@ class PostsController extends AppController {
 	*
 	*/
 
+	public $theme = 'BaseAdmin';
+
 	public function index(){
 
 		$this->set('posts', $this->Post->find('all'));

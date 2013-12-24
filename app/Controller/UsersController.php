@@ -3,7 +3,8 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
-
+	
+	public $theme = 'BaseAdmin';
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');
 

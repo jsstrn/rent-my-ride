@@ -2,6 +2,8 @@
 
 class EventsController extends AppController {
 
+	public $theme = 'BaseAdmin';
+
 	public function index() {
 
 	}
