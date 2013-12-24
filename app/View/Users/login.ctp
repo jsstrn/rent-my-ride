@@ -1,7 +1,6 @@
 
 <?php echo $this->Session->flash('auth'); ?>
 <!-- for theme -->
-<?php $Users->layout = 'login'?>
 
 <div class="container">
 <form class="form-signin" role="form" action="/rentmyride/users/login" id="UserLoginForm" method="post" accept-charset="utf-8">

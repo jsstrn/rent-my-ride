@@ -2,7 +2,6 @@
 
 class UploadsController extends AppController {
 
-	public $theme = 'BaseAdmin';
 
 	public $helpers = array('Html', 'Form', 'Session');
 

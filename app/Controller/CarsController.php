@@ -3,7 +3,6 @@ App::uses('AppController', 'Controller');
 
 class CarsController extends AppController {
 
-	public $theme = 'BaseAdmin';
 	
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');

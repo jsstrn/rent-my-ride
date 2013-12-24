@@ -31,7 +31,6 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
-public $theme = 'BaseAdmin';
 /**
  * This controller does not use a model
  *
