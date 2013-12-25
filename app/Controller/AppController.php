@@ -37,7 +37,8 @@ class AppController extends Controller {
 
   public $theme = 'Cakestrap';
 
-	//public $theme = 'Flatly';
+  //public $theme = 'Flatly';
+
 
 	public $components = array(
 		  'DebugKit.Toolbar',
@@ -62,10 +63,13 @@ class AppController extends Controller {
           'action' => 'login'
         );
         $this->Auth->loginRedirect = array(
-          'controller' => 'posts',
-          'action' => 'add'
+          'controller' => 'pages',
+          'action' => 'home'
         );
+        $this->Auth->allow('index', 'view', 'display');
     }
+
+
 
 	//public function beforeFilter() {
 		//$this->Auth->allow('index', 'view');
