@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="./index.html">Base Admin 3.0</a>
+    <a class="navbar-brand" href="./index.html">Rent My Ride</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,32 +44,49 @@
 		<?php echo $this->Form->create('User'); ?>
 		<form action="./index.html" method="post">
 		
-			<h1>Sign In</h1>		
+			<h1>Sign In</h1>	
+
+			<?php echo $this->Session->flash('auth'); ?>
+				<!-- for theme -->
+
+				<div class="container">
+				<form class="form-signin" role="form" action="/rentmyride/users/login" id="UserLoginForm" method="post" accept-charset="utf-8">
+					<h2 class="form-signin-heading">Please login</h2>
+					<input type="text" id="UserUsername" name="data[User][username]" class="form-control" placeholder="Username" required autofocus>
+					<input type="password" id="userPassword" name="data[User][password]" class="form-control" placeholder="Password" required>
+					<!--
+					<label class="checkbox">
+					  <input type="checkbox" value="remember-me"> Remember me
+					</label>
+					-->
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				</form>
+				</div>	
 			
-			<div class="login-fields">
+			<!--<div class="login-fields">
 				
 				<p>Sign in using your registered account:</p>
 				
 				<div class="field">
 					<label for="username">Username:</label>
-					<input type="text" id="username" name="username" value="" placeholder="Username" class="form-control input-lg username-field" />
+					<input type="text" id="UserUsername" name="data[User][username]" placeholder="Username" class="form-control input-lg username-field" />
 				</div> <!-- /field -->
 				
-				<div class="field">
+				<!--<div class="field">
 					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password" class="form-control input-lg password-field"/>
+					<input type="password" id="userPassword" name="data[User][password]" placeholder="Password" class="form-control input-lg password-field"/>
 				</div> <!-- /password -->
 				
-			</div> <!-- /login-fields -->
+			<!--</div> <!-- /login-fields -->
 			
-			<div class="login-actions">
+			<!--<div class="login-actions">
 				
 				<span class="login-checkbox">
 					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
 					<label class="choice" for="Field">Keep me signed in</label>
 				</span>
 									
-				<button class="login-action btn btn-primary">Sign In</button>
+				<button class="login-action btn btn-primary" type="submit">Sign In</button>-->
 				
 			</div> <!-- .actions -->
 			

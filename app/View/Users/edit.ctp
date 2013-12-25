@@ -9,5 +9,7 @@
 	echo $this->Form->input('license', array('required'=>'false'));
 	echo $this->Form->input('image', array('type' => 'file'));
 	echo $this->Form->submit('Save');
-	echo $this->Form->button('Cancel', array('type' => 'button','action' => '/index'));
+	//echo $this->Form->button('Cancel', array('action' => 'index'));
 ?>
+</br>
+<?php echo $this->html->link('Back', array('action'=>'index'));?>
