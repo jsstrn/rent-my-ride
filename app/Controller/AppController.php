@@ -33,11 +33,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-<<<<<<< HEAD
 	// public $theme = 'Cakestrap';
 
-=======
->>>>>>> 6d201ff79bec7aea8fc4c754c9804dde5ab69c78
 	public $theme = 'BaseAdmin';
 
 	public $components = array(
@@ -67,8 +64,6 @@ class AppController extends Controller {
           'action' => 'add'
         );
     }
-
-
 
 	//public function beforeFilter() {
 		//$this->Auth->allow('index', 'view');
