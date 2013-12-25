@@ -2,10 +2,10 @@
 <p>Enter the user details below to add a new user.</p>
 <?php
 	echo $this->Form->create('User', array('type' => 'post'));
-	echo $this->Form->input('group_id', array(
+	echo $this->Form->input('role', array(
 		'type' => 'select', 
 		'label' => 'Role', 
-		'options' => array('1' => 'Admin', '2' => 'User'),
+		'options' => array('Admin' => 'Admin', 'User' => 'User'),
 		'empty' => 'Choose one',
 		'required'=>'false'
 		));

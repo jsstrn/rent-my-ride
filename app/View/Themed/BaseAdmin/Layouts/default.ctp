@@ -17,9 +17,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life');
+$cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life!');
 ?>
-<!DOCTYPE html>
+<?php echo $this->Html->docType('html5'); ?>
+<!--<!DOCTYPE html>-->
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
@@ -45,17 +46,19 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	
 </head>
 <body>
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($cakeDescription, '/'); ?></h1>
 		</div>
-		<div id="content">
 
+		<div id="content">
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
+
 		</div>
 		<div id="footer">
 			<?php  /* echo $this->Html->link(
@@ -66,12 +69,6 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life');
 			?>
 		</div>
 	</div>
-	<?php //echo $this->element('sql_dump');
-		echo $this->Html->script('libs/jquery-1.9.1.min.js');
-		echo $this->Html->script('libs/jquery-ui-1.10.0.custom.min.js');
-		echo $this->Html->script('libs/bootstrap.min.js');
-		echo $this->Html->script('Application');
-		echo $this->Html->script('demo/signin.js');
-	?>
+	
 </body>
 </html>

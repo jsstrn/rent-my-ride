@@ -45,6 +45,7 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			// echo $this->Html->script('bootstrap-datepicker');
 			
 			echo $this->fetch('script');
+
 		?>
 		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
