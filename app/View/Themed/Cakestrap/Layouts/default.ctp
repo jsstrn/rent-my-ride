@@ -58,13 +58,13 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 		<div id="main-container">
 		
 			<div id="header" class="container">
-				<?php echo $this->element('menu/top_menu'); ?>
+				<?php // echo $this->element('menu/top_menu'); ?>
+				<?php echo $this->element('menu/main_menu'); ?>
 			</div><!-- /#header .container -->
 			
 			<div id="content" class="container">
 				<?php echo $this->Session->flash(); ?>
 				<br />
-				<?php echo $this->element('menu/main_menu'); ?>
 				<?php echo $this->fetch('content'); ?>
 			</div><!-- /#content .container -->
 			
