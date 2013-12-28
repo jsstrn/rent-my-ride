@@ -10,7 +10,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 
 		parent::beforeFilter();
-		$this->Auth->allow('login', 'logout'); //allows users to register for an account 
+		$this->Auth->allow('login', 'logout', 'register'); //allows users to register for an account 
 	}
 
 	// public access - rentmyride/users/index
@@ -136,7 +136,7 @@ class UsersController extends AppController {
 
 		if(!empty($this->request->data))
 		{
-			$this->request->data('User.role', 'User');
+			$this->request->data('User.group_id', '2');
 			if($this->User->save($this->request->data))
 			{
 				$this->Session->setFlash('Registeration Sucessful');
