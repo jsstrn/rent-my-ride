@@ -86,9 +86,10 @@
     </ul>
     
     <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control input-sm search-query" placeholder="Search">
-      </div>
+    	<div class="form-group">
+        	<input type="text" class="input-sm search-query" placeholder="Search">
+        	<button type="submit" class="btn btn-primary">Search</button>
+        </div>
     </form>
   </div><!-- /.navbar-collapse -->
 </div> <!-- /.container -->

@@ -70,6 +70,8 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			
 			<div id="footer" class="container">
 				<footer>
+				  <br />
+				  <?php echo $this->element('footer/footmenu'); ?>
 				  <p class="pull-right"><a href="#">Back to top</a></p>
 				  <p>&copy; <?php echo date('Y'); ?> Rent My Ride, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 				</footer>
