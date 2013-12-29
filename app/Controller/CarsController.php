@@ -116,5 +116,9 @@ class CarsController extends AppController {
 		}
 
 	}
+
+	public function map() {
+		
+	}
 }	
 ?>

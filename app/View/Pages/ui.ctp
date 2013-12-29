@@ -1,6 +1,8 @@
 <h1>UI Design Mockups</h1>
 <h2>Buttons with weblink</h2>
 
+<i></i>
+
 <h3>Example 1</h3>
 <button class="btn btn-info" onclick="window.location.href='<?php echo Router::url(array('controller'=>'cars', 'action'=>'view'))?>'">Click me</button>
 
