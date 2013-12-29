@@ -39,7 +39,6 @@ class User extends AppModel {
 		'username' => array(
 			'Pleae enter username' => array(
 				'rule' => 'notEmpty',
-					'required' => true,
 						'message' => 'A username is required.'
 			),
 			'This username is already taken' => array(
@@ -54,7 +53,6 @@ class User extends AppModel {
 		'password' => array(
 			'Please enter password' => array(
 				'rule' => 'notEmpty',
-					'required' => true,
 						'message' => 'A password is required.'
 			),
 			'Size of password' => array(
@@ -69,7 +67,6 @@ class User extends AppModel {
 		'confirm_password' => array(
 			'Please enter password' => array(
 				'rule' => 'notEmpty',
-					'required' => true,
 						'message' => 'A password confirmation is required.'
 			),
 			'Size of confirm_password' => array(
@@ -77,50 +74,43 @@ class User extends AppModel {
 					'message' => 'Password must be between 8 and 20 characters long.'
 			)
 		),
-		'role' => array(
+		'group_id' => array(
 			'rule' => 'notEmpty',
-				'required' => false,
 					'message' => 'A role is required.'
 		),
 		'name' => array(
-			'required' => true,
 				'rule' => 'notEmpty',
 					'message' => 'A name is required.'
 		),
 		'address' => array(
-			'required' => true,
 				'rule' =>'notEmpty',
 					'message' => 'An address is required.'
 		),
 		'email' => array(
 			'rule' => 'email',
-				'required' => true,
 					'message' => 'This is an invalid email address.'
 		),
 		'mobile' => array(
 			'Please enter phone number' => array(
-				'required' => true,
 					'rule' => 'notEmpty',
 						'message' => 'A mobile number is required.'
 			),
 			'Invalid mobile phone number' => array(
-				'rule' => array('phone', '^[89]\d{7}$'),
+				'rule' => array('phone', '/^[89]\d{7}$/'),
 					'message' => 'This is an invalid mobile phone number.'
 			),
 		),
 		'license' => array(
-			'required' => true,
 				'rule' => 'notEmpty',
 					'message' => 'A license number is required.'
 		),
 		'postal_code' => array(
 			'Please enter postal code' => array(
-				'required' => true,
 					'rule' => 'notEmpty',
 						'message' => 'A postal code is required.'
 			),
 			'Invalid postal code' => array(
-				'rule' => array('postal', '\\d{6}'),
+				'rule' => array('postal', '/^[\d]{6}$/'),
 					'message' => 'This is an invalid postal code.'
 			),
 		),
