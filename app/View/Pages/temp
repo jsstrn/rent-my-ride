@@ -1,0 +1,92 @@
+<body>
+<div id="wrapper">
+    <div id="header">
+    <div class="logo"></div>
+        
+    <ul class="myMenu">
+        <li><a href="#">About Us</a>
+        <ul>
+         	<li><a href="objectives.html">Objectives</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="what-is-car-sharing.html">What is Car-Sharing</a></li>
+        </ul>
+        </li>
+        
+        <li><a href="#">Car-Sharing</a>
+        <ul>
+            <li><a href="how-cs-works.html">How Car-Sharing Works</a></li>
+			<li><a href="pt-and-cs.html">Public Transport & Car-Sharing</a></li>
+			<li><a href="benefits-of-csa.html">Benefits of Car-Sharing</a></li>
+        </ul>
+        </li>
+        
+        <li><a href="#">Media</a>
+        <ul>
+            <li><a href="news.html">News</a></li>
+            <li><a href="videos.html">Video</a></li>
+        </ul>
+        </li>
+        
+        <li><a href="location.html">Location</a></li>        
+        <li><a href="contact.aspx">Contact Us</a></li>
+        <li><a href="links.html">Links</a></li>
+        </ul>
+  </div>
+    
+    <div id="main-content">
+    	<div id="main-content-header">
+       	  <div class="content-header">How Car-Sharing Works?</div>
+       	  <div class="side-links"><a href="how-cs-works.html">How Car-Sharing Works</a> | <a href="pt-and-cs.html">Public Transport & Car-Sharing</a> | <a href="benefits-of-csa.html">Benefits Of Car-Sharing</a></div>
+      	</div>
+        
+    <div id="main-content-body">
+	<div class="text">Car-sharing is an innovative transportation concept in today's urban living.  It allows the user to have the freedom of accessing a fleet of vehicles located throughout Singapore, 24 hours a day 7 days a week. Together with public transport, the 
+        car-sharing service is helping the people to meet their transportation needs in an economically and environmentally responsible manner.</div>    	
+	<br />
+	<div class="text">Usually, it takes less than 5 minutes from reserving to collecting a 
+        car-sharing vehicle and the whole process is automated and it is self-service just like having your own car.  Depending on the travelling needs, the user can choose different types of vehicles and just pay for what they use (time and mileage).   Please refer to the respective 
+        car-sharing service providers for their usage rates.</div>  
+	<br />
+        
+	<center><img src="image/why-join.gif" alt="" /></center>
+	<br />
+	
+    <div class="left-text">1. Making a Reservation<br/></div>
+    <div class="text">
+	<p>Users can make a reservation online  and they can instant confirmation on the availability of the vehicles.  Depending on the user’s needs, reservation  can be made with a few minute notice or days in advance.</p>
+	</div>
+	<br />
+	
+    <div class="left-text">2. Collecting the Car-Sharing Vehicle<br /></div>
+    <div class="text">
+    <p>Car-sharing  vehicles are normally parked near to user’s home or office in designated car  park spaces.  The user can unlock the  vehicle using their assigned keyfob/smartcard and collect the vehicle key.</p>
+    </div>
+	<br />
+    
+    <div class="left-text">3. Driving the Vehicle<br /></div>
+    <div class="text">
+    <p>During  the reservation period, the users will just operate the vehicle just like their  own car.  For example in between trips,  the user just lock and unlock the vehicle door using the key.  </p>
+    </div>
+    <br />
+    
+    <div class="left-text">4. Returning the Vehicle<br /></div>
+    <div class="text">
+    <p>When  they are finished, they can need to return the vehicle back to the same  location where they have collected the vehicle.   The trip usage are automatically recorded and the user can view their  usage record online.</p>
+    </div>
+    <br />
+    
+    <div class="left-text">5. Payment<br /></div>
+    <div class="text">
+    <p>The invoice is generated and payment will be made through GIRO or credit card depending on the 
+        car-sharing service providers.</p>
+    </div>
+	</div>
+    </div>
+    
+    <div id="footer">Email: carsharingiscool@gmail.com
+    <br />
+        Copyright © 2012 Car-Sharing Association Singapore | All Rights Reserved.
+    </div>
+</div>
+</body>
+</html>
