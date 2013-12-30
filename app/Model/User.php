@@ -98,7 +98,7 @@ class User extends AppModel {
 			'Invalid mobile phone number' => array(
 				'rule' => array('phone', '/^[89]\d{7}$/'),
 					'message' => 'This is an invalid mobile phone number.'
-			),
+			)
 		),
 		'license' => array(
 				'rule' => 'notEmpty',
@@ -112,7 +112,7 @@ class User extends AppModel {
 			'Invalid postal code' => array(
 				'rule' => array('postal', '/^[\d]{6}$/'),
 					'message' => 'This is an invalid postal code.'
-			),
+			)
 		),
 /*		'picture' => array(
 			'image' => array(
