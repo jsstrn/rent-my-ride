@@ -21,6 +21,12 @@
     <link href="./css/pages/plans.css" rel="stylesheet"> 
     <link href="./css/pages/pricing.css" rel="stylesheet"> 
 
+    <?php
+
+    echo $this->Html->css('pricing');
+
+    ?>
+
     <link href="./css/custom.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

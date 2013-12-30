@@ -2,6 +2,8 @@
 <?php echo $this->Session->flash('auth'); ?>
 <!-- for theme -->
 
+<?php echo $this->Html->css('signin'); ?>
+
 <div class="container">
 <form class="form-signin" role="form" action="/rentmyride/users/login" id="UserLoginForm" method="post" accept-charset="utf-8">
 	<h2 class="form-signin-heading">Please login</h2>

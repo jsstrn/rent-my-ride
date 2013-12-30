@@ -115,6 +115,7 @@
 	</div> <!-- /subnavbar-inner -->
 
 </div> <!-- /subnavbar -->
+
     
 			    <h3>Frequently Asked Questions</h3>
 
@@ -154,7 +155,9 @@
 			    <h4>5. Payment<br /></h4>
 			    <p>The invoice is generated and payment will be made through GIRO or credit card depending on the 
 			        car-sharing service providers.</p>
-	
+
+    
+  
 
 <!-- Le javascript
 ================================================== -->
