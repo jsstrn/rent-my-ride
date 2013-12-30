@@ -32,6 +32,8 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride - The Ride of Your Life');
 
 		echo $this->Html->css('cake.generic');
 
+		echo $this->Html->css(); 
+
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
