@@ -187,6 +187,8 @@ class UsersController extends AppController {
     	exit;
 	}
 
+	public function profile() {}
+
 	
 }
 
