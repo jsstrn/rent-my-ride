@@ -11,7 +11,7 @@ class PostsController extends AppController {
 	*
 	*/
 
-	public $theme = 'Cakestrap';
+	//public $theme = 'Cakestrap';
 
 	public function index(){
 
