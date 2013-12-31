@@ -1,7 +1,39 @@
 <h1>UI Design Mockups</h1>
-<h2>Buttons with weblink</h2>
 
-<i></i>
+<br><br><hr><br>
+
+<h2>Button with icon</h2>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-star"></span> Star
+</button>
+
+<br><br><hr><br>
+
+<h2>Dashboard</h2>
+
+<div class="row text-center">
+	<div class="col-md-3">
+		<h1>166</h1>
+		<p>Total number of users</p>
+	</div><!-- .col -->
+	<div class="col-md-3">
+		<h1>82</h1>
+		<p>Total number of cars</p>
+	</div><!-- .col -->
+	<div class="col-md-3">
+		<h1>126</h1>
+		<p>Total number of bookings</p>
+	</div><!-- .col -->
+	<div class="col-md-3">
+		<h1>327</h1>
+		<p>Total number of messages</p>
+	</div><!-- .col -->
+</div><!-- .row -->
+
+<br><br><hr><br>
+
+<h2>Buttons with weblink</h2>
 
 <h3>Example 1</h3>
 <button class="btn btn-info" onclick="window.location.href='<?php echo Router::url(array('controller'=>'cars', 'action'=>'view'))?>'">Click me</button>
