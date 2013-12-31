@@ -118,7 +118,7 @@ class CarsController extends AppController {
 	}
 
 	public function map() {
-		
+		$this->set('cars', $this->Car->find('all'));
 	}
 }	
 ?>

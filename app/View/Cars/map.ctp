@@ -16,17 +16,18 @@
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
 
-    var marker = new google.maps.Marker({
-      'position' : new google.maps.LatLng(1.3024213, 103.839922),
+    <?php $num = 1; ?>
+    <?php foreach ($cars as $car): ?>
+
+    var marker<?php echo $num; ?> = new google.maps.Marker({
+      'position' : new google.maps.LatLng(<?php echo $car['Car']['lat']; ?>, <?php echo $car['Car']['lng']; ?>),
       'map' : map,
       'icon' : image
     });
 
-    var marker2 = new google.maps.Marker({
-      'position' : new google.maps.LatLng(1.348031, 103.928512),
-      'map' : map,
-      'icon' : image
-    });
+    <?php $num++; ?>
+    <?php endforeach; ?>
+    <?php unset($car); ?>
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
