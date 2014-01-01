@@ -18,7 +18,7 @@ echo $this->Form->button('Reset', array('type' => 'reset'));
 ?> 
 <br />
 <br />
-<button class="btn btn-lg btn-default"><?php echo $this->Html->link('Cancel', array('action' => 'index')); ?></button>
+<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('action' => 'index')); ?></button>
 <br />
 <br />
 <?php //echo $this->Form->button('Cancel', array('type' => 'button','action' => '/index'));
