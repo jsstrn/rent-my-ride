@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-xs-6 col-md-10">
 		<?php echo $this->Form->create('Car', array('type' => 'post', 'class' => 'form-inline')); ?>
-		<?php echo $this->Form->text('search', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car')); ?>
+		<?php echo $this->Form->text('search', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car, leave blank for all cars')); ?>
 
 	</div>
 	<div class="col-xs-6 col-md-2">

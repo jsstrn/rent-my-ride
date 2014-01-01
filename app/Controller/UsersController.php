@@ -152,13 +152,45 @@ class UsersController extends AppController {
 	// public access
 	public function search() {
 
-		$query = $this->request->data['User']['username'];
+		$query = $this->request->data['User']['search'];
 
-		if (!$query) {
+		if (!$query) 
+		{
 			UsersController::index();
-		} else {
-			$result = $this->User->findAllByUsername($query);
-			$this->set('users', $result);
+		} 
+		else
+		{
+			$result1 = $this->User->findAllByUsername($query);
+			$result2 = $this->User->findAllByName($query);
+			$result3 = $this->User->findAllByAddress($query);
+			$result4 = $this->User->findAllByEmail($query);
+			$result5 = $this->User->findAllByMobile($query);
+			$result6 = $this->User->findAllByLicense($query);
+
+			if ($result1 != null)
+			{
+				$this->set('users', $result1);
+			}
+			elseif ($result2 != null)
+			{
+				$this->set('users', $result2);
+			}
+			elseif ($result3 != null)
+			{
+				$this->set('users', $result3);
+			}
+			elseif ($result4 != null)
+			{
+				$this->set('users', $result4);
+			}
+			elseif ($result5 != null)
+			{
+				$this->set('users', $result5);
+			}
+			elseif ($result6 != null)
+			{
+				$this->set('users', $result6);
+			}
 		}
 
 	}
