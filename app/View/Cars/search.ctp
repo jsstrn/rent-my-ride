@@ -3,16 +3,15 @@
 <div class="row">
 	<div class="col-xs-6 col-md-10">
 		<?php echo $this->Form->create('Car', array('type' => 'post', 'class' => 'form-inline')); ?>
-		<?php echo $this->Form->text('brand', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car')); ?>
+		<?php echo $this->Form->text('search', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car')); ?>
+
 	</div>
 	<div class="col-xs-6 col-md-2">
 		<button type="submit" class="btn btn-lg btn-success">Search</button>
 		<?php echo $this->Form->end(); ?>
 	</div>
 </div>
-
 <br>
-
 <?php $num = 1; ?>
 <?php foreach ($cars as $car): ?>
 <div class="panel panel-default">
@@ -23,6 +22,7 @@
    	<div class="col-md-3">
    		<img src="holder.js/200x200" class="img-thumbnail center-block">
    	</div>
+
 	<div class="col-md-9">
 		<table class="table table-hover">
 			<tr>
@@ -32,8 +32,8 @@
 				<td><?php echo $car['Car']['model']; ?></td>
 			</tr>
 			<tr>
-				<td><strong>Text</strong></td>
-				<td>-</td>
+				<td><strong>License Plate</strong></td>
+				<td><?php echo $car['Car']['license_plate']; ?></td>
 				<td><strong>Location</strong></td>
 				<td>-</td>
 			</tr>
@@ -46,8 +46,8 @@
 			<tr>
 				<td><strong>Transmission</strong></td>
 				<td><?php echo $car['Car']['transmission']; ?></td>
-				<td><strong>Price</strong></td>
-				<td>-</td>
+				<td><strong>Postal Code</strong></td>
+				<td><?php echo $car['Car']['postal_code']; ?></td>
 			</tr>
 		</table>
 		<div class="pull-right">

@@ -106,17 +106,54 @@ class CarsController extends AppController {
 	// public access
 	public function search() {
 
-		$query = $this->request->data['Car']['brand'];
+		$query2 = $this->request->data['Car']['search'];
 
-		if (!$query) {
+
+	    if (!$query2) {
 			CarsController::index();
-		} else {
-			$result = $this->Car->findAllByBrand($query);
-			$this->set('cars', $result);
+		} 
+		else
+		{
+			$result1 = $this->Car->findAllByBrand($query2);
+			$result2 = $this->Car->findAllByModel($query2);
+			$result3 = $this->Car->findAllByLicensePlate($query2);
+			$result4 = $this->Car->findAllByTransmission($query2);
+			$result5 = $this->Car->findAllByEngineType($query2);
+			$result6 = $this->Car->findAllByEngineCapacity($query2);
+			$result7 = $this->Car->findAllByPostalCode($query2);
+
+			if ($result1 != null)
+			{
+				$this->set('cars', $result1);
+			}
+			elseif ($result2 != null)
+			{
+				$this->set('cars', $result2);
+			}
+			elseif ($result3 != null)
+			{
+				$this->set('cars', $result3);
+			}
+			elseif ($result4 != null)
+			{
+				$this->set('cars', $result4);
+			}
+			elseif ($result5 != null)
+			{
+				$this->set('cars', $result5);
+			}
+			elseif ($result6 != null)
+			{
+				$this->set('cars', $result6);
+			}
+			elseif ($result7 != null)
+			{
+				$this->set('cars', $result7);
+			}
+
 		}
-
+			
 	}
-
 	public function map() {
 		$this->set('cars', $this->Car->find('all'));
 	}
