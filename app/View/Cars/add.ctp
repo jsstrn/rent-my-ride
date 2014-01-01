@@ -1,32 +1,3 @@
-<!--
-<script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
-</script>
-<script type="text/javascript">
-
-var geocoder = new google.maps.Geocoder();
-
-function codeAddress() {
-
-	alert("I've been clicked!");
-  var address = document.getElementById('CarLocation').value;
-
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      var lat = results[0].geometry.location;
-      var lng = results[0].geometry.location.lng;
-      alert('Lat: ' + lat + ' Lng: ' + lng);
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
--->
-
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false"></script>
 <script>
 var geocoder;
@@ -37,9 +8,13 @@ function codeAddress() {
 
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      var location = results[0].geometry.location;
+      var lat = results[0].geometry.location.lat();
+      var lng = results[0].geometry.location.lng();
       var fadd = results[0].formatted_address;
-      alert(location + fadd);
+      document.getElementById('DisplayAddress').value = fadd;
+      document.getElementById('CarFormattedAddress').value = fadd;
+      document.getElementById('CarLat').value = lat;
+      document.getElementById('CarLng').value = lng;
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -54,24 +29,30 @@ function codeAddress() {
 	<div class="col-md-8">
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-		    <h3 class="panel-title">Add your car</h3>
+		    <h3 class="panel-title">Your car details</h3>
 		  </div><!-- .panel-heading -->
 		  <div class="panel-body">
 		  	<div class="row">
 		  		<div class="col-sm-8">
 		  			<?php
 		  			echo '<input class="form-control" id="address" type="text" placeholder="Type Your Car\'s Location" autofocus="true">';
+		  			echo '<br>';
+		  			echo $this->Form->create('Car', array('type' => 'post'));
+		  			echo '<textarea class="form-control" id="DisplayAddress" row="2" placeholder="Address" disabled></textarea>';
+		  			echo $this->Form->input('formatted_address', $options = array('class'=>'form-control', 'type'=>'hidden'));
+		  			echo $this->Form->input('lat', $options = array('class'=>'form-control', 'type'=>'hidden'));
+		  			echo $this->Form->input('lng', $options = array('class'=>'form-control', 'type'=>'hidden'));
 		  			?>
 		  		</div>
 		  		<div class="col-sm-4">
 		  			<?php
-		  			echo '<input class="btn btn-default" type="button" value="Get Location" onclick="codeAddress()">';
+		  			echo '<button class="btn btn-default form-contol" type="button" onclick="codeAddress()">Get Location</button>';
 		  			?>
 		  		</div>
 		  	</div>
 		  	<?php
 		  	echo '<hr>';
-		  		echo $this->Form->create('Car', array('type' => 'post'));
+		  		
 		  		echo $this->Form->input('license_plate', array('class'=>'form-control'));
 		  		echo '<br>';
 		  		echo $this->Form->input('brand', array('class'=>'form-control'));
@@ -98,18 +79,12 @@ function codeAddress() {
 		  		echo '<br>';
 		  		echo $this->Form->input('image', array('class'=>'form-control', 'type' => 'file'));
 		  		echo '<br>';
+		  		echo $this->Form->submit('Add Your Car', array('class'=>'btn btn-primary'));
+		  		echo '<br>';
+		  		echo $this->Form->button('Reset Form', array('type' => 'reset', 'class'=>'btn btn-danger'));
+		  		echo '<br>';
+		  		echo $this->Form->end();
 		  	?>
-		  	<div class="row">
-		  		<div class="col-sm-9 text-right">
-		  			<?php echo $this->Form->button('Reset', array('type' => 'reset', 'class'=>'btn btn-danger')); ?>
-		  		</div>
-		  		<div class="col-sm-3 text-right">
-		  			<?php
-		  			echo $this->Form->submit('Add Your Car', array('class'=>'btn btn-primary'));
-		  			echo $this->Form->end();
-		  			?>
-		  		</div>
-		  	</div>
 		  </div><!-- .panel-body -->
 		</div><!-- .panel-default -->
 	</div><!-- .col -->
