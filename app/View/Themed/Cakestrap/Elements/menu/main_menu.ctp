@@ -63,12 +63,18 @@
 			
 		</li>
 
+		<?php if (!$logged_in): ?>
+		<li><?php echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')); ?>
+		</li>
+		<?php endif; ?>
+
+		<?php if ($logged_in): ?>
 
 		<li class="dropdown">
-						
+
 			<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
 				<i class="icon-user"></i> 
-				RmR User
+					<?php echo $current_user['username']; ?>
 				<b class="caret"></b>
 			</a>
 			
@@ -83,6 +89,7 @@
 			</ul>
 			
 		</li>
+		<?php endif; ?>
     </ul>
     
     <form class="navbar-form navbar-left" role="search">
