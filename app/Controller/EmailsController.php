@@ -9,7 +9,7 @@ public function send_mail($receiver = null, $name = null, $pass = null) {
         App::uses('CakeEmail', 'Network/Email');
         $email = new CakeEmail('gmail');
         $email->from('rentmyride.nyp@gmail.com');
-        $email->to('mohafizz@gmail.com');
+        $email->to('boi100886@gmail.com');
         $email->subject('Mail Confirmation');
         $email->send($message . " " . $confirmation_link);
     }

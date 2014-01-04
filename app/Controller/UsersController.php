@@ -37,9 +37,21 @@ class UsersController extends AppController {
 
 	// admin access only 
 	public function add() {
-	
+	App::uses('CakeEmail', 'Network/Email');
+
 		if ($this->request->is('POST')) {
 			$this->User->create();
+			$name = $this->request->data['User']['username'];
+			$pass = $this->request->data['User']['password'];
+			$emailadd = $this->request->data['User']['email'];
+
+			$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
+        	$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
+        	$email = new CakeEmail('gmail');
+        	$email->from('rentmyride.nyp@gmail.com');
+        	$email->to($emailadd);
+        	$email->subject('Mail Confirmation');
+        	$email->send($message . " " . $confirmation_link);
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash('New user added successfully');
 				return $this->redirect(array('action' => 'index'));
@@ -133,10 +145,23 @@ class UsersController extends AppController {
 	}
 
 	public function register() {
+		App::uses('CakeEmail', 'Network/Email');
 
 		if(!empty($this->request->data))
 		{
 			$this->request->data('User.group_id', '2');
+			$name = $this->request->data['User']['username'];
+			$pass = $this->request->data['User']['password'];
+			$emailadd = $this->request->data['User']['email'];
+
+			
+			$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
+        	$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
+        	$email = new CakeEmail('gmail');
+        	$email->from('rentmyride.nyp@gmail.com');
+        	$email->to('boi100886@gmail.com');
+        	$email->subject('Mail Confirmation');
+        	$email->send($message . " " . $confirmation_link);
 			if($this->User->save($this->request->data))
 			{
 				$this->Session->setFlash('Registeration Sucessful');
@@ -220,6 +245,22 @@ class UsersController extends AppController {
 	}
 
 	public function profile() {}
+
+
+	/*public function mail() {
+		App::uses('CakeEmail', 'Network/Email');
+		$email = new CakeEmail('gmail');
+        //$email->from('Team RMR');
+        $email->to('mohafizz@gmail.com');
+       // $email->attachments(array(''));
+        $email->subject('Account Confirmation');
+        $email->viewVars(array('username' => 'Joe'));
+        $email->template('welcome', 'default');
+        $email->emailFormat('both');
+        $email->send('Testing');
+        die('E-mail sent!');
+
+	}*/	
 
 
 	
