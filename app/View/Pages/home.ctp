@@ -18,7 +18,7 @@
             <div class="carousel-caption">
               <h1>Join us today!</h1>
               <p>Rent a car near your house today or rent out your car for additonal income!</p>
-              <p><a class="btn btn-lg btn-primary" href="/users/register" role="button">Sign up today</a></p>
+              <p><a class="btn btn-lg btn-primary" href="Users/register" role="button">Sign up today!</a></p>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="carousel-caption">
               <h1>FAQ</h1>
               <p>All you need to know about Rent My Ride!</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="faq" role="button">Learn more...</a></p>
             </div>
           </div>
         </div>
@@ -37,8 +37,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Our cars</h1>
-              <p>OBrowse our members cars</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <p>Browse our members cars</p>
+              <p><a class="btn btn-lg btn-primary" href="gallery" role="button">Browse our gallery</a></p>
             </div>
           </div>
         </div>
