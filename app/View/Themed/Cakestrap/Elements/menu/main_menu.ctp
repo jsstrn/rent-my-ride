@@ -44,6 +44,7 @@
 				<li><a href="/rentmyride/cars/">View All Cars</a></li>
 				<li><a href="/rentmyride/cars/search">Find A Cars</a></li>
 				<li><a href="/rentmyride/events">Check Avaliability Of Cars</a></li>
+				<li><a href="/rentmyride/cars/map">View All Cars Location</a></li>
 			</ul>
 			
 		</li>

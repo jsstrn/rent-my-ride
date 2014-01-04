@@ -1,9 +1,11 @@
 <h2>Add a Comment</h2>
 <?php
 	echo $this->Form->create('Post', array('action' => 'add'));
-	echo $this->Form->input('title', array('required'=>'false'));
-	echo $this->Form->input('body', array('required'=>'false'));
-	echo $this->Form->end('Create a Comment');
+	echo '<div class="form-group">';
+	echo $this->Form->input('title', array('required'=>'false', 'class' => 'form-control'));
+	echo $this->Form->input('body', array('required'=>'false', 'class' => 'form-control'));
+	echo '</div>';
+	echo $this->Form->submit('Create a Comment', array('class' => "btn btn-primary"));
 ?>
-
-<?php echo $this->html->link('Back', array('action'=>'index'));?>
+<br />
+<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('action' => 'index')); ?></button>
