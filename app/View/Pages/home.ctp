@@ -1,5 +1,6 @@
     <!-- Carousel
-    ================================================== -->x
+    ================================================== -->
+    <html>
     <br />
     <br />
     <br />
@@ -12,7 +13,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <img src="/rentmyride/img/signup.png" alt= "First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Join us today!</h1>
@@ -42,8 +43,8 @@
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
     </div><!-- /.carousel -->
   </body>
 </html>

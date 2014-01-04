@@ -43,7 +43,7 @@
 				
 			</div> <!-- /span3 -->
 			
-			<div class="col-md-3">
+			<!--<div class="col-md-3">
 				
 				<h4 style="color:#999999">Settings</h4>
 				
@@ -54,7 +54,7 @@
 					<li><a href="javascript:;">Officia deserunt</a></li>
 				</ul>
 				
-			</div> <!-- /span3 -->
+			</div> -->
 			
 		</div> <!-- /row -->
 
