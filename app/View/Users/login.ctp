@@ -15,5 +15,6 @@
 	</label>
 	-->
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	<a class="btn btn-lg btn-primary btn-block" href="register" role="button">No account? Sign up!</a></p>
 </form>
 </div>
