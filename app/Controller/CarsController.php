@@ -106,21 +106,21 @@ class CarsController extends AppController {
 	// public access
 	public function search() {
 
-		$query2 = $this->request->data['Car']['search'];
+		$query = $this->request->data['Car']['search'];
 
 
-	    if (!$query2) {
+	    if (!$query) {
 			CarsController::index();
 		} 
 		else
 		{
-			$result1 = $this->Car->findAllByBrand($query2);
-			$result2 = $this->Car->findAllByModel($query2);
-			$result3 = $this->Car->findAllByLicensePlate($query2);
-			$result4 = $this->Car->findAllByTransmission($query2);
-			$result5 = $this->Car->findAllByEngineType($query2);
-			$result6 = $this->Car->findAllByEngineCapacity($query2);
-			$result7 = $this->Car->findAllByPostalCode($query2);
+			$result1 = $this->Car->findAllByBrand($query);
+			$result2 = $this->Car->findAllByModel($query);
+			$result3 = $this->Car->findAllByLicensePlate($query);
+			$result4 = $this->Car->findAllByTransmission($query);
+			$result5 = $this->Car->findAllByEngineType($query);
+			$result6 = $this->Car->findAllByEngineCapacity($query);
+			$result7 = $this->Car->findAllByFormattedAddress($query);
 
 			if ($result1 != null)
 			{
