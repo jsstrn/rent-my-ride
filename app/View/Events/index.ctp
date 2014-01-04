@@ -1,16 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-    // page is now ready, initialize the calendar...
-
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    var h = date.getHours();
-
     $('#calendar').fullCalendar({
-        // put your options and callbacks here
         header: {
         	left: 'prev,next today',
         	center: 'title',
@@ -20,15 +11,30 @@ $(document).ready(function() {
         editable: true,
         selectable: true,
         events: [
-        {
-        	id: 123,
-        	title: 'This is today!',
-        	start: new Date(y,m,d,h),
-        	end: new Date(y,m,d,h+2),
-        	allDay: false // $event['Event']['add_day']
-        }]
-    })
 
+        {
+            title: 'Today',
+            start: new Date(),
+            date: new Date(),
+            allDay: false,
+        },
+
+        <?php $num = 1; ?>
+        <?php foreach ($dates as $date): ?>
+
+        <?php echo '{' ; ?>
+            <?php echo "title: \"" . $date['Event']['id'] . "\"," ; ?>
+            <?php echo "start: \"" . $date['Event']['date_start'] . ' ' . $date['Event']['time_start'] . "\"," ; ?>
+            <?php echo "end: \"" . $date['Event']['date_end'] . ' ' . $date['Event']['time_end'] . "\"," ; ?>
+            <?php echo "allDay: false"; ?>
+        <?php echo '},' ; ?>
+
+        <?php $num++; ?>
+        <?php endforeach; ?>
+        <?php unset($date); ?>
+
+        ]
+    })
 });
 </script>
 

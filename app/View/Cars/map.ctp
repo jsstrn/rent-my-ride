@@ -33,4 +33,10 @@
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
+<?php $src = $this->webroot . 'img/cars/default.png' ; ?>
+
+<img src="<?php echo $src ; ?>">
+
+<img src="/rentmyride/img/cars/test-bmw.png">
+
 <div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>

@@ -5,6 +5,8 @@ class EventsController extends AppController {
 
 	public function index() {
 
+		$this->set('dates', $this->Event->find('all'));
+
 	}
 
 	public function view() {
