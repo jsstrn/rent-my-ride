@@ -28,35 +28,43 @@ echo $this->Form->end();
 		  </div>
 		  <div class="panel-body">
 		  	<form class="form-horizontal" role="form">
+		  		<?php
+		  		echo $this->Form->create('Event', array());
+		  		echo $this->Form->input('car_id', array('type' => 'hidden'));
+		  		echo $this->Form->input('user_id', array('type' => 'hidden'));
+		  		?>
 		  	  <div class="form-group">
 		  	    <label class="col-sm-2 control-label">Start Date</label>
 		  	    <div class="col-sm-10">
-		  	      <input type="date" class="form-control">
+		  	    	<?php echo $this->Form->input('date_start', array('class'=>'form-control', 'label'=>false)); ?>
 		  	    </div>
 		  	  </div>
 		  	  <div class="form-group">
 		  	    <label class="col-sm-2 control-label">Start Time</label>
 		  	    <div class="col-sm-10">
-		  	      <input type="time" class="form-control">
+
 		  	    </div>
 		  	  </div>
 		  	  <hr>
 		  	  <div class="form-group">
 		  	    <label class="col-sm-2 control-label">End Date</label>
 		  	    <div class="col-sm-10">
-		  	      <input type="date" class="form-control">
+
 		  	    </div>
 		  	  </div>
 		  	  <div class="form-group">
 		  	    <label class="col-sm-2 control-label">End Time</label>
 		  	    <div class="col-sm-10">
-		  	      <input type="time" class="form-control">
+
 		  	    </div>
 		  	  </div>
 		  	  <hr>
 		  	  <div class="form-group">
 		  	    <div class="col-sm-10 col-sm-offset-2">
-		  	      <button type="submit" class="btn btn-default">Place Booking</button>
+		  	    	<?php 
+		  	    	echo $this->Form->submit('Book Now', array('class'=>'btn btn-default'));
+		  	    	echo $this->Form->end();
+		  	    	?>
 		  	    </div>
 		  	  </div>
 		  	</form>
