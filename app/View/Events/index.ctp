@@ -23,7 +23,7 @@ $(document).ready(function() {
         <?php foreach ($dates as $date): ?>
 
         <?php echo '{' ; ?>
-            <?php echo "title: \"" . $date['Event']['id'] . "\"," ; ?>
+            <?php echo "title: \"" . 'Booked by ' . $date['User']['name'] . "\"," ; ?>
             <?php echo "start: \"" . $date['Event']['date_start'] . ' ' . $date['Event']['time_start'] . "\"," ; ?>
             <?php echo "end: \"" . $date['Event']['date_end'] . ' ' . $date['Event']['time_end'] . "\"," ; ?>
             <?php echo "allDay: false"; ?>
