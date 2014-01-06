@@ -113,10 +113,3 @@ CakePlugin::load('PaypalIpn');
 
 CakePlugin::load('Like', array('routes' => true));
 
-<<<<<<< HEAD
-=======
->>>>>>> 8741e76cbaeb48e3b2e7dce841329f233bcace1e
-=======
->>>>>>> 8741e76cbaeb48e3b2e7dce841329f233bcace1e
-=======
->>>>>>> 8741e76cbaeb48e3b2e7dce841329f233bcace1e
