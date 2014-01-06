@@ -33,8 +33,6 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::Connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq'));
 	Router::Connect('/gallery/*', array('controller' => 'pages', 'action' => 'display', 'gallery'));
-	Router::connect('/search/:type/:term/*', array('Plugin' => 'searchable', 'controller' => 
-	'SearchIndexes', 'action' => 'index'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
@@ -47,11 +45,11 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
-
+	
 	/* Paypal IPN plugin */
 	Router::connect('/paypal_ipn/process', array('plugin' => 'paypal_ipn', 'controller' => 'instant_payment_notifications', 'action' => 'process'));
 	/* Optional Route, but nice for administration */
 	Router::connect('/paypal_ipn/:action/*', array('admin' => 'true', 'plugin' => 'paypal_ipn', 'controller' => 'instant_payment_notifications', 'action' => 'index'));
 	/* End Paypal IPN plugin */
-	
-	//include(APP.'Plugin'.DS.'searchable'.DS.'config'.DS.'routes.php');
+
+	//include(APP.'Plugin'.DS.'Searchable'.DS.'Config'.DS.'routes.php');

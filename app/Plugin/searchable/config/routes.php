@@ -1,7 +1,7 @@
 <?php
 Router::connect('/search/:type/:term/*', array(
-  'Plugin' => 'searchable',
-  'controller' => 'SearchIndexes',
+  'Plugin' => 'Searchable',
+  'controller' => 'SearchIndices',
   'action' => 'index',
 ));
 ?>

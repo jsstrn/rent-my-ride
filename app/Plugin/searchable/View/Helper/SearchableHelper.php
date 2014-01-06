@@ -1,5 +1,5 @@
 <?php
-class SearchableHelper extends AppHelper {
+class SearchableHelper extends SearchableHelper {
   var $helpers = array('Html', 'Text');
   function snippets($data) {
     $data = json_decode($data, true);

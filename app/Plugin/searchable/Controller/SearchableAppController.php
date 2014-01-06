@@ -1,5 +1,5 @@
 <?php
-class SearchableAppController extends AppController {
+class SearchableAppController extends Controller {
 
 }
 ?>

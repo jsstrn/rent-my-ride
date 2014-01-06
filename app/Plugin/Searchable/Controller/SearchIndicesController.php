@@ -1,26 +1,26 @@
 <?php
-class SearchIndexesController extends SearchableAppController {
+class SearchIndicesController extends SearchableAppController {
 
-  var $name = 'SearchIndexes';
+  var $name = 'SearchIndices';
   var $paginate = array('SearchIndex' => array('limit' => 10));
   var $helpers = array('Searchable');
 
   function index() {
 
     // Redirect with search data in the URL in pretty format
-    if (!empty($this->data)) {
+    if (!empty($this->request->data)) {
       $redirect = array();
-      if (isset($this->data['SearchIndex']['term'])
-      && !empty($this->data['SearchIndex']['term'])) {
-        $redirect['term'] = urlencode(urlencode($this->data['SearchIndex']['term']));
+      if (isset($this->request->data['SearchIndex']['term'])
+      && !empty($this->request->data['SearchIndex']['term'])) {
+        $this->redirect['term'] = urlencode(urlencode($this->request->data['SearchIndex']['term']));
       } else {
-        $redirect['term'] = 'null';
+        $this->redirect['term'] = 'null';
       }
-      if (isset($this->data['SearchIndex']['type'])
-      && !empty($this->data['SearchIndex']['type'])) {
-        $redirect['type'] = $this->data['SearchIndex']['type'];
+      if (isset($this->request->data['SearchIndex']['type'])
+      && !empty($this->request->data['SearchIndex']['type'])) {
+        $this->redirect['type'] = $this->request->data['SearchIndex']['type'];
       } else {
-        $redirect['type'] = 'All';
+        $this->redirect['type'] = 'All';
       }
       $this->redirect($redirect);
     }
