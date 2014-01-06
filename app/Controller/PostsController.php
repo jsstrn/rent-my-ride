@@ -13,6 +13,8 @@ class PostsController extends AppController {
 
 	//public $theme = 'Cakestrap';
 
+	public $helpers = array('Like.Like');
+
 	public function index(){
 
 		$this->set('posts', $this->Post->find('all'));
@@ -37,6 +39,7 @@ class PostsController extends AppController {
 				$this->Session->setFlash('Unable to add comment. Please try again.');
 			}
 		}
+
 	}
 
 	public function edit($id = NULL) {
@@ -57,8 +60,6 @@ class PostsController extends AppController {
 		$this->Session->setFlash('The comment has been deleted');
 		$this->redirect(array('action'=>'index'));
 	}
-
-	//public function
 
 }
 

@@ -1,0 +1,6 @@
+<?php
+public Post extends AppModel{
+        $actsAs = array('Like.Likeable');
+    }
+
+    ?>

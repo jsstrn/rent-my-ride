@@ -8,6 +8,10 @@ class Event extends AppModel {
 			'className' => 'Car',
 			'foreignKey' => 'car_id'
 			),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+			)
 		);
 }
 

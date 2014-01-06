@@ -2,6 +2,7 @@
 
 class Post extends AppModel {
 
+	public $actsAs = array('Like.Likeable');
 	public $name = 'Post';
 	public $validate = array(
 		'title'=>array(

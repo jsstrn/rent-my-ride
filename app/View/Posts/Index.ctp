@@ -26,4 +26,6 @@
 	<?php $num ++; ?>
 	<?php endforeach; ?>
 	<?php unset($post); ?>
+
+	
 </table>

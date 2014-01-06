@@ -70,7 +70,7 @@ class User extends AppModel {
 						'message' => 'A password confirmation is required.'
 			),
 			'Size of confirm_password' => array(
-				'rule' => array('between', 8, 20),
+				'rule' => array('between', 1, 20),
 					'message' => 'Password must be between 8 and 20 characters long.'
 			)
 		),
