@@ -88,8 +88,10 @@ class User extends AppModel {
 					'message' => 'An address is required.'
 		),
 		'email' => array(
-			'rule' => 'email',
-					'message' => 'This is an invalid email address.'
+			'rule' => 'notEmpty',
+					'required' => 'true',
+							'message' => 'An Email is required.'
+
 		),
 		'mobile' => array(
 			'Please enter phone number' => array(
