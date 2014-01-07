@@ -148,8 +148,8 @@ class BuildSearchIndexShell extends Shell {
     // Store those that exist and have Searchable attached
     foreach ($modelNames as $modelName) {
 
-          // not needed - CakePHP 2 will lazy load models as reqd
-          //App::uses($modelName, 'Model');
+	  // not needed - CakePHP 2 will lazy load models as reqd
+	  //App::uses($modelName, 'Model');
 
       // If Searchable not attached, skip
       if (!ClassRegistry::init($modelName)->Behaviors->attached('Searchable')) {
