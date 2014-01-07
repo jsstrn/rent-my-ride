@@ -2,7 +2,8 @@
 
 class Post extends AppModel {
 
-	public $actsAs = array('Like.Likeable');
+	//public $actsAs = array('Like.Likeable');
+	//var $actsAs = array('Searchable.Searchable');
 	public $name = 'Post';
 	public $validate = array(
 		'title'=>array(
