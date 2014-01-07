@@ -1,8 +1,8 @@
 <?php
 echo $this->Form->create('SearchIndex', array(
   'url' => array(
-    'Plugin' => 'Searchable',
-    'Controller' => 'SearchIndices',
+    'plugin' => 'searchable',
+    'controller' => 'search_indexes',
     'action' => 'index'
   )
 ));

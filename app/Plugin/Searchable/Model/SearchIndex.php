@@ -1,7 +1,7 @@
 <?php
 class SearchIndex extends SearchableAppModel {
   var $name = 'SearchIndex';
-  var $useTable = 'search_indices';
+  var $useTable = 'search_index';
 
   /**
    * Returns array of types (models) used in the Search Index with model name as
