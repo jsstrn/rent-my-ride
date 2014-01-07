@@ -1,13 +1,13 @@
 <h2>Search a car</h2>
 
 <div class="row">
-	<div class="col-xs-6 col-md-10">
+	<div class="col-xs-6 col-sm-10">
 		<?php echo $this->Form->create('Car', array('type' => 'post', 'class' => 'form-inline')); ?>
-		<?php echo $this->Form->text('search', array('class' => 'form-control input-lg', 'placeholder' => 'Search for a car, leave blank for all cars')); ?>
+		<?php echo $this->Form->text('search', array('class' => 'form-control', 'placeholder' => 'Search for a car, leave blank for all cars')); ?>
 
 	</div>
-	<div class="col-xs-6 col-md-2">
-		<button type="submit" class="btn btn-lg btn-success">Search</button>
+	<div class="col-xs-6 col-sm-2">
+		<button type="submit" class="btn btn-success form-control">Search</button>
 		<?php echo $this->Form->end(); ?>
 	</div>
 </div>

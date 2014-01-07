@@ -10,6 +10,7 @@ $(document).ready(function() {
         firstDay: 1,
         editable: true,
         selectable: true,
+        eventColor: '#378006',
         events: [
 
         {

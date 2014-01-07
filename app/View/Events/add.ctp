@@ -42,7 +42,9 @@ echo $this->Form->end();
 		  	  <div class="form-group">
 		  	    <label class="col-sm-2 control-label">Start Time</label>
 		  	    <div class="col-sm-10">
-
+		  	    	<?php echo $this->Form->select('time_start',
+		  	    		array('8am to 9am', '9am to 10am', '10am to 11am', '11am to 12pm', '12pm to 1pm'),
+		  	    		array('class'=>'form-control')); ?>
 		  	    </div>
 		  	  </div>
 		  	  <hr>
@@ -61,10 +63,12 @@ echo $this->Form->end();
 		  	  <hr>
 		  	  <div class="form-group">
 		  	    <div class="col-sm-10 col-sm-offset-2">
-		  	    	<?php 
-		  	    	echo $this->Form->submit('Book Now', array('class'=>'btn btn-default'));
-		  	    	echo $this->Form->end();
-		  	    	?>
+		  	    	<div class="text-right">
+		  	    		<?php 
+		  	    		echo $this->Form->submit('Book Now', array('class'=>'btn btn-primary'));
+		  	    		echo $this->Form->end();
+		  	    		?>
+		  	    	</div>
 		  	    </div>
 		  	  </div>
 		  	</form>
