@@ -5,6 +5,7 @@ App::uses('AuthComponent', 'Controller/Component');
 class User extends AppModel {
 
 	public $belongsTo = array('Group');
+	//var $actsAs = array('Searchable.Searchable');
     public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
