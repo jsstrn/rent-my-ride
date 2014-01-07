@@ -1,6 +1,6 @@
 <?php
 
-class PostsController extends AppController {
+class CommentsController extends AppController {
 
 	/*
 	*	we write a function like this:
@@ -17,12 +17,12 @@ class PostsController extends AppController {
 
 	public function index(){
 
-		$this->set('posts', $this->Post->find('all'));
+		$this->set('posts', $this->Comment->find('all'));
 	}
 
 	public function view($id = NULL) {
 		
-		$this->set('post', $this->Post->read(NULL, $id));
+		$this->set('post', $this->Comment->read(NULL, $id));
 	}
 
 	public function comment(){
@@ -32,7 +32,7 @@ class PostsController extends AppController {
 	public function add() {
 	
 		if ($this->request->is('post')) {
-			if ($this->Post->save($this->data)) {
+			if ($this->Comment->save($this->data)) {
 				$this->Session->setFlash('The comment was added successfully');
 				$this->redirect(array('action' =>'index'));
 			} else {
@@ -45,9 +45,9 @@ class PostsController extends AppController {
 	public function edit($id = NULL) {
 
 		if (empty($this->data)) {
-			$this->data = $this->Post->read(NULL, $id);
+			$this->data = $this->Comment->read(NULL, $id);
 		} else {
-			if($this->Post->save($this->data)) {
+			if($this->Comment->save($this->data)) {
 				$this->Session->setFlash('The comment has been updated');
 				$this->redirect(array('action'=>'view', $id));
 			}
@@ -56,7 +56,7 @@ class PostsController extends AppController {
 
 	public function delete($id = NULL) {
 
-		$this->Post->delete($id);
+		$this->Comment->delete($id);
 		$this->Session->setFlash('The comment has been deleted');
 		$this->redirect(array('action'=>'index'));
 	}

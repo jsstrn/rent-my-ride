@@ -1,6 +1,6 @@
 <h2>Add a Comment</h2>
 <?php
-	echo $this->Form->create('Post', array('action' => 'add'));
+	echo $this->Form->create('Comment', array('action' => 'add'));
 	echo '<div class="form-group">';
 	echo $this->Form->input('title', array('required'=>'false', 'class' => 'form-control'));
 	echo $this->Form->input('body', array('required'=>'false', 'class' => 'form-control'));

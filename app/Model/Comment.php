@@ -1,9 +1,11 @@
 <?php
 
-class Post extends AppModel {
+class Comment extends AppModel{
+
+	public $name = 'Comment';
 
 	public $actsAs = array('Like.Likeable');
-	public $name = 'Post';
+
 	public $validate = array(
 		'title'=>array(
 			'title_must_not_be_blank'=>array(
@@ -23,6 +25,8 @@ class Post extends AppModel {
 				)
 			)
 		);
+
+
 }
 
 ?>

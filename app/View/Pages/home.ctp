@@ -13,7 +13,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/rentmyride/img/signup.png" alt= "First slide">
+          <img src="/rentmyride/img/signup.jpg" alt= "First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Join us today!</h1>

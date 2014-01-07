@@ -17,11 +17,11 @@
 	<?php foreach($posts as $post): ?>
 	<tr>
 		<td><?php echo $num; ?></td>
-		<td><?php echo $post['Post']['title']; ?></td>
-		<td><?php echo $post['Post']['body']; ?></td>
-		<td><?php echo $this->html->link('View', array('action'=>'view', $post['Post']['id'])) . " | " . 
-			$this->html->link('Edit', array('action'=>'edit', $post['Post']['id'])) . " | " . 
-			$this->Html->link('Delete', array('action' => 'delete', $post['Post']['id']), NULL, 'Are you sure you want to delete this comment?'); ?></td>
+		<td><?php echo $post['Comment']['title']; ?></td>
+		<td><?php echo $post['Comment']['body']; ?></td>
+		<td><?php echo $this->html->link('View', array('action'=>'view', $post['Comment']['id'])) . " | " . 
+			$this->html->link('Edit', array('action'=>'edit', $post['Comment']['id'])) . " | " . 
+			$this->Html->link('Delete', array('action' => 'delete', $post['Comment']['id']), NULL, 'Are you sure you want to delete this comment?'); ?></td>
 	</tr>
 	<?php $num ++; ?>
 	<?php endforeach; ?>
