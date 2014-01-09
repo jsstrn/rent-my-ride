@@ -7,7 +7,7 @@
       <span class="sr-only">Toggle navigation</span>
       <i class="icon-cog"></i>
     </button>
-    <a class="navbar-brand" href="home">Rent My Ride</a>
+    <a class="navbar-brand" href="/rentmyride">Rent My Ride</a>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -23,11 +23,11 @@
 			
 			<ul class="dropdown-menu">
 				<li><a href="">How To Get Started</a></li>
-				<li><a href="about">About Us</a></li>
-				<li><a href="contact">Contact Us</a></li>
-				<li><a href="gallery">Gallery</a></li>
+				<li><a href="/rentmyride/pages/about">About Us</a></li>
+				<li><a href="/rentmyride/pages/contact">Contact Us</a></li>
+				<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
 				<li><a href="javascript:;">History</a></li>
-				<li><a href="faq">FAQ</a></li>
+				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 			</ul>
 			
 		</li>
@@ -53,7 +53,7 @@
 						
 			<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
 				<i class="icon-cog"></i>
-				Posts
+				Comments
 				<b class="caret"></b>
 			</a>
 			
