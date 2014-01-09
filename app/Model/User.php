@@ -5,6 +5,7 @@ App::uses('AuthComponent', 'Controller/Component');
 class User extends AppModel {
 
 	public $belongsTo = array('Group');
+	//var $actsAs = array('Searchable.Searchable');
     public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
@@ -87,8 +88,10 @@ class User extends AppModel {
 					'message' => 'An address is required.'
 		),
 		'email' => array(
-			'rule' => 'email',
-					'message' => 'This is an invalid email address.'
+			'rule' => 'notEmpty',
+					'required' => 'true',
+							'message' => 'An Email is required.'
+
 		),
 		'mobile' => array(
 			'Please enter phone number' => array(

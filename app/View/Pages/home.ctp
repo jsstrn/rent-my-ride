@@ -13,17 +13,17 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/rentmyride/img/signup.png" alt= "First slide">
+          <img src="img/signup.jpg" alt= "First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Join us today!</h1>
-              <p>Rent a car near your house today or rent out your car for additonal income!</p>
+              <p>Rent a car near your home today or rent out your car for additonal income!</p>
               <p><a class="btn btn-lg btn-primary" href="Users/register" role="button">Sign up today!</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <img src="img/faq.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>FAQ</h1>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="item">
-          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <img src="img/gallery.png" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Our cars</h1>

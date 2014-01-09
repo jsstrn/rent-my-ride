@@ -13,6 +13,8 @@ class Car extends AppModel {
 			)
 		); */
 
+	//var $actsAs = array('Searchable.Searchable');
+
 	public $belongsTo = array();
 
 	public $validate = array(
