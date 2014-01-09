@@ -10,9 +10,9 @@
 				
 				<ul>
 					<li><a href="javascript:;">About Us</a></li>
-					<li><a href="javascript:;">Twitter</a></li>
-					<li><a href="javascript:;">Facebook</a></li>
-					<li><a href="javascript:;">Google+</a></li>
+					<li><a href="javascript:;">History</a></li>
+					<li><a href="javascript:;">Gallery</a></li>
+					<li><a href="javascript:;">How to get started!</a></li>
 				</ul>
 				
 			</div> <!-- /span3 -->
@@ -23,9 +23,7 @@
 				
 				<ul>
 					<li><a href="javascript:;">Frequently Asked Questions</a></li>
-					<li><a href="javascript:;">Ask a Question</a></li>
-					<li><a href="javascript:;">Video Tutorial</a></li>
-					<li><a href="javascript:;">Feedback</a></li>
+					<li><a href="javascript:;">Contact Us!</a></li>
 				</ul>
 				
 			</div> <!-- /span3 -->
