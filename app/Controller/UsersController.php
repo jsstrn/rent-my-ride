@@ -246,6 +246,7 @@ class UsersController extends AppController {
 
 	public function profile() {}
 
+	public function admin() {}
 
 	/*public function mail() {
 		App::uses('CakeEmail', 'Network/Email');
@@ -260,10 +261,7 @@ class UsersController extends AppController {
         $email->send('Testing');
         die('E-mail sent!');
 
-	}*/	
-
-
-	
+	}*/		
 }
 
 ?>
