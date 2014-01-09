@@ -58,8 +58,8 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/posts/">View All Posts</a></li>
-				<li><a href="/rentmyride/posts/add">Add A Post</a></li>
+				<li><a href="/rentmyride/Comments/">View All Comments</a></li>
+				<li><a href="/rentmyride/Comments/add">Add A Comment</a></li>
 			</ul>
 			
 		</li>
@@ -93,11 +93,11 @@
 		<?php endif; ?>
     </ul>
     
-    <form class="navbar-form navbar-left" role="search">
-    	<div class="form-group">
+     <form class="navbar-form navbar-left" role="search">
+    	<?php /*<div class="form-group">
         	<input type="text" class="input-sm search-query" placeholder="Search">
         	<button type="submit" class="btn btn-primary">Search</button>
-        </div>
+        </div>*/?>
     </form>
   </div><!-- /.navbar-collapse -->
 </div> <!-- /.container -->
