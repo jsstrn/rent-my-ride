@@ -61,6 +61,26 @@ class CommentsController extends AppController {
 		$this->redirect(array('action'=>'index'));
 	}
 
+	public function support() 
+	{
+		if(!empty($this->request->data))
+		{
+			$head = $this->request->data['User']['heading'];
+			$body = $this->request->data['User']['body'];
+			$myuser = $this->Auth->user('username');
+			App::uses('CakeEmail', 'Network/Email');
+			//$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
+        	$message = 'Hi Admin,' . '<br /><br />' . $head . '<br /><br />' . $body;
+        	$email = new CakeEmail('gmail');
+        	$email->from('rentmyride.nyp@gmail.com');
+        	$email->to('rentmyride.nyp@gmail.com');
+        	$email->subject('Complaint Reported By ' . $myuser);
+        	$email->emailFormat('html');
+       		$email->send($message);
+			$this->redirect(array('action'=>'/'));
+		}
+	}
+
 }
 
 ?>

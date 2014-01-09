@@ -85,6 +85,7 @@
 				<li><a href="/rentmyride/groups/view/2">My Groups</a></li>
 				<li><a href="/rentmyride/users/search">Search Users</a></li>
 				<li><a href="/rentmyride/users/upload">Upload Photos</a></li>
+				<li><a href="/rentmyride/comments/support">Report A Problem</a></li>
 				<li class="divider"></li>
 				<li><a href="/rentmyride/users/logout">Logout</a></li>
 			</ul>
