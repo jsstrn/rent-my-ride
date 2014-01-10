@@ -10,7 +10,7 @@
 		  	<div class="row">
 		  		<div class="col-sm-8">
 		  			<?php
-		  			echo $this->Form->create('User', array('type' => 'post'));
+		  			echo $this->Form->create('Comment', array('type' => 'post'));
 		  			echo $this->Form->input('heading', array('class'=>'form-control'));
 		  			echo '<br>';
 		  			echo $this->Form->input('body', array('class'=>'form-control', 'type' => 'textarea'));

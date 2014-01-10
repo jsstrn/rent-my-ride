@@ -65,8 +65,8 @@ class CommentsController extends AppController {
 	{
 		if(!empty($this->request->data))
 		{
-			$head = $this->request->data['User']['heading'];
-			$body = $this->request->data['User']['body'];
+			$head = $this->request->data['Comment']['heading'];
+			$body = $this->request->data['Comment']['body'];
 			$myuser = $this->Auth->user('username');
 			App::uses('CakeEmail', 'Network/Email');
 			//$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
