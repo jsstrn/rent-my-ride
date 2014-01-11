@@ -65,7 +65,7 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			</div><!-- /#header .container -->
 			
 			<div id="content" class="container">
-				<br />
+				<br /><br />
 				<?php echo $this->Session->flash(); ?>
 				<br />
 				<?php echo $this->fetch('content'); ?>

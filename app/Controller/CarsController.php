@@ -42,10 +42,10 @@ class CarsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Car->create();
 			if ($this->Car->save($this->request->data)) {
-				$this->Session->setFlash('Your car has been added!');
+				$this->Session->setFlash('Your car has been added!', 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('Unable to add your car. Try again later.');
+				$this->Session->setFlash('Unable to add your car. Try again later.', 'flash/error');
 			}
 		}
 	}
@@ -64,10 +64,10 @@ class CarsController extends AppController {
 	    if ($this->request->is(array('post', 'put'))) {
 	        $this->Car->id = $id;
 	        if ($this->Car->save($this->request->data)) {
-	            $this->Session->setFlash(__('Your car has been updated.'));
+	            $this->Session->setFlash(__('Your car has been updated.', 'flash/success'));
 	            return $this->redirect(array('action' => 'index'));
 	        }
-	        $this->Session->setFlash(__('Unable to update your car details.'));
+	        $this->Session->setFlash(__('Unable to update your car details.', 'flash/error'));
 	    }
 
 	    if (!$this->request->data) {
@@ -87,7 +87,7 @@ class CarsController extends AppController {
 		}
 
 		if ($this->Car->delete($id)) {
-			$this->Session->setFlash('Your car has been removed.');
+			$this->Session->setFlash('Your car has been removed.', 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 

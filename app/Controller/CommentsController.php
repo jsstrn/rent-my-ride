@@ -33,10 +33,10 @@ class CommentsController extends AppController {
 	
 		if ($this->request->is('post')) {
 			if ($this->Comment->save($this->data)) {
-				$this->Session->setFlash('The comment was added successfully');
+				$this->Session->setFlash('The comment was added successfully.', 'flash/success');
 				$this->redirect(array('action' =>'index'));
 			} else {
-				$this->Session->setFlash('Unable to add comment. Please try again.');
+				$this->Session->setFlash('Unable to add comment. Please try again.', 'flash/error');
 			}
 		}
 
@@ -48,8 +48,12 @@ class CommentsController extends AppController {
 			$this->data = $this->Comment->read(NULL, $id);
 		} else {
 			if($this->Comment->save($this->data)) {
-				$this->Session->setFlash('The comment has been updated');
+				$this->Session->setFlash('The comment has been updated.', 'flash/success');
 				$this->redirect(array('action'=>'view', $id));
+			}
+			else{
+
+				 $this->Session->setFlash('The comment cannot be updated.', 'flash/error');
 			}
 		}	   
 	} 
@@ -57,7 +61,7 @@ class CommentsController extends AppController {
 	public function delete($id = NULL) {
 
 		$this->Comment->delete($id);
-		$this->Session->setFlash('The comment has been deleted');
+		$this->Session->setFlash('The comment has been deleted.', 'flash/success');
 		$this->redirect(array('action'=>'index'));
 	}
 

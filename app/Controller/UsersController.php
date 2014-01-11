@@ -10,7 +10,8 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 
 		parent::beforeFilter();
-		$this->Auth->allow('login', 'logout', 'register'); //allows users to register for an account 
+		$this->Auth->allow('login', 'logout', 'register'); 
+		//allows users to login, logout and register for an account 
 	}
 
 	// public access - rentmyride/users/index
@@ -47,7 +48,7 @@ class UsersController extends AppController {
 			$emailadd = $this->request->data['User']['email'];
 			
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash('New user added successfully');
+				$this->Session->setFlash('New user added successfully.', 'flash/success');
 				App::uses('CakeEmail', 'Network/Email');
 				$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
         		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
@@ -58,7 +59,7 @@ class UsersController extends AppController {
         		$email->send($message . " " . $confirmation_link);
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('Unable to add new user. Please try again.');
+				$this->Session->setFlash('Unable to add new user. Please try again.', 'flash/error');
 			}
 		}
 	}
@@ -78,10 +79,10 @@ class UsersController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 		    $this->User->id = $id;
 		    if ($this->User->save($this->request->data)) {
-		        $this->Session->setFlash(__('Your details have been updated.'));
+		        $this->Session->setFlash(__('Your details have been updated.', 'flash/success'));
 		        return $this->redirect(array('action' => 'index'));
 		    }
-		    $this->Session->setFlash(__('Unable to update your user details.'));
+		    $this->Session->setFlash(__('Unable to update your user details.', 'flash/error'));
 		}
 
 		if (!$this->request->data) {
@@ -100,7 +101,7 @@ class UsersController extends AppController {
 		}
 
 		if ($this->User->delete($id)) {
-			$this->Session->setFlash('The user has been removed.');
+			$this->Session->setFlash('The user has been removed.', 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 	}
@@ -113,7 +114,7 @@ class UsersController extends AppController {
 		return $capture;
 	}
 
-	public function signup() {
+	/*public function signup() {
 
 		if ($this->request->is('post')) {
 			$this->User->create();
@@ -124,25 +125,25 @@ class UsersController extends AppController {
 				$this->Session->setFlash('Oops! Something went wrong. Please try again.');
 			}
 		}
-	}
+	}*/
 
 	public function login() {
 
 		if ($this->Session->read('Auth.User')) {
-        $this->Session->setFlash('You are logged in!');
+        $this->Session->setFlash('You are logged in!', 'flash/success');
         return $this->redirect('/');
     }
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirect());
 			}
-			$this->Session->setFlash(__('Incorrect username and/or password.'));
+			$this->Session->setFlash(__('Incorrect username and/or password.', 'flash/error'));
 		}
 	}
 
 	public function logout() {
 
-		$this->Session->setFlash('Good-Bye');
+		$this->Session->setFlash('Good-Bye', 'flash/success');
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -160,7 +161,7 @@ class UsersController extends AppController {
 			
 			if($this->User->save($this->request->data))
 			{
-				$this->Session->setFlash('Registeration Sucessful');
+				$this->Session->setFlash('Registeration Sucessful.', 'flash/success');
 				App::uses('CakeEmail', 'Network/Email');
 				$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
         		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
@@ -173,7 +174,7 @@ class UsersController extends AppController {
 			}
 			else
 			{
-				$this->Session->setFlash('Registeration Unsucessful, Please Try Again');
+				$this->Session->setFlash('Registeration Unsucessful, Please Try Again.', 'flash/error');
 			}
 		}
 	}
