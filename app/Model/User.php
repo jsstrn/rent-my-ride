@@ -4,7 +4,28 @@ App::uses('AuthComponent', 'Controller/Component');
 
 class User extends AppModel {
 
-	public $belongsTo = array('Group');
+	public $belongsTo = array(
+		'Group' => array(
+			'className' => 'Group',
+			'foreignKey' => 'group_id'
+			)
+		);
+
+	public $hasMany = array(
+		'Car' => array(
+			'className' => 'Car',
+			'foreignKey' => 'group_id'
+			),
+		'Event' => array(
+			'className' => 'Event',
+			'foreignKey' => 'event_id'
+			),
+		'Message' => array(
+			'className' => 'Message',
+			'foreignKey' => 'message_id'
+			)
+		);
+
 	//var $actsAs = array('Searchable.Searchable');
     public $actsAs = array('Acl' => array('type' => 'requester'));
 

@@ -1,5 +1,11 @@
 <h1>UI Design Mockups</h1>
 
+<h2>Images</h2>
+
+<?php $src = $this->webroot . 'img/cars/default.png' ; ?>
+
+<img src="<?php echo $src ; ?>">
+
 <br><br><hr><br>
 
 <h2>Button with icon</h2>

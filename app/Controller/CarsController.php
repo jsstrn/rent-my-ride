@@ -157,5 +157,9 @@ class CarsController extends AppController {
 	public function map() {
 		$this->set('cars', $this->Car->find('all'));
 	}
+
+	public function admin() {
+		$this->set('cars_total', $this->Car->find('count'));
+	}
 }	
 ?>

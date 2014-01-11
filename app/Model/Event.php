@@ -11,7 +11,7 @@ class Event extends AppModel {
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'user_id'
-			)
+			),
 		);
 }
 

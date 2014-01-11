@@ -251,7 +251,12 @@ class UsersController extends AppController {
 
 	public function profile() {}
 
-	public function admin() {}
+	public function admin() {
+		$this->set('users_total', $this->User->find('count'));
+		$this->set('cars_total', $this->User->Car->find('count'));
+		$this->set('events_total', $this->User->Event->find('count'));
+		$this->set('messages_total', $this->User->Message->find('count'));
+	}
 
 	/*public function mail() {
 		App::uses('CakeEmail', 'Network/Email');
