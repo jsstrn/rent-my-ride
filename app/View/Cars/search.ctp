@@ -21,6 +21,7 @@
   <div class="panel-body">
    	<div class="col-md-3">
    		<img src="holder.js/200x200" class="img-thumbnail center-block">
+   		<?php echo $car['Car']['image']; ?>
    	</div>
 
 	<div class="col-md-9">
