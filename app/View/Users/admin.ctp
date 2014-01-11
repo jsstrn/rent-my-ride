@@ -103,7 +103,7 @@
 	            enabled: false
 	        },
 	        xAxis: {
-	            categories: ['BMW', 'Mercedes Benz', 'Audi']
+	            categories: ['Nissan', 'Toyota', 'Honda']
 	        },
 	        yAxis: {
 	            title: {
@@ -111,11 +111,13 @@
 	            }
 	        },
 	        series: [{
-	            name: 'Men',
-	            data: [1, 8, 4]
-	        }, {
-	            name: 'Women',
-	            data: [5, 7, 3]
+	            name: 'Drivers',
+	            data: 
+	            [
+	           		<?php echo $nissan; ?>,
+	           		<?php echo $toyota; ?>,
+	           		<?php echo $honda; ?>,
+	            ]
 	        }]
 	    });
 	});
@@ -124,7 +126,24 @@
 	$(function () { 
 	    $('#chart2').highcharts({
 	        chart: {
-	            type: 'column'
+	            type: 'pie',
+	        },
+	        plotOptions: {
+	            pie: {
+	                dataLabels: {
+	                    enabled: true,
+	                    distance: -50,
+	                    style: {
+	                        fontWeight: 'bold',
+	                        color: 'white',
+	                        textShadow: '0px 1px 2px black'
+	                    }
+	                },
+	                innerSize: '50%',
+	                startAngle: -90,
+	                endAngle: 90,
+	                center: ['50%', '75%']
+	            }
 	        },
 	        title: {
 	            text: 'Total Number of Cars'

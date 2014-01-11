@@ -20,12 +20,6 @@
 		<td><?php echo $upload['Upload']['name']; ?></td>
 		<td><?php echo $upload['Upload']['path']; ?></td>
 		<td><img src="<?php echo $upload['Upload']['path'];?>"></td>
-		<td><?php echo $this->Html->link('View', 'view/' . $upload['User']['id']) . " | " . 
-			$this->Html->link('Edit', 'edit/' . $upload['User']['id']) . " | " . 
-			$this->Form->postLink('Delete',
-				array('action' => 'delete', $upload['User']['id']),
-				array('confirm' => 'Are you sure?')); 
-				?></td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
