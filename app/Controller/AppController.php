@@ -64,7 +64,7 @@ class AppController extends Controller {
         );
         $this->Auth->loginRedirect = array(
           'controller' => 'pages',
-          'action' => 'home'
+          'action' => '/'
         );
         $this->Auth->allow();
         // $this->Auth->allow('index', 'view', 'display');
