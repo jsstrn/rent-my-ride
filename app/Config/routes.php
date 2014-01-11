@@ -35,7 +35,7 @@
 	Router::Connect('/gallery/*', array('controller' => 'pages', 'action' => 'display', 'gallery'));
 	Router::Connect('/home', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::Connect('/about', array('controller' => 'pages', 'action' => 'display', 'about'));
-	Router::Connect('/contact', array('controller' => 'pages', 'action' => 'display', 'contact'));				
+	//Router::Connect('/contact', array('controller' => 'pages', 'action' => 'display', 'contact'));				
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

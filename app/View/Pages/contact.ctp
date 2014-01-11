@@ -4,6 +4,6 @@
 <p>If you have any feebacks tell us here!</p>
 
 <?php
-
+echo $this->Form->create('Contact');
 
 ?>
