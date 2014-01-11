@@ -22,7 +22,7 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="">How To Get Started</a></li>
+				<li><a href="/rentmyride/pages/started">How To Get Started</a></li>
 				<li><a href="/rentmyride/pages/about">About Us</a></li>
 				<li><a href="/rentmyride/pages/contact">Contact Us</a></li>
 				<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
