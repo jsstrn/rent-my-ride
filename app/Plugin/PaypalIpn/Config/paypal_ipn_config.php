@@ -28,9 +28,9 @@ class PaypalIpnConfig {
  * Test settings to test with using a sandbox paypal account.
  */
 	  var $test = array(
-		'business'      => 'sandbox_email@paypal.com',         // 'live_email@paypal.com', //Your Paypal email account
-		'server'        => 'https://www.sandbox.paypal.com',        // Main paypal server.
-		'notify_url'    => 'http://test.yoursite.com/paypal_ipn/process',
+		'business'      => 'mohafizz-facilitator_api1.gmail.com',         // 'live_email@paypal.com', //Your Paypal email account
+		'server'        => 'https://www.api.sandbox.paypal.com',        // Main paypal server.
+		'notify_url'    => 'http://localhost:8888/rentmyride/paypal_ipn/paypal_items/index',
                                                             // 'http://test.yoursite.com/paypal_ipn/process',
                                                             // Notify_url... set this to the process path of your
                                                             // paypal_ipn::instant_payment_notification::process action

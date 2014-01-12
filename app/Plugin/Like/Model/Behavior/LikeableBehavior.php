@@ -38,7 +38,7 @@ class LikeableBehavior extends ModelBehavior{
 			'hasMany' => array(
 				'Like' => array(
 					'className' => 'Like.Like',
-					'foreignKey' => 'foreign_id',
+					'foreignKey' => 'comments_id',
 					'conditions' => array('Like.model' => $Model->alias)
 				)
 			)
@@ -49,7 +49,7 @@ class LikeableBehavior extends ModelBehavior{
 			'belongsTo' => array(
 				$Model->alias => array(
 					'className' => $Model->alias,
-					'foreignKey' => 'foreign_id',
+					'foreignKey' => 'comments_id',
 					'counterCache' => $this->settings[$Model->alias]['counterCache'],
 					'conditions' => array('Like.model' => $Model->alias),
 					'counterScope' => array('Like.model' => $Model->alias)
@@ -75,7 +75,7 @@ class LikeableBehavior extends ModelBehavior{
 		$likesToDelete = $Model->Like->find('list', array(
 			'conditions' => array(
 				'model' => $Model->alias,
-				'foreign_id' => $Model->id
+				'comments_id' => $Model->id
 			)
 		));
 
@@ -90,17 +90,17 @@ class LikeableBehavior extends ModelBehavior{
 	 * Like an item
 	 * 
 	 * @example $this->Post->like(1, $this->Auth->user('id));
-	 * @param int $foreign_id ID of the item
+	 * @param int $comments_id ID of the item
 	 * @param int $user_id ID the user
 	 */
-	public function like(Model $Model, $foreign_id, $user_id){
+	public function like(Model $Model, $comments_id, $user_id){
 		// If the item does not exist
-		if(!$Model->exists($foreign_id)){
+		if(!$Model->exists($comments_id)){
 			throw new NotFoundException();
 		}
 	
 		// If the user already like this item
-		if($Model->isLikedBy($foreign_id, $user_id)){
+		if($Model->isLikedBy($comments_id, $user_id)){
 			throw new AlreadyLikedException();
 		}
 		
@@ -108,7 +108,7 @@ class LikeableBehavior extends ModelBehavior{
 		$Model->Like->save(array(
 			'Like' => array(
 				'model' => $Model->alias,
-				'foreign_id' => $foreign_id,
+				'comments_id' => $comments_id,
 				'user_id' => $user_id
 			)	
 		));
@@ -120,21 +120,21 @@ class LikeableBehavior extends ModelBehavior{
 	 * Dislike an item
 	 *
 	 * @example $this->Post->dislike(1, $this->Auth->user('id))
-	 * @param int $foreign_id ID of the item
+	 * @param int $comments_id ID of the item
 	 * @param int $user_id ID the user
 	 */
-	public function dislike(Model $Model, $foreign_id, $user_id){
-		if(!$Model->exists($foreign_id)){
+	public function dislike(Model $Model, $comments_id, $user_id){
+		if(!$Model->exists($comments_id)){
 			throw new NotFoundException();
 		}
 		
-		if(!$Model->isLikedBy($foreign_id, $user_id)){
+		if(!$Model->isLikedBy($comments_id, $user_id)){
 			throw new NotLikedException();
 		}
 		
 		$like = $Model->Like->find('first', array('conditions' => array(
 			'Like.model' => $Model->alias,
-			'Like.foreign_id' => $foreign_id,
+			'Like.comments_id' => $comments_id,
 			'Like.user_id' => $user_id
 		)));
 		
@@ -146,20 +146,20 @@ class LikeableBehavior extends ModelBehavior{
 	/**
 	 * Check if an item is liked by a user
 	 *
-	 * @param int $foreign_id ID of an item
+	 * @param int $comments_id ID of an item
 	 * @param int $user_id ID the user
 	 * @return boolean True if the user like the item, false otherwise
 	 */
-	public function isLikedBy(Model $Model, $foreign_id, $user_id){
+	public function isLikedBy(Model $Model, $comments_id, $user_id){
 		// If the item does not exist
-		if(!$Model->exists($foreign_id)){
+		if(!$Model->exists($comments_id)){
 			throw new NotFoundException();
 		}
 
 		$count = $Model->Like->find('count', array(
 			'conditions' => array(
 				'Like.model' => $Model->alias,
-				'Like.foreign_id' => $foreign_id,
+				'Like.comments_id' => $comments_id,
 				'Like.user_id' => $user_id
 			)
 		));
@@ -202,7 +202,7 @@ class LikeableBehavior extends ModelBehavior{
 	public function findLikedBy(Model $Model, $user_id){
 		$Model->Like->recursive = -1;
 		$likedItem = $Model->Like->find('all', array(
-			'fields' => array('Like.foreign_id'),
+			'fields' => array('Like.comments_id'),
 			'conditions' => array(
 				'Like.model' => $Model->alias,
 				'Like.user_id' => $user_id
@@ -213,7 +213,7 @@ class LikeableBehavior extends ModelBehavior{
 			return array();
 		}
 			
-		$likedItemIds = Set::classicExtract($likedItem, '{n}.Like.foreign_id');
+		$likedItemIds = Set::classicExtract($likedItem, '{n}.Like.comments_id');
 		return $Model->findAllById($likedItemIds);
 	}
 }

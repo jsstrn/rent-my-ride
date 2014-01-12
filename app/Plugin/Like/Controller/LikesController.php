@@ -2,7 +2,7 @@
 
 class LikesController extends AppController{
 	
-	public function like($model_name, $foreign_id){
+	public function like($model_name, $comments_id){
 		$Model = ClassRegistry::init(Inflector::classify($model_name));
 		$referer = $this->referer('/');
 		$user_id = $this->Auth->user('id'); 
@@ -17,17 +17,17 @@ class LikesController extends AppController{
 			return $this->redirect($referer);
 		}
 		
-		if(!$Model->exists($foreign_id)){
+		if(!$Model->exists($comments_id)){
 			$this->Session->setFlash(__d('like', 'This element does not exist.'));
 			return $this->redirect($referer);
 		}
 		
-		$Model->like($foreign_id, $user_id);
+		$Model->like($comments_id, $user_id);
 		return $this->redirect($referer);
 
 	}
 	
-	public function dislike($model_name, $foreign_id){
+	public function dislike($model_name, $comments_id){
 		$Model = ClassRegistry::init(Inflector::classify($model_name));
 		$referer = $this->referer('/');
 		$user_id = $this->Auth->user('id');
@@ -42,12 +42,12 @@ class LikesController extends AppController{
 			return $this->redirect($referer);
 		}
 	
-		if(!$Model->exists($foreign_id)){
+		if(!$Model->exists($comments_id)){
 			$this->Session->setFlash(__d('like', 'This element does not exist.'));
 			return $this->redirect($referer);
 		}
 	
-		$Model->dislike($foreign_id, $user_id);
+		$Model->dislike($comments_id, $user_id);
 		return $this->redirect($referer);
 	}
 	

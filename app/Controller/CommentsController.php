@@ -23,9 +23,14 @@ class CommentsController extends AppController {
 	public function view($id = NULL) {
 		
 		$this->set('post', $this->Comment->read(NULL, $id));
+
 	}
 
 	public function comment(){
+
+	}
+
+	public function find(){
 
 	}
 
