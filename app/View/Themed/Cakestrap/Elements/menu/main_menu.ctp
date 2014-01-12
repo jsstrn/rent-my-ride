@@ -32,6 +32,8 @@
 			
 		</li>
 
+		<?php if ($logged_in): ?>
+
 		<li class="dropdown">
 						
 			<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -49,6 +51,10 @@
 			
 		</li>
 
+		<?php endif; ?>
+
+		<?php if ($logged_in): ?>
+
 		<li class="dropdown">
 						
 			<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -63,6 +69,8 @@
 			</ul>
 			
 		</li>
+
+		<?php endif; ?>
 
 		<?php if (!$logged_in): ?>
 		<li><?php echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')); ?>
