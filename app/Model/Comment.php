@@ -3,7 +3,7 @@
 class Comment extends AppModel{
 
 	public $name = 'Comment';
-	public $actsAs = array('Like.Likeable');
+	//public $actsAs = array('Like.Likeable');
 	//var $actsAs = array('Searchable.Searchable');
 	public $validate = array(
 		'title'=>array(

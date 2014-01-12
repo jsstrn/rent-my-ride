@@ -61,7 +61,7 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			<div id="header" class="container">
 				<?php // echo $this->element('menu/top_menu'); ?>
 				<?php echo $this->element('menu/main_menu'); ?>
-				<?php echo $this->element('Searchable.form'); ?>
+				<?php //echo $this->element('Searchable.form'); ?>
 			</div><!-- /#header .container -->
 			
 			<div id="content" class="container">

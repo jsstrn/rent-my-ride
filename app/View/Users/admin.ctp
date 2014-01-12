@@ -2,15 +2,15 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<div class="panel panel-default">
-		  <div class="panel-body">
+		  
 		  	<div class="text-center">
-		  		<input class="form-control" placeholder="Universal Search Bar" autofocus>
+		  		<?php echo $this->element('Searchable.form'); ?>
+		  		<?php //<input class="form-control" placeholder="Universal Search Bar" autofocus> ?>
 		  	</div>
-		  </div>
-		</div><!-- .panel -->
+		  
 	</div>
 </div>
+<br />
 
 <h2>Statistics</h2><hr>
 
