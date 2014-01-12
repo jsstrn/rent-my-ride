@@ -6,6 +6,6 @@ echo $this->Form->create('SearchIndex', array(
     'action' => 'index'
   )
 ));
-echo $this->Form->input('term', array('label' => 'Search', 'id' => 'SearchSearch'));
+echo $this->Form->input('term', array('label' => '<h3><b>Search</b></h3>', 'id' => 'SearchSearch', 'class' => 'form-control', 'placeholder' => 'Universal Search Bar', 'autofocus'));
 echo $this->Form->end();
 ?>
