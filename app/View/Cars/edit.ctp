@@ -9,7 +9,9 @@
 	echo $this->Form->select('transmission', array('Automatic' => 'Automatic', 'Manual' => 'Manual'));
 	echo $this->Form->select('engine_type', array('Petrol' => 'Petrol', 'Diesel' => 'Diesel', 'Hybrid' => 'Hybrid'));
 	echo $this->Form->input('engine_capacity');
-	echo $this->Form->input('image', array('type' => 'file'));
+	// echo $this->Form->input('image', array('type' => 'file', 'name' => 'uploader'));
+	echo "<input type='file' name='uploader'>";
 	echo $this->Form->submit('Save');
 	echo $this->Form->button('Cancel', array('type' => 'button', array('action' => 'index')));
+	echo $this->Form->end();
 ?>

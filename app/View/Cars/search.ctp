@@ -20,7 +20,7 @@
   </div>
   <div class="panel-body">
    	<div class="col-md-3">
-   		<img src="holder.js/200x200" class="img-thumbnail center-block">
+   		<img data-src="holder.js/200x200" class="img-thumbnail center-block" src="<?php echo $upload['Car']['image'];?>">
    		<?php // echo $car['Car']['image']; ?>
    	</div>
 

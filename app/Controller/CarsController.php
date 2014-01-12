@@ -40,6 +40,11 @@ class CarsController extends AppController {
 	public function add() {
 
 		if ($this->request->is('post')) {
+
+			$dir = 'img/cars/';
+			$path = $dir . basename($_FILES['image']['name']);
+			$this->request->data['Car']['image'] = $path;
+
 			$this->Car->create();
 			if ($this->Car->save($this->request->data)) {
 				$this->Session->setFlash('Your car has been added!', 'flash/success');
@@ -48,6 +53,24 @@ class CarsController extends AppController {
 				$this->Session->setFlash('Unable to add your car. Try again later.', 'flash/error');
 			}
 		}
+	}
+
+	public function image() {
+
+		$dir = 'img/cars/';
+		$path = $dir . basename($_FILES['uploader']['name']);
+		$this->request->data['Car']['image'] = $path;
+
+		echo '<pre>';
+		if (move_uploaded_file($_FILES['uploader']['tmp_name'], $dir)) {
+		    echo "File is valid, and was successfully uploaded.\n";
+		} else {
+		    echo "Possible file upload attack!\n";
+		}
+		echo 'Here is some more debugging info:';
+		print_r($_FILES);
+		print "</pre>";
+
 	}
 
 	// users and admin access
@@ -62,7 +85,9 @@ class CarsController extends AppController {
 	    }
 
 	    if ($this->request->is(array('post', 'put'))) {
-	        $this->Car->id = $id;
+
+	    	$this->Car->id = $id;
+	        
 	        if ($this->Car->save($this->request->data)) {
 	            $this->Session->setFlash(__('Your car has been updated.', 'flash/success'));
 	            return $this->redirect(array('action' => 'index'));
