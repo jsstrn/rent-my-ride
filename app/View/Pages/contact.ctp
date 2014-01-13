@@ -1,16 +1,19 @@
+<div class="well">
 <h2>Contact Us</h2>
+Contact us here and we will email you back within 48hrs.
+</br></br>
 
 <?php
-echo $this->Form->create('Contactform.Contactform');
 
-echo $this->Form->input('Contactform.Name', array('label' => __d('contactform', 'name')));
-echo $this->Form->input('Contactform.Mail', array('label' => __d('contactform', 'email')));
-echo $this->Form->input('Contactform.Message', array('type' => 'textarea', 'label' => __d('contactform', 'message')));
-echo $this->Form->label('Contactform.Spamprotection', __d('contactform', 'spam protection').' - '.$calculation);
-echo $this->Form->input('Contactform.Spamprotection', array('label' => false, 'autocomplete' => 'off'));
+echo $this->Form->create();
 
-echo $this->Form->submit('Absenden', array('label' => __d('contactform', 'submit')));
+echo $this->Form->input('name', array('label' => 'Name:', 'class'=>'form-control'));
+echo '</br>';
+echo $this->Form->input('email', array('label' => 'Email:', 'class'=>'form-control'));
+echo '</br>';
+echo $this->Form->input('message', array('label' => 'Message', 'class'=>'form-control', 'type' => 'textarea'));
+echo '</br>';
+echo $this->Form->submit('Send', array('class'=>'btn btn-primary'));
 
-echo $this->Form->end();
 
 ?>
