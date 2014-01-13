@@ -57,7 +57,45 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
     </div><!-- /.carousel -->
 
-<div class="fb-like-box" data-href="https://www.facebook.com/rentmyride.SG" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="fb-like-box" data-href="https://www.facebook.com/rentmyride.SG" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+  </div>
+  <div class="col-md-8">
+    <div class="panel-heading">
+        
+        <div class="col-md-4">
+          <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+            <p>I find RmR so convient. I can rent a car when i want without much hassle.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+            <p>RmR is wonderful and easy to use. When i just started, it didn't take long for me to get familliarize with this app.  </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+            <p>Now i can make some money while renting my car when not in use, utilizing my car to its maximum. </p>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</div>
 
   </body>
 </html>

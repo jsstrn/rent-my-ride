@@ -79,10 +79,10 @@ class UsersController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 		    $this->User->id = $id;
 		    if ($this->User->save($this->request->data)) {
-		        $this->Session->setFlash(__('Your details have been updated.', 'flash/success'));
+		        $this->Session->setFlash('Your details have been updated.', 'flash/success');
 		        return $this->redirect(array('action' => 'index'));
 		    }
-		    $this->Session->setFlash(__('Unable to update your user details.', 'flash/error'));
+		    $this->Session->setFlash('Unable to update your user details.', 'flash/error');
 		}
 
 		if (!$this->request->data) {
