@@ -17,26 +17,41 @@
 							'required'=>'false',
 							'class' => 'form-control'
 						));
+						echo "<br />";
 						echo $this->Form->input('username', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('password', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('confirm_password', array('type'=>'password','required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('name', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('license', array('label' => 'Driver\'s License', 'required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('email', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('mobile', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('address', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('postal_code', array('required'=>'false', 'class' => 'form-control'));
+						echo "<br />";
 						echo $this->Form->input('picture', array('type' => 'file', 'class' => 'form-control'));
 					?>
 					</div>
 					<br />
-					<?php echo $this->Form->submit('Add User', array('class' => "btn btn-primary") );
-		  			echo "<br />";
-		  			echo $this->Form->button('Reset', array('type' => 'reset', 'class' => "btn btn-danger"));
-		 		 	echo "<br />";
-					?>
 					<br />
+					<?php
+					echo '<div class="col-md-2">';
+					echo $this->Form->submit('Add User', array('class' => "btn btn-primary") );
+		  			echo '</div>';
+		  			echo '<div class="col-md-2">';
+		  			echo $this->Form->button('Reset', array('type' => 'reset', 'class' => "btn btn-danger"));
+		 		 	echo '</div>';
+					?>
+					<div class="col-md-2">
 					<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('action' => 'index')); ?></button>
+					</div>
 				</div>
 			</div>
 		</div>
