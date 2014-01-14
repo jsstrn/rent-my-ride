@@ -27,6 +27,18 @@ class EventsController extends AppController {
 			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
 
 			if ($this->request->is('post')) {
+
+				$myDate = $this->request->data('date');
+				$myTime = $this->request->data('time');
+
+				$interval = $this->request->data('interval');
+				$myDateTime = $myDate . ' ' . $myTime;
+				$datetime_start = time($myDateTime);
+				$datetime_end = $datetime_start + (60 * 60 * $interval);
+
+				$this->request->data['Event']['datetime_start'] = $datetime_start;
+				$this->request->data['Event']['datetime_end'] = $datetime_end;
+
 				$this->Event->create();
 				if ($this->Event->save($this->request->data)) {
 					$this->redirect(array('action' => 'success'));
@@ -43,19 +55,8 @@ class EventsController extends AppController {
 
 		$this->set('user_id', $this->Auth->user('id'));
 
-	}
+		$this->set('user_name', $this->Auth->user('name'));
 
-	public function some_function() {
-
-		if ($this->request->is('post')) {
-			$this->Car->create();
-			if ($this->Car->save($this->request->data)) {
-				$this->Session->setFlash('Your car has been added!');
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash('Unable to add your car. Try again later.');
-			}
-		}
 	}
 
 	public function confirm() {

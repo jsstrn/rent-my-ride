@@ -29,7 +29,10 @@ $(document).ready(function() {
             <?php echo "end: \"" . $date['Event']['date_end'] . ' ' . $date['Event']['time_end'] . "\"," ; ?>
             <?php echo "allDay: false"; ?>
         <?php echo '},' ; ?>
-
+        <?php $mytime = $date['Event']['time_start']; ?>
+        <?php $ctime = time($mytime) ; ?>
+        <?php $addedtime = $ctime + 60 * 60; ?>
+        <?php $newdate = date('Y-m-d H:i:s', $addedtime); ?>
         <?php $num++; ?>
         <?php endforeach; ?>
         <?php unset($date); ?>
@@ -38,5 +41,15 @@ $(document).ready(function() {
     })
 });
 </script>
+
+<?php
+$currentTime = time() + 60 * 60;
+$showTime = date('Y-m-d H:i', $currentTime);
+$convertTime = time($showTime);
+echo time() . '<br>' ;
+echo $showTime . '<br>';
+echo $convertTime . '<br>';
+?> 
+<?php echo $mytime . '<br>' . $addedtime;?> 
 
 <div id="calendar"></div>
