@@ -35,8 +35,14 @@ class CommentsController extends AppController {
 	}
 
 	public function add() {
+
+		$this->loadModel('User');
+		$a = $this->User->find('list', array('fields' => array('User.username')));
+		$this->set('a', $a);
+		$this->set('loggeduser', $this->Auth->User('username'));
 	
 		if ($this->request->is('post')) {
+			$this->request->data('Comment.fromsender', $this->Auth->User('username'));
 			if ($this->Comment->save($this->data)) {
 				$this->Session->setFlash('The comment was added successfully.', 'flash/success');
 				$this->redirect(array('action' =>'index'));

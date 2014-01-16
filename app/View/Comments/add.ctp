@@ -10,6 +10,15 @@
 			<?php
 				echo $this->Form->create('Comment', array('action' => 'add'));
 				echo '<div class="form-group">';
+				echo $this->Form->input('user_id', array(
+					'type' => 'select', 
+					'label'=>'To',
+					'options' => $a,
+					'empty' => 'Choose Usernames', 
+					'class' => 'form-control'));
+				echo '<br />';
+				echo $this->Form->input('fromsender', array('label'=>'From', 'disabled' => 'true', 'class' => 'form-control', 'default'=> $loggeduser));
+				echo '<br />';
 				echo $this->Form->input('title', array('required'=>'false', 'class' => 'form-control'));
 				echo '<br />';
 				echo $this->Form->input('body', array('required'=>'false', 'class' => 'form-control'));
