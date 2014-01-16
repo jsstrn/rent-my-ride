@@ -3,6 +3,13 @@
 class Comment extends AppModel{
 
 	public $name = 'Comment';
+
+	public $belongsTo = array(
+        'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'user_id'
+        )
+    );
 	//public $actsAs = array('Like.Likeable');
 	//var $actsAs = array('Searchable.Searchable');
 	public $validate = array(
