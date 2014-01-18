@@ -6,13 +6,12 @@
 
 Last modified on: <?php echo $post['Comment']['modified']; ?> </p>
 
-<?php echo $this->Like->like('post', $post['Comment']['id']). " OR " .
-      $this->Like->dislike('post', $post['Comment']['id']); ?>
+<?php echo $this->Like->like('post', $post['Comment']['id']);
+      echo $this->Like->dislike('post', $post['Comment']['id']); ?>
 
 </br>
 
-<?php echo $this->html->link('Back', array('action'=>'index')). " | " . 
-$this->html->link('Edit', array('action'=>'edit', $post['Comment']['id'])). " | " . 
+<?php echo $this->html->link('Back', array('action'=>'index')). " | " .  
 $this->html->link('Delete', array('action'=>'delete', $post['Comment']['id']), NULL, 'Are you sure you want to delete this comment?'); 
 
 ?>
