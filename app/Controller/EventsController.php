@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 2014 Copyright (c) Rent My Ride Pte Ltd. 
+ * All rights reserved. 
+ */
+
 class EventsController extends AppController {
 
 
@@ -28,12 +33,20 @@ class EventsController extends AppController {
 
 			if ($this->request->is('post')) {
 
-				$myDate = $this->request->data('date');
-				$myTime = $this->request->data('time');
+				$y = $this->request->data['Event']['myDate']['year'];
+				$m = $this->request->data['Event']['myDate']['month'];
+				$d = $this->request->data['Event']['myDate']['day'];
+
+				$h = $this->request->data['Event']['myTime']['hour'];
+				$i = $this->request->data['Event']['myTime']['min'];
+
+				strtotime(time)
+				
+				echo $myDate;
 
 				$interval = $this->request->data('interval');
-				$myDateTime = $myDate . ' ' . $myTime;
-				$datetime_start = time($myDateTime);
+				// $datetime_start = strtotime($str);
+				// $datetime_start = time($myDateTime);
 				$datetime_end = $datetime_start + (60 * 60 * $interval);
 
 				$this->request->data['Event']['datetime_start'] = $datetime_start;
