@@ -17,7 +17,12 @@ class CommentsController extends AppController {
 
 	public function index(){
 
-		$this->set('posts', $this->Comment->find('all'));
+		//$this->set('posts', $this->Comment->find('all'));
+		$n = $this->Comment->findAllByUserId($this->Auth->User('id'));
+		$o = $this->Comment->findAllByFromsender($this->Auth->User('username'));
+
+		$this->set('n', $n);
+		$this->set('o', $o);
 	}
 
 	public function view($id = NULL) {
