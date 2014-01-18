@@ -63,7 +63,7 @@ class InstantPaymentNotificationsController extends PaypalIpnAppController {
 /**
  * Admin Only Functions... all baked
  */
-
+public function index(){}
 /**
  * Admin Index
  */
