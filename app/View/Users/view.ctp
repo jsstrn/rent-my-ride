@@ -34,6 +34,16 @@
 
 </br>
 
-<?php echo $this->html->link('Back', array('action'=>'index')). " | " . 
+<?php if ($current_user['group_id'] == 1)
+		{
+		   echo $this->html->link('Back', array('action'=>'index')). " | " . 
 		   $this->html->link('Edit', array('action'=>'edit', $user['User']['id'])). " | " . 
-           $this->html->link('Delete', array('action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this comment?'); ?>
+           $this->html->link('Delete', array('action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this user?'); 
+        }
+        else
+        {
+           echo $this->html->link('Back', array('action'=>'search')). " | " . 
+		   $this->html->link('Edit', array('action'=>'edit', $user['User']['id'])). " | " . 
+           $this->html->link('Delete', array('action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this user?'); 
+		}
+    	?>

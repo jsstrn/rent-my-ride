@@ -167,10 +167,10 @@ class UsersController extends AppController {
         		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
         		$email = new CakeEmail('gmail');
         		$email->from('rentmyride.nyp@gmail.com');
-        		$email->to('boi100886@gmail.com');
+        		$email->to($emailadd);
         		$email->subject('Mail Confirmation');
         		$email->send($message . " " . $confirmation_link);
-				$this->redirect(array('action'=>'/'));
+				$this->redirect(array('controller' => 'pages', 'action'=>'/'));
 			}
 			else
 			{

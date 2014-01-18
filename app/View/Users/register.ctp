@@ -43,7 +43,7 @@
 					echo '</div>';
 					?> 
 					<div class="col-md-2">
-					<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('action' => 'index')); ?></button>
+					<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('controller' => 'pages', 'action' => '/')); ?></button>
 					</div>
 				</div>
 			</div>

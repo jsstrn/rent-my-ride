@@ -39,20 +39,55 @@ class CommentsController extends AppController {
 
 	}
 
-	public function add() {
+	public function add($id = NULL) {
 
-		$this->loadModel('User');
-		$a = $this->User->find('list', array('fields' => array('User.username')));
-		$this->set('a', $a);
-		$this->set('loggeduser', $this->Auth->User('username'));
+		if ($id != NULL)
+		{
+			$this->loadModel('User');
+			$b = $this->request->params['pass'];
+			$c = $this->User->find('list', array(
+        	'fields' => array('User.id', 'User.username'),
+        	'conditions' => array('User.id' => $b)
+    		));
+
+			$this->set('a', $c);
+			$this->set('loggeduser', $this->Auth->User('username'));
 	
-		if ($this->request->is('post')) {
-			$this->request->data('Comment.fromsender', $this->Auth->User('username'));
-			if ($this->Comment->save($this->data)) {
-				$this->Session->setFlash('The comment was added successfully.', 'flash/success');
-				$this->redirect(array('action' =>'index'));
-			} else {
-				$this->Session->setFlash('Unable to add comment. Please try again.', 'flash/error');
+			if ($this->request->is('post')) 
+			{
+				$this->request->data('Comment.fromsender', $this->Auth->User('username'));
+				if ($this->Comment->save($this->data)) 
+				{
+					$this->Session->setFlash('The comment was added successfully.', 'flash/success');
+					$this->redirect(array('action' =>'index'));
+				} 
+				else 
+				{
+					$this->Session->setFlash('Unable to add comment. Please try again.', 'flash/error');
+				}
+			}
+		}
+
+
+		if (!$id)
+		{
+			$this->loadModel('User');
+			$a = $this->User->find('list', array('fields' => array('User.username')));
+			$this->set('a', $a);
+			$this->set('loggeduser', $this->Auth->User('username'));
+	
+			if ($this->request->is('post')) 
+			{
+				$this->request->data('Comment.fromsender', $this->Auth->User('username'));
+				if ($this->Comment->save($this->data)) 
+				{
+					$this->Session->setFlash('The comment was added successfully.', 'flash/success');
+					$this->redirect(array('action' =>'index'));
+				} 
+				else 
+				{
+					$this->Session->setFlash('Unable to add comment. Please try again.', 'flash/error');
+				}
 			}
 		}
 
@@ -97,7 +132,7 @@ class CommentsController extends AppController {
         	$email->subject('Complaint Reported By ' . $myuser);
         	$email->emailFormat('html');
        		$email->send($message);
-			$this->redirect(array('action'=>'/'));
+			$this->redirect(array('controller' => 'pages', 'action'=>'/'));
 		}
 	}
 

@@ -52,7 +52,7 @@
 			</tr>
 		</table>
 		<div class="pull-right">
-			<button class="btn btn-default">View Details</button>
+			<button class="btn btn-default" onclick="window.location.href='<?php echo Router::url(array('controller'=>'cars', 'action'=>'view', $car['Car']['id']))?>'">View Details</button>
 			<button class="btn btn-primary">Book Now!</button>
 		</div>
 	</div>

@@ -30,4 +30,16 @@
 	</tr>
 </table>
 <br>
-<p><?php echo $this->Html->link('Back', array('controller' => 'cars', 'action' => 'index')); ?></p>
+<?php if ($current_user['group_id'] == 1)
+		{
+		   echo $this->html->link('Back', array('action'=>'index')). " | " .
+		   $this->html->link('Edit', array('action'=>'edit', $car['Car']['id'])). " | " . 
+           $this->html->link('Delete', array('action'=>'delete', $car['Car']['id']), NULL, 'Are you sure you want to delete this Car?'); 
+        }
+        else
+        {
+           echo $this->html->link('Back', array('action'=>'search')). " | " .
+		   $this->html->link('Edit', array('action'=>'edit', $car['Car']['id'])). " | " . 
+           $this->html->link('Delete', array('action'=>'delete', $car['Car']['id']), NULL, 'Are you sure you want to delete this Car?'); 
+        }
+        ?>

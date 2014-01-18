@@ -5,9 +5,11 @@
 		
 		<div class="actions">
 		
+			<?php if ($current_user['group_id'] == 1): ?>
 			<ul class="list-group">
 				<li class="list-group-item"><?php echo $this->Html->link(__('New Group'), array('action' => 'add'), array('class' => '')); ?></li>
 			</ul><!-- /.list-group -->
+			<?php endif; ?>
 			
 		</div><!-- /.actions -->
 		
@@ -39,8 +41,12 @@
 		<td><?php echo h($group['Group']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $group['Group']['id']), array('class' => 'btn btn-default btn-xs')); ?>
+			<?php if ($current_user['group_id'] == 1): ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $group['Group']['id']), array('class' => 'btn btn-default btn-xs')); ?>
+			<?php endif; ?>
+			<?php if ($current_user['group_id'] == 1): ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $group['Group']['id']), array('class' => 'btn btn-default btn-xs'), __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?>
+			<?php endif; ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
