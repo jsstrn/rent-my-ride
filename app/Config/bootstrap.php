@@ -109,6 +109,8 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+CakePlugin::loadAll();
+
 CakePlugin::load('PaypalIpn');
 
 CakePlugin::load('Like', array('routes' => true));

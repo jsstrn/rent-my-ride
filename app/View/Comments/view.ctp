@@ -6,8 +6,8 @@
 
 Last modified on: <?php echo $post['Comment']['modified']; ?> </p>
 
-<?php echo $this->Like->like('post', $post['Comment']['id']);
-      echo $this->Like->dislike('post', $post['Comment']['id']); ?>
+<?php echo $this->Like->like('post', $post['Comment']['id']). " OR " .
+      $this->Like->dislike('post', $post['Comment']['id']); ?>
 
 </br>
 

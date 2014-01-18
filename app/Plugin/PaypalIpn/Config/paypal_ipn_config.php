@@ -11,9 +11,9 @@ class PaypalIpnConfig {
  * Each settings key coresponds to the Paypal API.  Review www.paypal.com for more.
  */
 	var $default = array(
-		'business'      => 'mohafizz-facilitator@gmail.com',         // 'live_email@paypal.com', //Your Paypal email account
-		'server'        => 'https://www.paypal.com',        // Main paypal server.
-		'notify_url'    => 'http://yoursite.com/paypal_ipn/process',
+		'business'      => 'mohafizz-facilitator_api1.gmail.com',         // 'live_email@paypal.com', //Your Paypal email account
+		'server'        => 'https://www.api.sandbox.paypal.com',        // Main paypal server.
+		'notify_url'    => 'http://localhost:8888/rentmyride/paypal_ipn/paypal_items/index',
                                                             // 'http://yoursite.com/paypal_ipn/process',
                                                             // Notify_url... set this to the process path of your
                                                             // paypal_ipn::instant_payment_notification::process action
