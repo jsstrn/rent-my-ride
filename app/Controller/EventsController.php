@@ -71,6 +71,10 @@ class EventsController extends AppController {
 	public function success() {
 
 	}
+
+	public function payment() {
+
+	}
 }
 
 ?>
