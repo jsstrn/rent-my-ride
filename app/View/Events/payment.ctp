@@ -29,14 +29,10 @@
 						<h5>-</h5>
 						<p><?php echo '$' . $lastRecord['Car']['rate'] . '.00' ;?></p>
 						<p><?php echo $lastRecord['Event']['interval'] . ' hours';?></p>
-						<p><?php echo '$' . $amount ;?></p>
-						<p><?php echo '$' . $gst ;?></p>
-						<?php
-						setlocale(LC_MONETARY, 'sg_SG');
-						echo money_format('%i', $total);
-						?>
+						<p><?php echo 'S$ ' . $english_format_number = number_format($amount, 2, '.', ',') ;?></p>
+						<p><?php echo 'S$ ' . $english_format_number = number_format($gst, 2, '.', ',') ;?></p>
 						<hr>
-						<h4><?php echo '$' . $total ;?></h4>
+						<h4><?php echo 'S$ ' . $english_format_number = number_format($total, 2, '.', ',') ;?></h4>
 						
 					</div>
 				</div>
