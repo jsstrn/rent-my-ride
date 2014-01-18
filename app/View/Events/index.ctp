@@ -8,7 +8,7 @@ $(document).ready(function() {
         	right: 'month,agendaWeek,agendaDay'
         },
         firstDay: 1,
-        editable: true,
+        editable: false,
         selectable: true,
         eventColor: '#378006',
         events: [
@@ -30,10 +30,6 @@ $(document).ready(function() {
             <?php echo "end: \"" . $datetime_end . "\"," ; ?>
             <?php echo "allDay: false"; ?>
         <?php echo '},' ; ?>
-        <?php $mytime = $event['Event']['time_start']; ?>
-        <?php $ctime = time($mytime) ; ?>
-        <?php $addedtime = $ctime + 60 * 60; ?>
-        <?php $newdate = date('Y-m-d H:i:s', $addedtime); ?>
         <?php $num++; ?>
         <?php endforeach; ?>
         <?php unset($event); ?>

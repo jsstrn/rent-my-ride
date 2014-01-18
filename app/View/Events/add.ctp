@@ -3,7 +3,6 @@
 <?php date_default_timezone_set('Asia/Singapore') ;?>
 
 <div class="row">
-	<div class="col-md-3"></div>
 	<div class="col-md-6">
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -14,7 +13,8 @@
 		  		if(!$user_name) {
 		  			echo '<p class="text-center">You are not logged in. Please login to make a booking.<p>';
 		  		} else {
-		  			echo '<p class="text-center">Hello, ' . $user_name . '! You have selected a ' . $car['Car']['brand'] . '.</p>';
+		  			echo '<p class="text-center">Hello, ' . $user_name . '! You have selected a ' . $car['Car']['brand'] . '</p>';
+		 		 	echo '<p class="text-center">Rental rate is $' . $car['Car']['rate'] . '/hr</p>';
 		  		}
 		  	?>
 		  	<hr>
@@ -61,7 +61,7 @@
 		  </div><!-- #panel-body -->
 		</div><!-- #panel-default -->
 	</div><!-- #col -->
-	<div class="col-md-3"></div>
+	<div class="col-md-6"></div>
 </div><!-- #row -->
 
 <script>

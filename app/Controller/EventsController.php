@@ -46,7 +46,7 @@ class EventsController extends AppController {
 
 				$this->Event->create();
 				if ($this->Event->save($this->request->data)) {
-					$this->redirect(array('action' => 'success'));
+					$this->redirect(array('action' => 'payment'));
 				} else {
 					$this->Session->setFlash('Unable to place your booking. Try again later.');
 				}
@@ -73,6 +73,20 @@ class EventsController extends AppController {
 	}
 
 	public function payment() {
+
+		$lastRecord = $this->Event->find('first', array(
+		    'order' => array('Event.created' => 'desc')
+		));
+
+		$amount = $lastRecord['Car']['rate'] * $lastRecord['Event']['interval'];
+
+		$gst = $amount * 0.07;
+		$total = $amount + $gst;
+
+		$this->set('amount', $amount);
+		$this->set('gst', $gst);
+		$this->set('total', $total);
+		$this->set('lastRecord', $lastRecord);
 
 	}
 }
