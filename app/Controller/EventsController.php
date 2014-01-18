@@ -10,7 +10,7 @@ class EventsController extends AppController {
 
 	public function index() {
 
-		$this->set('dates', $this->Event->find('all'));
+		$this->set('events', $this->Event->find('all'));
 
 	}
 
@@ -32,21 +32,13 @@ class EventsController extends AppController {
 			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
 
 			if ($this->request->is('post')) {
-
-				$y = $this->request->data['Event']['myDate']['year'];
-				$m = $this->request->data['Event']['myDate']['month'];
-				$d = $this->request->data['Event']['myDate']['day'];
-
-				$h = $this->request->data['Event']['myTime']['hour'];
-				$i = $this->request->data['Event']['myTime']['min'];
-
-				strtotime(time)
 				
-				echo $myDate;
+				$datetime_str = $this->request->data('myDate') . ' ' . $this->request->data('myTime');
+
+				$datetime_start = strtotime($datetime_str);
 
 				$interval = $this->request->data('interval');
-				// $datetime_start = strtotime($str);
-				// $datetime_start = time($myDateTime);
+				$interval = $this->request->data['Event']['interval'];
 				$datetime_end = $datetime_start + (60 * 60 * $interval);
 
 				$this->request->data['Event']['datetime_start'] = $datetime_start;

@@ -21,35 +21,26 @@ $(document).ready(function() {
         },
 
         <?php $num = 1; ?>
-        <?php foreach ($dates as $date): ?>
-
+        <?php foreach ($events as $event): ?>
+        <?php $datetime_start = date( 'Y-m-d H:i:s', $event['Event']['datetime_start'] ); ?>
+        <?php $datetime_end = date( 'Y-m-d H:i:s', $event['Event']['datetime_end'] ); ?>
         <?php echo '{' ; ?>
-            <?php echo "title: \"" . 'Booked by ' . $date['User']['name'] . "\"," ; ?>
-            <?php echo "start: \"" . $date['Event']['date_start'] . ' ' . $date['Event']['time_start'] . "\"," ; ?>
-            <?php echo "end: \"" . $date['Event']['date_end'] . ' ' . $date['Event']['time_end'] . "\"," ; ?>
+            <?php echo "title: \"" . 'Booked by ' . $event['User']['name'] . "\"," ; ?>
+            <?php echo "start: \"" . $datetime_start . "\"," ; ?>
+            <?php echo "end: \"" . $datetime_end . "\"," ; ?>
             <?php echo "allDay: false"; ?>
         <?php echo '},' ; ?>
-        <?php $mytime = $date['Event']['time_start']; ?>
+        <?php $mytime = $event['Event']['time_start']; ?>
         <?php $ctime = time($mytime) ; ?>
         <?php $addedtime = $ctime + 60 * 60; ?>
         <?php $newdate = date('Y-m-d H:i:s', $addedtime); ?>
         <?php $num++; ?>
         <?php endforeach; ?>
-        <?php unset($date); ?>
+        <?php unset($event); ?>
 
         ]
     })
 });
 </script>
-
-<?php
-$currentTime = time() + 60 * 60;
-$showTime = date('Y-m-d H:i', $currentTime);
-$convertTime = time($showTime);
-echo time() . '<br>' ;
-echo $showTime . '<br>';
-echo $convertTime . '<br>';
-?> 
-<?php echo $mytime . '<br>' . $addedtime;?> 
 
 <div id="calendar"></div>
