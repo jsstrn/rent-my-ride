@@ -12,9 +12,7 @@
 <?php 
   		echo $this->Form->create('User', array('type' => 'post'));
   		echo $this->Form->input('id', array('type' => 'hidden'));
-		echo $this->Form->input('username', array('required'=>'false', 'disabled' => 'true', 'class' => 'form-control')); ?>
-		<p> Your username is for logging in and cannot be changed. </p>
-		<?php 
+		echo $this->Form->input('username', array('required'=>'false', 'disabled' => 'true', 'class' => 'form-control')); 
 		//echo $this->Form->input('password', array('required'=>'false', 'class' => 'form-control'));
 		echo $this->Form->input('name', array('required'=>'false', 'disabled' => 'true', 'class' => 'form-control'));
 		echo $this->Form->input('license', array('label' => 'Driver\'s License', 'disabled' => 'true','required'=>'false', 'class' => 'form-control'));
@@ -62,7 +60,12 @@
 	      </div> <!-- /span4 -->
 	  </div>
 	
-	<div>
-	  <?php echo '<iframe width="749" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-	</div>
+	<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Map</h3>
+			</div>
+			<div class="panel-body">
+				<?php echo '<iframe width="1109" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+			</div><!-- #panel-body -->
+		</div><!-- #panel-default -->
 	      
