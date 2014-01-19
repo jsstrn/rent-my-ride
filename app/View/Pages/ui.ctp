@@ -11,7 +11,7 @@
 <h2>Button with icon</h2>
 
 <button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-star"></span> Star
+  <i class="glyphicon glyphicon-star"></i> Star
 </button>
 
 <br><br><hr><br>

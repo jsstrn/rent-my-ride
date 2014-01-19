@@ -52,8 +52,13 @@
 			</tr>
 		</table>
 		<div class="pull-right">
-			<button class="btn btn-default">View Details</button>
-			<button class="btn btn-primary">Book Now!</button>
+			<?php echo $this->Html->link('View Details', 'view/' . $car['Car']['id'], array('class' => 'btn btn-default')) ;?>
+			<?php echo $this->Html->link('Book Now', array(
+				'controller' => 'events',
+				'action' => 'add',
+				$car['Car']['id']),
+				array('class' => 'btn btn-primary'))
+			;?>
 		</div>
 	</div>
   </div>
