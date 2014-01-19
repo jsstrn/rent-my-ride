@@ -32,6 +32,28 @@
 			
 		</li>
 
+		<?php if ($logged_in && $current_user['group_id'] == 1): ?>
+
+		<li class="dropdown">
+						
+			<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
+				<i class="icon-cog"></i>
+				Admin
+				<b class="caret"></b>
+			</a>
+			
+			<ul class="dropdown-menu">
+				<li><a href="/rentmyride/cars">View All Cars</a></li>
+				<li><a href="/rentmyride/users">View All Users</a></li>
+				<li><a href="/rentmyride/users/admin">Admin Panel</a></li>
+				<li><a href="/rentmyride/groups">List All Groups</a></li>
+				<li><a href="/rentmyride/uploads">List Uploads</a></li>
+			</ul>
+			
+		</li>
+
+		<?php endif; ?>
+
 		<?php if ($logged_in): ?>
 
 		<li class="dropdown">
@@ -43,7 +65,6 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/cars/">View All Cars</a></li>
 				<li><a href="/rentmyride/cars/search">Find A Cars</a></li>
 				<li><a href="/rentmyride/events">Check Avaliability Of Cars</a></li>
 				<li><a href="/rentmyride/cars/map">View All Cars Location</a></li>
@@ -89,8 +110,7 @@
 			
 			<ul class="dropdown-menu">
 				<li><a href="/rentmyride/users/profile">My Profile</a></li>
-				<li><a href="javascript:;">Edit Profile</a></li>
-				<li><a href="/rentmyride/groups/view/2">My Groups</a></li>
+				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My Groups</a></li>
 				<li><a href="/rentmyride/users/search">Search Users</a></li>
 				<li><a href="/rentmyride/users/upload">Upload Photos</a></li>
 				<li><a href="/rentmyride/comments/support">Report A Problem</a></li>

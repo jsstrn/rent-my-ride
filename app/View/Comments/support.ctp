@@ -18,7 +18,7 @@
 		  			echo $this->Form->submit('Submit Your Complaint', array('class'=>'btn btn-primary'));
 		  			?>
 		  			<br />
-		  			<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('action' => '/')); ?></button>
+		  			<button class="btn btn-default"><?php echo $this->Html->link('Cancel', array('controller' => 'pages', 'action' => '/')); ?></button>
 		  		</div>
 		  	</div>
 		  </div>
