@@ -1,4 +1,5 @@
 <h1>Uploads listing</h1>
+
 <p>This is a list of all uploaded images.</p>
 
 <p><?php echo $this->Html->link('Add a new image', 'add/'); ?></p>
