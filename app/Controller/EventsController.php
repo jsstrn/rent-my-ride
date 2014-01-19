@@ -14,6 +14,12 @@ class EventsController extends AppController {
 
 	}
 
+	public function all() {
+
+		$this->set('events', $this->Event->find('all'));
+
+	}
+
 	public function view() {
 
 	}
@@ -40,6 +46,8 @@ class EventsController extends AppController {
 				$interval = $this->request->data('interval');
 				$interval = $this->request->data['Event']['interval'];
 				$datetime_end = $datetime_start + (60 * 60 * $interval);
+
+				// $this->Event->findByCarId($car_id);
 
 				$this->request->data['Event']['datetime_start'] = $datetime_start;
 				$this->request->data['Event']['datetime_end'] = $datetime_end;

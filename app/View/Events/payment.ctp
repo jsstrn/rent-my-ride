@@ -48,7 +48,7 @@
 				    data-currency="SGD" 
 				    data-shipping="0" 
 				    data-tax="<?php echo $gst ;?>"
-				    data-callback="" 
+				    data-callback="rmr.jesstern.com/events/confirm" 
 				    data-env="sandbox"
 				></script>
 			</div>
