@@ -54,11 +54,11 @@
 	<div class="col-md-3">
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-		    <h3 class="panel-title text-center">Total Messages</h3>
+		    <h3 class="panel-title text-center">Total Comments</h3>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="text-center">
-		  		<h1><h1><?php echo $messages_total; ?></h1></h1>
+		  		<h1><h1><?php echo $comments_total; ?></h1></h1>
 		  	</div>
 		  </div>
 		</div><!-- .panel -->

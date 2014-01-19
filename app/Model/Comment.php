@@ -24,6 +24,10 @@ class Comment extends AppModel{
 					'message'=>'A comment with this title already exists!'
 			)
 		),
+		'user_id'=>array(
+			'rule'=>'notEmpty',
+				'message'=>'A username must be selected!'
+		),
 		'body'=>array(
 			'body_must_not_be_blank'=>array(
 					'rule'=>'notEmpty',

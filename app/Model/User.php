@@ -20,8 +20,8 @@ class User extends AppModel {
 			'className' => 'Event',
 			'foreignKey' => 'id'
 			),
-		'Message' => array(
-			'className' => 'Message',
+		'Comment' => array(
+			'className' => 'Comment',
 			'foreignKey' => 'id'
 			)
 		);

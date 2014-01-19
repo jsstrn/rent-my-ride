@@ -15,7 +15,8 @@
 					'label'=>'To',
 					'options' => $a,
 					'empty' => 'Choose Usernames', 
-					'class' => 'form-control'));
+					'class' => 'form-control',
+					'required' => 'false'));
 				echo '<br />';
 				echo $this->Form->input('fromsender', array('label'=>'From', 'disabled' => 'true', 'class' => 'form-control', 'default'=> $loggeduser));
 				echo '<br />';

@@ -292,7 +292,7 @@ class UsersController extends AppController {
 		$this->set('users_total', $this->User->find('count'));
 		$this->set('cars_total', $this->User->Car->find('count'));
 		$this->set('events_total', $this->User->Event->find('count'));
-		$this->set('messages_total', $this->User->Message->find('count'));
+		$this->set('comments_total', $this->User->Comment->find('count'));
 
 		$this->set('nissan', $this->User->Car->find('count', array(
 			'conditions' => array('Car.brand' => 'nissan')
