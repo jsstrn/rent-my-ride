@@ -24,13 +24,20 @@ class UsersController extends AppController {
 	public function view($id = null) {
 
 		if (!$id) {
-			throw new NotFoundException(__('Invalid Request'));
+		    throw new NotFoundException(__('Invalid Request'));
 		}
 
 		$user = $this->User->findById($id);
-
 		if (!$user) {
-			throw new NotFoundException(__('Invalid Request'));
+		    throw new NotFoundException(__('Invalid Request'));
+		}
+
+		if ($this->request->is(array('post', 'put'))); {
+		    $this->User->id = $id;
+		}
+
+		if (!$this->request->data) {
+		    $this->request->data = $user;
 		}
 
 		$this->set('user', $user);
@@ -249,7 +256,37 @@ class UsersController extends AppController {
     	exit;
 	}
 
-	public function profile() {}
+
+	//public function profile() {}
+
+	public function profile($id = null) {
+
+		if (!$id) {
+			throw new NotFoundException(__('Invalid Request'));
+		}
+
+		$user = $this->User->findById($id);
+
+		if (!$user) {
+			throw new NotFoundException(__('Invalid Request'));
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+		    $this->User->id = $id;
+		    if ($this->User->save($this->request->data)) {
+		        $this->Session->setFlash('Your details have been updated.', 'flash/success');
+		        return $this->redirect(array('action' => 'index'));
+		    }
+		    $this->Session->setFlash('Unable to update your user details.', 'flash/error');
+		}
+
+		if (!$this->request->data) {
+		    $this->request->data = $user;
+		}
+
+		$this->set('user', $user);
+
+	}
 
 	public function admin() {
 		$this->set('users_total', $this->User->find('count'));

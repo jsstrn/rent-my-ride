@@ -153,6 +153,25 @@
 					
 					<br>
 					
+				  <?php 
+				  		echo $this->Form->create('User', array('type' => 'post'));
+				  		echo $this->Form->input('id', array('type' => 'hidden'));
+						echo $this->Form->input('username', array('required'=>'false', 'disabled' => 'true', 'class' => 'form-control')); ?>
+						<p> Your username is for logging in and cannot be changed. </p>
+						<?php 
+						//echo $this->Form->input('password', array('required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('name', array('required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('license', array('label' => 'Driver\'s License', 'required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('email', array('required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('mobile', array('required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('address', array('required'=>'false', 'class' => 'form-control'));
+						echo $this->Form->input('postal_code', array('required'=>'false', 'class' => 'form-control'));
+						echo '<div class="col-md-2">';
+						echo $this->Form->submit('Update', array('class' => "btn btn-primary") );
+		  				echo '</div>';
+		  				?>
+
+
 						<div class="tab-content">
 							<div class="tab-pane active" id="profile">
 							<form id="edit-profile" class="form-horizontal col-md-8">
@@ -161,24 +180,17 @@
 									<div class="form-group">											
 										<label for="username" class="col-md-4">Username</label>
 										<div class="col-md-8">
-											<input type="text" class="form-control" id="username" value="jumpstartui" disabled>
+											<?php echo h($user['User']['username']) ?>
+											
 											<p class="help-block">Your username is for logging in and cannot be changed.</p>
 										</div> <!-- /controls -->				
 									</div> <!-- /control-group -->
 									
 									
 									<div class="form-group">											
-										<label for="firstname" class="col-md-4">First Name</label>
+										<label for="fullname" class="col-md-4">Full Name</label>
 										<div class="col-md-8">
-											<input type="text" class="form-control" id="firstname" value="Rod">
-										</div> <!-- /controls -->				
-									</div> <!-- /control-group -->
-									
-									
-									<div class="form-group">											
-										<label class="col-md-4" for="lastname">Last Name</label>
-										<div class="col-md-8">
-											<input type="text" class="form-control" id="lastname" value="Howard">
+											<?php echo h($user['User']['name']) ?>
 										</div> <!-- /controls -->				
 									</div> <!-- /control-group -->
 									
@@ -186,11 +198,27 @@
 									<div class="form-group">											
 										<label class="col-md-4" for="email">Email Address</label>
 										<div class="col-md-8">
-											<input type="text" class="form-control" id="email" value="rod.howard@example.com">
+											<?php echo h($user['User']['email']) ?>
 										</div> <!-- /controls -->				
 									</div> <!-- /control-group -->
 									
 									
+									<div class="form-group">											
+										<label class="col-md-4" for="mobile">Mobile</label>
+										<div class="col-md-8">
+											<?php echo h($user['User']['mobile']) ?>
+										</div> <!-- /controls -->				
+									</div> <!-- /control-group -->
+
+
+									<div class="form-group">											
+										<label class="col-md-4" for="license">Mobile</label>
+										<div class="col-md-8">
+											<?php echo h($user['User']['license']) ?>
+										</div> <!-- /controls -->				
+									</div> <!-- /control-group -->
+
+
 									<hr /><br />
 									
 									<div class="form-group">											
