@@ -55,7 +55,8 @@ class UsersController extends AppController {
 			$emailadd = $this->request->data['User']['email'];
 			
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash('New user added successfully.', 'flash/success');
+				$this->Session->setFlash('New user added successfully. 
+					Email Notification is sent to your email address', 'flash/success');
 				App::uses('CakeEmail', 'Network/Email');
 				$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
         		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
@@ -168,7 +169,8 @@ class UsersController extends AppController {
 			
 			if($this->User->save($this->request->data))
 			{
-				$this->Session->setFlash('Registeration Sucessful.', 'flash/success');
+				$this->Session->setFlash('New user added successfully. 
+					Email Notification is sent to your email address', 'flash/success');
 				App::uses('CakeEmail', 'Network/Email');
 				$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
         		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
