@@ -26,8 +26,8 @@ class User extends AppModel {
 			)
 		);
 
-	//var $actsAs = array('Searchable.Searchable');
-    public $actsAs = array('Acl' => array('type' => 'requester'));
+	var $actsAs = array('Searchable.Searchable');
+    //public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
         if (!$this->id && empty($this->data)) {

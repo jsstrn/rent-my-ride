@@ -16,7 +16,7 @@ class SearchComponent extends Component {
  */
     var $like = false;
 
-    function initialize(&$controller, $settings = array()) {
+    function initialize(controller $controller, $settings = array()) {
         $this->_controller = $controller;
         $this->_set($settings);
     }

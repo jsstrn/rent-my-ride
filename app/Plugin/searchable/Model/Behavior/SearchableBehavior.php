@@ -77,9 +77,9 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  * @access public
  */
-    function setup(&$model, $config = array()) {
+    function setup(model $model, $settings = array()) {
         // Add config to settings for given model
-        $this->settings[$model->alias] = array_merge($this->_defaults, (array)$config);
+        $this->settings[$model->alias] = array_merge($this->_defaults, (array)$settings);
 
         // Normalize the fields property using default string types from the model
         // schema if not specified, or processing the fields config param passed in.
@@ -142,7 +142,7 @@ class SearchableBehavior extends ModelBehavior {
  * @param AppModel $model
  * @param boolean $created
  */
-    function afterSave(&$model, $created) {
+    function afterSave(model $model, $created, $options = array()) {
         $this->setSearchableRecords($model, $created);
         $this->saveSearchIndex($model, $created);
     }
@@ -154,7 +154,7 @@ class SearchableBehavior extends ModelBehavior {
  * @param AppModel $model
  * @return boolean Always true
  */
-    function beforeDelete(&$model) {
+    function beforeDelete(model $model, $cascade = true) {
         $this->setSearchableRecords($model);
         return true;
     }
@@ -164,7 +164,7 @@ class SearchableBehavior extends ModelBehavior {
  *
  * @param AppModel $model
  */
-    function afterDelete(&$model) {
+    function afterDelete(model $model) {
         $this->deleteSearchIndex($model);
     }
 

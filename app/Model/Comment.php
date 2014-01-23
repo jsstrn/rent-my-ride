@@ -11,7 +11,7 @@ class Comment extends AppModel{
         )
     );
 	//public $actsAs = array('Like.Likeable');
-	//var $actsAs = array('Searchable.Searchable');
+	var $actsAs = array('Searchable.Searchable');
 	public $validate = array(
 		'title'=>array(
 			'title_must_not_be_blank'=>array(
