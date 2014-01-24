@@ -157,34 +157,42 @@ class UsersController extends AppController {
 
 	public function register() {
 		
-
-		if(!empty($this->request->data))
+		if(!$this->Auth->loggedIn())
 		{
-			$this->request->data('User.group_id', '2');
-			$name = $this->request->data['User']['username'];
-			$pass = $this->request->data['User']['password'];
-			$emailadd = $this->request->data['User']['email'];
+
+			if(!empty($this->request->data))
+			{
+				$this->request->data('User.group_id', '2');
+				$name = $this->request->data['User']['username'];
+				$pass = $this->request->data['User']['password'];
+				$emailadd = $this->request->data['User']['email'];
 
 			
 			
-			if($this->User->save($this->request->data))
-			{
-				$this->Session->setFlash('New user added successfully. 
+				if($this->User->save($this->request->data))
+				{
+					$this->Session->setFlash('New user added successfully. 
 					Email Notification is sent to your email address', 'flash/success');
-				App::uses('CakeEmail', 'Network/Email');
-				$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
-        		$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
-        		$email = new CakeEmail('gmail');
-        		$email->from('rentmyride.nyp@gmail.com');
-        		$email->to($emailadd);
-        		$email->subject('Mail Confirmation');
-        		$email->send($message . " " . $confirmation_link);
-				$this->redirect(array('controller' => 'pages', 'action'=>'/'));
+					App::uses('CakeEmail', 'Network/Email');
+					$confirmation_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "users/login/";
+        			$message = 'Hi,' . $name . ', Your Password is: ' . $pass;
+        			$email = new CakeEmail('gmail');
+        			$email->from('rentmyride.nyp@gmail.com');
+        			$email->to($emailadd);
+        			$email->subject('Mail Confirmation');
+        			$email->send($message . " " . $confirmation_link);
+					$this->redirect(array('controller' => 'pages', 'action'=>'/'));
+				}
+				else
+				{
+					$this->Session->setFlash('Registeration Unsucessful, Please Try Again.', 'flash/error');
+				}
 			}
-			else
-			{
-				$this->Session->setFlash('Registeration Unsucessful, Please Try Again.', 'flash/error');
-			}
+		}
+		else
+		{
+			$this->Session->setFlash('You have already register. You cannot register again! 
+				Please logoff and try again.', 'flash/error');
 		}
 	}
 
