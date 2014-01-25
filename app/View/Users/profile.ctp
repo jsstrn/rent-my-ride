@@ -60,27 +60,37 @@
 			<div class="tab-pane" id="settings">
 				<form id="edit-profile2" class="form-horizontal col-md-8">
 					<fieldset>
-						
-						<h4>Stacked Navigation</h4>
-						<br />
+						<div class="row">
+							<div class="col-md-8 col-sm-6">
+									Testing!
+							</div>
 
-						<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-						        <li class="active">
-						        	<a href="javascript:;">
-						        		<span class="badge pull-right"><?php echo $comments_total; ?></span>
-						        		Home
-						        	</a>
-						        </li>
+							<div class="col-md-4 col-sm-6">
 
-						        <li><a href="javascript:;">Profile</a></li>
-						        <li>
-						        	<a href="javascript:;">
-						        		<span class="badge pull-right">3</span>
-						        		Messages
-						        	</a>
-						        </li>
-						 </ul>
-						
+						      		<div class="well">
+										<h4>Stacked Navigation</h4>
+											<br />
+
+											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+											        <li class="active">
+											        	<a href="javascript:;">
+											        		<span class="badge pull-right"><?php echo $comments_total; ?></span>
+											        		Home
+											        	</a>
+											        </li>
+
+											        <li><a href="javascript:;">Profile</a></li>
+											        <li>
+											        	<a href="javascript:;">
+											        		<span class="badge pull-right">3</span>
+											        		Messages
+											        	</a>
+											        </li>
+											 </ul>
+						      			
+						      		</div>
+							</div>
+						</div>	
 					</fieldset>
 				</form>
 			</div>
@@ -89,8 +99,11 @@
 				<form id="edit-profile3" class="form-horizontal col-md-8">
 					<fieldset>
 						
-						Testing 2!!!!
-						
+							
+								
+								<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+								
+							
 					</fieldset>
 				</form>
 			</div>

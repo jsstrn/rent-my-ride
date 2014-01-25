@@ -1,10 +1,10 @@
-<div class="extra"; style="background-color:#090909">
+<div class="extra"; style="background-image: url(img/carbonfiber.jpg); background-position: 100% repeat fixed;">
 
 	<div class="container">
 
 		<div class="row">
 			
-			<div class="col-md-3">
+			<div class="col-md-4">
 				
 				<h4 style="color:#999999">About</h4>
 				
@@ -17,7 +17,7 @@
 				
 			</div> <!-- /span3 -->
 			
-			<div class="col-md-3">
+			<div class="col-md-4">
 				
 				<h4 style="color:#999999">Support</h4>
 				
@@ -28,9 +28,9 @@
 				
 			</div> <!-- /span3 -->
 			
-			<div class="col-md-3">
+			<div class="col-md-4">
 				
-				<h4 style="color:#999999">Legal</h4>
+				<h4 style="color:#999999; top left;">Legal</h4>
 				
 				<ul>
 					<li><a href="javascript:;">License</a></li>
