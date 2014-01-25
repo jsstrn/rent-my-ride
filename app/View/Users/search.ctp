@@ -21,7 +21,13 @@
   </div>
   <div class="panel-body">
    	<div class="col-md-3">
-   		<img src="holder.js/200x200" class="img-thumbnail center-block">
+   		<img class="center-block"
+   		<?php
+   		if (!$user['Upload']['path']) {
+   			echo 'data-src="holder.js/200x200"';
+   		} else {
+   			echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+   		}?>>
    	</div>
 	<div class="col-md-9">
 		<table class="table table-hover">
