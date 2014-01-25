@@ -43,7 +43,13 @@
 										
 										
 									<p> To insert additional information here...or maybe user picture?</p>
-									<img class="featurette-image img-responsive" src="http://www.placehold.it/500" alt="Generic placeholder image">
+									<img class="featurette-image img-responsive center-block"
+									<?php
+									if (!$user['Upload']['path']) {
+										echo 'data-src="holder.js/200x200"';
+									} else {
+										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+									}?>>
 					      		</div>
 						</div>
 					</div>	
