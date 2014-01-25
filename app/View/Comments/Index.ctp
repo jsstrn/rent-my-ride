@@ -12,6 +12,21 @@
   				<button class="btn btn-lg btn-default"><?php echo $this->Html->link('Add a comment', array('action' => 'add')); ?></button>
 
   				<br /><br /><br />
+
+  						<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+						        <li class="active">
+						        	<a href="javascript:;">
+						        		<span class="badge pull-right">40</span>
+						        		Received Messages
+						        	</a>
+						        </li>
+						        <li>
+						        	<a href="javascript:;">
+						        		<span class="badge pull-right">3</span>
+						        		Sent Messages
+						        	</a>
+						        </li>
+						 </ul>
 				
 				<div class="widget-content">
 					
@@ -20,7 +35,7 @@
 					<div class="tabbable">
 						<ul class="nav nav-tabs">
 					  		<li class="active">
-					    	<a href="#receieve" data-toggle="tab">Receieve Comments</a>
+					    	<a href="#receive" data-toggle="tab">Received Comments</a>
 					  		</li>
 					  		<li><a href="#sent" data-toggle="tab">Sent Comments</a></li>
 						</ul>
@@ -28,7 +43,7 @@
 						<br>
 					
 						<div class="tab-content">
-							<div class="tab-pane active" id="receieve">
+							<div class="tab-pane active" id="receive">
 							
 							<table class='table table-striped'>
 								<tr>

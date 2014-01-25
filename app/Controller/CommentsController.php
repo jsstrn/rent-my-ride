@@ -13,8 +13,6 @@ class CommentsController extends AppController {
 
 	//public $theme = 'Cakestrap';
 
-	public $helpers = array('Like.Like');
-
 	public function index(){
 
 		//$this->set('posts', $this->Comment->find('all'));
@@ -23,6 +21,7 @@ class CommentsController extends AppController {
 
 		$this->set('n', $n);
 		$this->set('o', $o);
+		//$this->set('comments_total', $this->User->Comment->find('count'));
 	}
 
 	public function view($id = NULL) {

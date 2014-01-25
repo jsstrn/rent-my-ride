@@ -22,7 +22,7 @@
 <h2>Button with icon</h2>
 
 <button type="button" class="btn btn-default btn-lg">
-  <i class="glyphicon glyphicon-star"></i> Star
+  <i class="glyphicon glyphicon-star"></i> Starry
 </button>
 
 <br><br><hr><br>

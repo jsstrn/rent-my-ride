@@ -61,7 +61,25 @@
 				<form id="edit-profile2" class="form-horizontal col-md-8">
 					<fieldset>
 						
-						Testing!!!!
+						<h4>Stacked Navigation</h4>
+						<br />
+
+						<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+						        <li class="active">
+						        	<a href="javascript:;">
+						        		<span class="badge pull-right"><?php echo $comments_total; ?></span>
+						        		Home
+						        	</a>
+						        </li>
+
+						        <li><a href="javascript:;">Profile</a></li>
+						        <li>
+						        	<a href="javascript:;">
+						        		<span class="badge pull-right">3</span>
+						        		Messages
+						        	</a>
+						        </li>
+						 </ul>
 						
 					</fieldset>
 				</form>
