@@ -109,7 +109,7 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/users/profile">My Profile</a></li>
+				<li><a href="/rentmyride/users/profile/<?php echo $current_user['id']; ?>">My Profile</a></li>
 				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My Groups</a></li>
 				<li><a href="/rentmyride/users/search">Search Users</a></li>
 				<li><a href="/rentmyride/users/upload">Upload Photos</a></li>
