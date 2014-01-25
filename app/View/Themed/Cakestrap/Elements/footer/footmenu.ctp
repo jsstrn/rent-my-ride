@@ -9,10 +9,10 @@
 				<h4 style="color:#999999">About</h4>
 				
 				<ul>
-					<li><a href="javascript:;">About Us</a></li>
-					<li><a href="javascript:;">History</a></li>
-					<li><a href="javascript:;">Gallery</a></li>
-					<li><a href="javascript:;">How to get started!</a></li>
+					<li><a href="/rentmyride/pages/about">About Us</a></li>
+					<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
+					<li><a href="/rentmyride/pages/started">How to get started!</a></li>
+					<li><a href="https://www.facebook.com/rentmyride.SG">Facebook</a></li>
 				</ul>
 				
 			</div> <!-- /span3 -->
@@ -22,8 +22,8 @@
 				<h4 style="color:#999999">Support</h4>
 				
 				<ul>
-					<li><a href="javascript:;">Frequently Asked Questions</a></li>
-					<li><a href="javascript:;">Contact Us!</a></li>
+					<li><a href="/rentmyride/pages/faq">Frequently Asked Questions</a></li>
+					<li><a href="/rentmyride/pages/contact">Contact Us!</a></li>
 				</ul>
 				
 			</div> <!-- /span3 -->
