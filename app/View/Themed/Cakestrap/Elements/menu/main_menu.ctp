@@ -26,7 +26,6 @@
 				<li><a href="/rentmyride/pages/about">About Us</a></li>
 				<li><a href="/rentmyride/pages/contact">Contact Us</a></li>
 				<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
-				<li><a href="javascript:;">History</a></li>
 				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 			</ul>
 			
