@@ -4,6 +4,15 @@
 */
 class Upload extends AppModel {
 
+/*
+	public $hasOne = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+			)
+		);
+*/
+
 	/*
 	public function isUploadedFile($params) {
 	    $val = array_shift($params);

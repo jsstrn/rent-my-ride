@@ -4,9 +4,6 @@ App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
 
-	public $theme = 'Cakestrap';
-
-
 	public function beforeFilter() {
 
 		parent::beforeFilter();

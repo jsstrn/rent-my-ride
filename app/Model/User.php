@@ -4,6 +4,15 @@ App::uses('AuthComponent', 'Controller/Component');
 
 class User extends AppModel {
 
+/*
+	public $hasOne = array(
+		'Upload' => array(
+			'className' => 'Upload',
+			'foreignKey' => 'upload_id'
+			)
+		);
+*/
+
 	public $belongsTo = array(
 		'Group' => array(
 			'className' => 'Group',
