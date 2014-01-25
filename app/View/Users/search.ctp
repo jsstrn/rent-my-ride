@@ -56,7 +56,6 @@
 			
 			<button class="btn btn-info" onclick="window.location.href='<?php echo Router::url(array('controller'=>'users', 'action'=>'view', $user['User']['id']))?>'">View</button>
 			</button>
-			<button class="btn btn-primary">Give Rating!</button>
 			<button class="btn btn-primary" onclick="window.location.href='<?php echo Router::url(array('controller'=>'comments', 'action'=>'add', $user['User']['id']))?>'">Give Comment!</button>
 		</div>
 	</div>

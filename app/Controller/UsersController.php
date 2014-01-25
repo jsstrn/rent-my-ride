@@ -190,6 +190,7 @@ class UsersController extends AppController {
 		{
 			$this->Session->setFlash('You have already register. You cannot register again! 
 				Please logoff and try again.', 'flash/error');
+			$this->redirect(array('controller' => 'pages', 'action' => '/'));
 		}
 	}
 

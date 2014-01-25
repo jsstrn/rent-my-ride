@@ -59,6 +59,12 @@
 				$car['Car']['id']),
 				array('class' => 'btn btn-primary'))
 			;?>
+			<?php echo $this->Html->link('Submit Review', array(
+				'controller' => 'reviews',
+				'action' => 'add',
+				$car['Car']['id']),
+				array('class' => 'btn btn-primary'))
+			;?>
 		</div>
 	</div>
   </div>

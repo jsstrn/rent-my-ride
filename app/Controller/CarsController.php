@@ -23,17 +23,22 @@ class CarsController extends AppController {
 	
 	public function view($id = null) {
 
+		$this->loadModel('Review');
+		$car = $this->Car->findById($id);
+		$review = $this->Review->findAllByCarId($id);
+
 		if (!$id) {
 			throw new NotFoundException(__('Invalid Request'));
 		}
-
-		$car = $this->Car->findById($id);
 
 		if (!$car) {
 			throw new NotFoundException(__('Invalid Request'));
 		}
 
 		$this->set('car', $car);
+		$this->set('review', $review);
+		
+
 	}
 
 	// users and admin access
