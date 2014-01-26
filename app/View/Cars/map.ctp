@@ -20,18 +20,29 @@
     <?php $num = 1; ?>
     <?php foreach ($cars as $car): ?>
 
-    var marker<?php echo $num; ?> = new google.maps.Marker({
+    var marker = new google.maps.Marker({
      'position' : new google.maps.LatLng(<?php echo $car['Car']['lat']; ?>, <?php echo $car['Car']['lng']; ?>),
       'map' : map,
       'icon' : image,
       'animation' : google.maps.Animation.DROP
     });
+
+    var infowindow = new google.maps.InfoWindow({
+      content: 'Hello World Map <?php echo $num; ?>'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(marker.get('map'), marker);
+    });
+
     <?php $num++; ?>
     <?php endforeach; ?>
     <?php unset($car); ?>
+
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 <div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+
