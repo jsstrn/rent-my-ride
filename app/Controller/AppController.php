@@ -34,10 +34,8 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	//public $theme = 'BaseAdmin';
-
-  public $theme = 'Cakestrap';
-
-  //public $theme = 'Flatly';
+  //public $theme = 'Cakestrap';
+  public $theme = 'Flatly';
 
 
 	public $components = array(

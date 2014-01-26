@@ -1,4 +1,5 @@
 <h1>User profile</h1>
+
 <br /><br />
 	<div class="row">
 		<div class="col-md-8">

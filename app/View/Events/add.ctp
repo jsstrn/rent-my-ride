@@ -36,7 +36,7 @@
 		  	  <div class="form-group">
 		  	    <label class="col-sm-3 control-label">Start time</label>
 		  	    <div class="col-sm-9">
-		  	    	<input name="myTime" class="form-control" type="time" step="900" value="08:30">
+		  	    	<input name="myTime" class="form-control" type="time" step="900" value="08:00">
 		  	    </div>
 		  	  </div>
 		  	  <div class="form-group">

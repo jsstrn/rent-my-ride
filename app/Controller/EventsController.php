@@ -51,11 +51,10 @@ class EventsController extends AppController {
 				$this->request->data['Event']['datetime_start'] = $datetime_start;
 				$this->request->data['Event']['datetime_end'] = $datetime_end;
 
-				// x must not be greater than or equal to datetime_start and less than or equal to datetime_end
 				if ($datetime_start >= $checkDate['Event']['datetime_start'] || $datetime_start <= $checkDate['Event']['datetime_end']) {
-					$this->Session->setFlash('You cannot book this date and time. This date and time has already been booked.', 'flash/error');
+					$this->Session->setFlash('1 You cannot book this date and time. This date and time has already been booked.', 'flash/error');
 				} elseif ($datetime_end >= $checkDate['Event']['datetime_start'] || $datetime_end <= $checkDate['Event']['datetime_end']) {
-					$this->Session->setFlash('You cannot book this date and time. This date and time has already been booked', 'flash/error');
+					$this->Session->setFlash('2 You cannot book this date and time. This date and time has already been booked', 'flash/error');
 				} else {
 
 					$this->Event->create();

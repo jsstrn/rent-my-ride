@@ -1,6 +1,6 @@
 <?php
 
-class Upload extends AppModel {
+class Picture extends AppModel {
 
 	public $validate = array(
 		'image' => array(
@@ -14,6 +14,7 @@ class Upload extends AppModel {
 				)
 			)
 		);
+
 }
 
 ?>
