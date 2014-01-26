@@ -13,20 +13,6 @@
 
   				<br /><br /><br />
 
-  						<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-						        <li class="active">
-						        	<a href="javascript:;">
-						        		<span class="badge pull-right">40</span>
-						        		Received Messages
-						        	</a>
-						        </li>
-						        <li>
-						        	<a href="javascript:;">
-						        		<span class="badge pull-right">3</span>
-						        		Sent Messages
-						        	</a>
-						        </li>
-						 </ul>
 				
 				<div class="widget-content">
 					
@@ -35,9 +21,9 @@
 					<div class="tabbable">
 						<ul class="nav nav-tabs">
 					  		<li class="active">
-					    	<a href="#receive" data-toggle="tab">Received Comments</a>
+					    	<a href="#receive" data-toggle="tab">Received Comments&nbsp;&nbsp;<span class="badge pull-right"><?php echo $receieve; ?></span></a>
 					  		</li>
-					  		<li><a href="#sent" data-toggle="tab">Sent Comments</a></li>
+					  		<li><a href="#sent" data-toggle="tab">Sent Comments&nbsp;&nbsp;<span class="badge pull-right"><?php echo $sent; ?></span></a></li>
 						</ul>
 					
 						<br>

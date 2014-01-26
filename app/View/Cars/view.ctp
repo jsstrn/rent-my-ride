@@ -69,8 +69,7 @@
         }
         else
         {
-           echo $this->html->link('Back', array('action'=>'search')). " | " .
-		   $this->html->link('Edit', array('action'=>'edit', $car['Car']['id'])). " | " . 
+           echo $this->html->link('Back', array('action'=>'search')). " | " . 
            $this->html->link('Delete', array('action'=>'delete', $car['Car']['id']), NULL, 'Are you sure you want to delete this Car?'); 
         }
         ?>

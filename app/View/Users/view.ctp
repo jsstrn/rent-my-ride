@@ -34,8 +34,7 @@
         }
         else
         {
-           echo $this->html->link('Back', array('action'=>'search')). " | " . 
-		   $this->html->link('Edit', array('action'=>'edit', $user['User']['id'])). " | " . 
+           echo $this->html->link('Back', array('action'=>'search')). " | " .  
            $this->html->link('Delete', array('action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this user?'); 
 		}
     	?>

@@ -21,7 +21,11 @@ class CommentsController extends AppController {
 
 		$this->set('n', $n);
 		$this->set('o', $o);
-		//$this->set('comments_total', $this->User->Comment->find('count'));
+		$this->set('receieve', $this->Comment->find('count', array(
+       'conditions' => array('Comment.user_id' => $this->Auth->user('id')))));
+		$this->set('sent', $this->Comment->find('count', array('conditions' => array(
+			'Comment.fromsender' => $this->Auth->user('username')))));
+		
 	}
 
 	public function view($id = NULL) {
@@ -131,6 +135,7 @@ class CommentsController extends AppController {
         	$email->subject('Complaint Reported By ' . $myuser);
         	$email->emailFormat('html');
        		$email->send($message);
+       		$this->Session->setFlash('Your complaint has been submitted to admin.', 'flash/success');
 			$this->redirect(array('controller' => 'pages', 'action'=>'/'));
 		}
 	}

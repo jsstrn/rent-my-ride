@@ -26,7 +26,6 @@
 				<li><a href="/rentmyride/pages/about">About Us</a></li>
 				<li><a href="/rentmyride/pages/contact">Contact Us</a></li>
 				<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
-				<li><a href="javascript:;">History</a></li>
 				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 			</ul>
 			
@@ -46,6 +45,7 @@
 				<li><a href="/rentmyride/cars">View All Cars</a></li>
 				<li><a href="/rentmyride/users">View All Users</a></li>
 				<li><a href="/rentmyride/users/admin">Admin Panel</a></li>
+				<li><a href="/rentmyride/events/all">View All Events Booked</a></li>
 				<li><a href="/rentmyride/groups">List All Groups</a></li>
 				<li><a href="/rentmyride/uploads">List Uploads</a></li>
 			</ul>
@@ -65,6 +65,7 @@
 			</a>
 			
 			<ul class="dropdown-menu">
+				<li><a href="/rentmyride/cars/add">Add A Car</a></li>
 				<li><a href="/rentmyride/cars/search">Find A Cars</a></li>
 				<li><a href="/rentmyride/events">Check Avaliability Of Cars</a></li>
 				<li><a href="/rentmyride/cars/map">View All Cars Location</a></li>
@@ -113,7 +114,6 @@
 				<li><a href="/rentmyride/users/profile/<?php echo $current_user['id']; ?>">My Profile</a></li>
 				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My Groups</a></li>
 				<li><a href="/rentmyride/users/search">Search Users</a></li>
-				<li><a href="/rentmyride/users/upload">Upload Photos</a></li>
 				<li><a href="/rentmyride/comments/support">Report A Problem</a></li>
 				<li class="divider"></li>
 				<li><a href="/rentmyride/users/logout">Logout</a></li>

@@ -54,7 +54,7 @@ class CarsController extends AppController {
 			$this->Car->create();
 			if ($this->Car->save($this->request->data)) {
 				$this->Session->setFlash('Your car has been added!', 'flash/success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'pages', 'action'=>'/'));
 			} else {
 				$this->Session->setFlash('Unable to add your car. Try again later.', 'flash/error');
 			}
