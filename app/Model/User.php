@@ -17,16 +17,20 @@ class User extends AppModel {
 *	hasMany foreignKey must be user_id for the users table
 *	Refer to http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html#hasmany
 */
-	/*public $hasMany = array(
+	public $hasMany = array(
 		'Car' => array(
 			'className' => 'Car',
-			'foreignKey' => 'user_id' // 'user_id'
+			'foreignKey' => 'id' // 'user_id'
 			),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'id' // 'user_id'
+			), 
+		'Comment' => array(
+			'className' => 'Comment',
+			'foreignKey' => 'id'
 			)
-		);*/
+		);
 
 	var $actsAs = array('Searchable.Searchable');
     //public $actsAs = array('Acl' => array('type' => 'requester'));
