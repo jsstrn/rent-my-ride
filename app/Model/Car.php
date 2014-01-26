@@ -15,7 +15,12 @@ class Car extends AppModel {
 
 	var $actsAs = array('Searchable.Searchable');
 
-	public $belongsTo = array();
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+			)
+		);
 
 	public $validate = array(
 		'license_plate' => array(

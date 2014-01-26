@@ -13,18 +13,22 @@ class User extends AppModel {
 			)
 		);
 
+/**	
+*	hasMany foreignKey must be user_id for the users table
+*	Refer to http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html#hasmany
+*/
 	public $hasMany = array(
 		'Car' => array(
 			'className' => 'Car',
-			'foreignKey' => 'id'
+			'foreignKey' => 'id' // 'user_id'
 			),
 		'Event' => array(
 			'className' => 'Event',
-			'foreignKey' => 'id'
+			'foreignKey' => 'id' // 'user_id'
 			),
 		'Comment' => array(
 			'className' => 'Comment',
-			'foreignKey' => 'id'
+			'foreignKey' => 'id' // 'user_id'
 			)
 		);
 
