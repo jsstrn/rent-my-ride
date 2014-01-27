@@ -24,6 +24,13 @@
 					<td><?php echo '$'.h($car['Car']['rate']).'.00' ?></td>
 				</tr>
 				</table>
+				<div class="well">
+					<center><h4><strong>Ratings:</strong></h4></center>
+					<?php foreach ($review as $reviews): ?>
+						<?php $total_ratings = $total_ratings + $reviews['Review']['ratings']; ?>
+						<?php endforeach; ?>
+						<?php echo'<center><h3><strong>' . round($total_ratings / $average) . ' Stars' . '</center></h3></strong>'; ?>
+				</div>
 			</div>
 		</div>
 	</div>

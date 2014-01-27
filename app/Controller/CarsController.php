@@ -26,6 +26,9 @@ class CarsController extends AppController {
 		$this->loadModel('Review');
 		$car = $this->Car->findById($id);
 		$review = $this->Review->findAllByCarId($id);
+		$average = $this->Review->find('count', array(
+        'conditions' => array('Review.car_id' => $id)
+    	));
 
 		if (!$id) {
 			throw new NotFoundException(__('Invalid Request'));
@@ -37,7 +40,8 @@ class CarsController extends AppController {
 
 		$this->set('car', $car);
 		$this->set('review', $review);
-		
+		$this->set('total_ratings');
+		$this->set('average', $average);
 
 	}
 
@@ -138,9 +142,9 @@ class CarsController extends AppController {
 	public function search() {
 
 		$query = $this->request->data['Car']['search'];
+		
 
-
-	    if (!$query) {
+		if (!$query) {
 			CarsController::index();
 		} 
 		else
@@ -183,6 +187,7 @@ class CarsController extends AppController {
 			}
 
 		}
+
 			
 	}
 	public function map() {
