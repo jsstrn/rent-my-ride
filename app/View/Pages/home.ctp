@@ -23,7 +23,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="img/signup.jpg" alt= "First slide">
+          <img src="<?php echo $this->webroot; ?>img/main/signup.jpg" alt= "First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Join us today!</h1>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="img/faq.png" alt="Second slide">
+          <img src="<?php echo $this->webroot; ?>img/main/faq.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>FAQ</h1>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="img/gallery.png" alt="Third slide">
+          <img src="<?php echo $this->webroot; ?>img/main/gallery.png" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Our cars</h1>
@@ -66,7 +66,7 @@
         
         <div class="col-md-4">
           <div class="thumbnail">
-          <img src="img/users/man_6.jpg" alt="...">
+          <img src="<?php echo $this->webroot; ?>img/users/man_6.jpg" alt="...">
             <div class="caption">
               
             <p>I find RmR so convient. I can rent a car when i want without much hassle.</p>
@@ -77,7 +77,7 @@
       
       <div class="col-md-4">
         <div class="thumbnail">
-          <img src="img/users/lady_6.jpg" alt="...">
+          <img src="<?php echo $this->webroot; ?>img/users/lady_6.jpg" alt="...">
             <div class="caption">
               
             <p>RmR is wonderful and easy to use. When i just started, it didn't take long for me to get familliarize with this app.</p>
@@ -88,7 +88,7 @@
 
       <div class="col-md-4">
         <div class="thumbnail">
-          <img src="img/users/lady_7.jpg" alt="...">
+          <img src="<?php echo $this->webroot; ?>img/users/lady_7.jpg" alt="...">
             <div class="caption">
             <p>Now i can make some money while renting my car when not in use, utilizing my car to its maximum. </p>
           </div>
