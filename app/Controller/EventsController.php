@@ -7,6 +7,16 @@
 
 class EventsController extends AppController {
 
+	private function create() {
+		// this function will write a new entry to its Model
+		$this->Event->create();
+		if ($this->Event->save($this->request->data)) {
+			$this->redirect(array('action' => 'payment'));
+		} else {
+			$this->Session->setFlash('Unable to place your booking. Try again later.');
+		}
+	}
+
 
 	public function index() {
 
@@ -28,7 +38,11 @@ class EventsController extends AppController {
 
 
 		if (!$car_id) {
-			throw new NotFoundException(__('Invalid Request'));
+			throw new NotFoundException(__('No car is no longer listed with us. Try another car.'));
+		}
+
+		if (!$this->Auth->user('id')) {
+			throw new NotFoundException(__('You must be logged in to book a car'));
 		}
 
 		$car_exists = $this->Event->Car->findById($car_id);
@@ -37,6 +51,8 @@ class EventsController extends AppController {
 			$this->request->data['Event']['car_id'] = $car_id;
 			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
 			$checkDate = $this->Event->findByCarId($car_id);
+
+			$this->set('checkDate', $checkDate);
 
 			if ($this->request->is('post')) {
 				
@@ -51,17 +67,13 @@ class EventsController extends AppController {
 				$this->request->data['Event']['datetime_start'] = $datetime_start;
 				$this->request->data['Event']['datetime_end'] = $datetime_end;
 
-				if ($datetime_start >= $checkDate['Event']['datetime_start'] || $datetime_start <= $checkDate['Event']['datetime_end']) {
-					$this->Session->setFlash('1 You cannot book this date and time. This date and time has already been booked.', 'flash/error');
-				} elseif ($datetime_end >= $checkDate['Event']['datetime_start'] || $datetime_end <= $checkDate['Event']['datetime_end']) {
-					$this->Session->setFlash('2 You cannot book this date and time. This date and time has already been booked', 'flash/error');
+				if (!$checkDate) {
+					$this->create();
 				} else {
-
-					$this->Event->create();
-					if ($this->Event->save($this->request->data)) {
-						$this->redirect(array('action' => 'payment'));
+					if ($datetime_start >= $checkDate['Event']['datetime_start'] && $datetime_start <= $checkDate['Event']['datetime_end']) {
+						$this->Session->setFlash('1 You cannot book this date and time. This date and time has already been booked.', 'flash/error');
 					} else {
-						$this->Session->setFlash('Unable to place your booking. Try again later.');
+						$this->create();
 					}
 				}
 			}
