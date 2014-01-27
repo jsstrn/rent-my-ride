@@ -42,9 +42,11 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 			echo $this->Html->script('libs/jquery-1.10.2.min');
 			echo $this->Html->script('libs/bootstrap.min');
 			echo $this->Html->script('fullcalendar.min');
+			// echo $this->Html->script('bootstrap-filestyle.min');
 			// echo $this->Html->script('bootstrap-datepicker');
 			
 			echo $this->fetch('script');
+
 		?>
 		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -57,16 +59,22 @@ $cakeDescription = __d('cake_dev', 'Rent My Ride');
 		<div id="main-container">
 		
 			<div id="header" class="container">
-				<?php echo $this->element('menu/top_menu'); ?>
+				<?php // echo $this->element('menu/top_menu'); ?>
+				<?php echo $this->element('menu/main_menu'); ?>
+				<?php //echo $this->element('Searchable.form'); ?>
 			</div><!-- /#header .container -->
 			
 			<div id="content" class="container">
+				<br /><br />
 				<?php echo $this->Session->flash(); ?>
+				<br />
 				<?php echo $this->fetch('content'); ?>
 			</div><!-- /#content .container -->
 			
 			<div id="footer" class="container">
 				<footer>
+				  <br />
+				  <?php echo $this->element('footer/footmenu'); ?>
 				  <p class="pull-right"><a href="#">Back to top</a></p>
 				  <p>&copy; <?php echo date('Y'); ?> Rent My Ride, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 				</footer>
