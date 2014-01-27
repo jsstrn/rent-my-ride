@@ -17,6 +17,15 @@ class EventsController extends AppController {
 		}
 	}
 
+	private function checkEvents($checkDates, $datetime_start, $datetime_end) {
+		$conflict = 0;
+		foreach ($checkDates as $checkDate) {
+			if ($datetime_start >= $checkDate['Event']['datetime_start'] && $datetime_start <= $checkDate['Event']['datetime_end']) {
+				$conflict = $conflict + 1; // true when dates conflict
+			} 
+		}
+		return $conflict;
+	}
 
 	public function index() {
 
@@ -50,9 +59,9 @@ class EventsController extends AppController {
 		if ($car_exists) {
 			$this->request->data['Event']['car_id'] = $car_id;
 			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
-			$checkDate = $this->Event->findByCarId($car_id);
+			$checkDates = $this->Event->findAllByCarId($car_id);
 
-			$this->set('checkDate', $checkDate);
+			$this->set('checkDates', $checkDates);
 
 			if ($this->request->is('post')) {
 				
@@ -67,11 +76,12 @@ class EventsController extends AppController {
 				$this->request->data['Event']['datetime_start'] = $datetime_start;
 				$this->request->data['Event']['datetime_end'] = $datetime_end;
 
-				if (!$checkDate) {
+				if (!$checkDates) {
 					$this->create();
 				} else {
-					if ($datetime_start >= $checkDate['Event']['datetime_start'] && $datetime_start <= $checkDate['Event']['datetime_end']) {
-						$this->Session->setFlash('1 You cannot book this date and time. This date and time has already been booked.', 'flash/error');
+					$conflict = $this->checkEvents($checkDates, $datetime_start, $datetime_end);
+					if ($conflict > 0) {
+						$this->Session->setFlash('You cannot book this date and time. This date and time has already been booked.', 'flash/error');
 					} else {
 						$this->create();
 					}
