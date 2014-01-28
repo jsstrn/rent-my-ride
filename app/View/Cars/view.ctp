@@ -29,7 +29,7 @@
 					<?php foreach ($review as $reviews): ?>
 						<?php $total_ratings = $total_ratings + $reviews['Review']['ratings']; ?>
 						<?php endforeach; ?>
-						<?php echo'<center><h3><strong>' . round($total_ratings / $average) . ' Stars' . '</center></h3></strong>'; ?>
+						<?php echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>'; ?>
 				</div>
 			</div>
 		</div>
@@ -49,15 +49,15 @@
 		<div class='row'>
 			<div class="col-md-12">
 				<div class="panel panel-default">
+					<div class="panel-heading">
+					<div><strong><?php echo h($reviews['Review']['title']) ?></strong><div align="right"><strong>Ratings: <?php echo h($reviews['Review']['ratings']) . ' Stars' ?></strong></div></div>
+					</div>
 					<div class="panel-body">
-						<strong><?php echo h($reviews['Review']['title']) ?></strong>
-						<hr></hr>
 						<p><?php echo h($reviews['Review']['body']) ?></p>
 						<hr></hr>
 						<p><small>Commented By: <?php echo h($reviews['Review']['fromsender'])?></small>&nbsp;&nbsp;
 						<small>Created On: <?php echo h($reviews['Review']['created'])?></small></p>
-						<br />
-						<strong>Ratings: <?php echo h($reviews['Review']['ratings']) ?></strong>
+						
 					</div>
 				</div>
 			</div>

@@ -30,7 +30,7 @@
 						echo "<br />";
 						echo $this->Form->input('postal_code', array('required'=>'false', 'class' => 'form-control'));
 						echo "<br />";
-						echo $this->Form->input('picture', array('type' => 'file', 'class' => 'form-control')); ?>
+						//echo $this->Form->input('picture', array('type' => 'file', 'class' => 'form-control')); ?>
 					</div> 
 					<?php
 					echo "<br />";

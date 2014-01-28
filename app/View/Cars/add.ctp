@@ -77,12 +77,15 @@ function codeAddress() {
 		  		echo '<br>';
 		  		echo $this->Form->input('engine_capacity', array('class'=>'form-control'));
 		  		echo '<br>';
+		  		echo $this->Form->input('rate', array('class'=>'form-control'));
+		  		echo '<br>';
 		  		echo $this->Form->input('image', array('class'=>'form-control', 'type' => 'file'));
 		  		echo '<br>';
 		  		echo $this->Form->submit('Add Your Car', array('class'=>'btn btn-primary'));
-		  		echo '<br>';
+		  		echo '<br />';
 		  		echo $this->Form->button('Reset Form', array('type' => 'reset', 'class'=>'btn btn-danger'));
-		  		echo '<br>';
+		  		echo '<br /><br />';
+		  		echo '<button class="btn btn-default">' . $this->Html->link('Cancel', array('action' => 'index')) .'</button>';
 		  		echo $this->Form->end();
 		  	?>
 		  </div><!-- .panel-body -->
