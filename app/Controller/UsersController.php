@@ -294,8 +294,6 @@ class UsersController extends AppController {
 
 		$this->set('user', $user);
 
-		$this->set('comments_total', $this->User->Comment->find('count'));
-
 	}
 
 	public function admin() {

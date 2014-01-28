@@ -3,6 +3,7 @@
 	  <li class="active">
 	    <a href="#profile" data-toggle="tab">Profile</a>
 	  </li>
+	  <li><a href="#cars" data-toggle="tab">Cars</a></li>
 	  <li><a href="#settings" data-toggle="tab">Settings</a></li>
 	  <li><a href="#maps" data-toggle="tab">Maps</a></li>
 	</ul>
@@ -56,14 +57,70 @@
 				</fieldset>
 			</form>
 			</div>
+
 			
+			
+
+			<div class="tab-pane" id="cars">
+				<form id="edit-profile2" class="form-horizontal col-md-12">
+					<fieldset>
+						<div class="row">
+								<div class="panel panel-default">
+						  			<div class="panel-heading">
+						    			<h3 class="panel-title">You have X cars</h3>
+						  			</div>
+						  			<div class="panel-body">
+								   				<div class="col-md-3">
+								   				<img src="holder.js/150x150" class="img-thumbnail center-block">
+								   				</div>
+								   		<div class="col-md-9">	
+										<table class="table table-hover">
+											<tr>
+												<td><strong>Brand</strong></td>
+												<td><?php echo h($user['Car']['0']['brand']); ?></td>
+												<td><strong>Model</strong></td>
+												<td><?php echo h($user['Car']['0']['model']); ?></td>
+											</tr>
+											<tr>
+												<td><strong>License plate</strong></td>
+												<td><?php echo h($user['Car']['0']['license_plate']); ?></td>
+												<td><strong>Engine Type</strong></td>
+												<td><?php echo h($user['Car']['0']['engine_type']); ?></td>
+											</tr>
+											<tr>
+												<td><strong>Transmission</strong></td>
+												<td><?php echo h($user['Car']['0']['transmission']); ?></td>
+												<td><strong>Capacity</strong></td>
+												<td><?php echo h($user['Car']['0']['engine_capacity']); ?></td>
+											</tr>
+											<tr>
+												<td><strong>Text</strong></td>
+												<td><?php echo h($user['Car']['0']['brand']); ?></td>
+												<td><strong>Price</strong></td>
+												<td><?php echo h($user['Car']['0']['rate']); ?></td>
+											</tr>
+										</table>
+										<div class="pull-right">
+											<button class="btn btn-default">View Details</button>
+										</div>
+										</div>
+									
+					  				
+									</div>
+								</div>	
+						</div>
+					</fieldset>
+				</form>
+			</div>
+
 			<div class="tab-pane" id="settings">
-				<form id="edit-profile2" class="form-horizontal col-md-8">
+				<form id="edit-profile3" class="form-horizontal col-md-8">
 					<fieldset>
 						<div class="row">
 							<div class="col-md-8 col-sm-6">
-									Testing!
+								
 							</div>
+						
 
 							<div class="col-md-4 col-sm-6">
 
@@ -96,7 +153,7 @@
 			</div>
 
 			<div class="tab-pane" id="maps">
-				<form id="edit-profile3" class="form-horizontal col-md-8">
+				<form id="edit-profile4" class="form-horizontal col-md-8">
 					<fieldset>
 						
 							
