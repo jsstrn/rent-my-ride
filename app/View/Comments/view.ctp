@@ -6,9 +6,6 @@
 
 Last modified on: <?php echo $post['Comment']['modified']; ?> </p>
 
-<?php echo $this->Like->like('post', $post['Comment']['id']);
-      echo $this->Like->dislike('post', $post['Comment']['id']); ?>
-
 </br>
 
 <?php echo $this->html->link('Back', array('action'=>'index')). " | " .  
