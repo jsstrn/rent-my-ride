@@ -20,15 +20,15 @@ class User extends AppModel {
 	public $hasMany = array(
 		'Car' => array(
 			'className' => 'Car',
-			'foreignKey' => 'id' // 'user_id'
+			'foreignKey' => 'user_id' // 'user_id'
 			),
 		'Event' => array(
 			'className' => 'Event',
-			'foreignKey' => 'id' // 'user_id'
+			'foreignKey' => 'user_id' // 'user_id'
 			), 
 		'Comment' => array(
 			'className' => 'Comment',
-			'foreignKey' => 'id'
+			'foreignKey' => 'user_id'
 			)
 		);
 
