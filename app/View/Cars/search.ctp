@@ -13,6 +13,7 @@
 </div>
 <br>
 <?php $num = 1; ?>
+<?php $counter = 0; ?>
 <?php foreach ($cars as $car): ?>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -36,7 +37,7 @@
 				<td><strong>License Plate</strong></td>
 				<td><?php echo $car['Car']['license_plate']; ?></td>
 				<td><strong>Location</strong></td>
-				<td>-</td>
+				<td><?php echo $car['Car']['formatted_address']; ?></td>
 			</tr>
 			<tr>
 				<td><strong>Type</strong></td>
@@ -47,9 +48,12 @@
 			<tr>
 				<td><strong>Transmission</strong></td>
 				<td><?php echo $car['Car']['transmission']; ?></td>
-				<td><strong>Postal Code</strong></td>
-				<td><?php echo $car['Car']['postal_code']; ?></td>
+				<td><strong>User</strong></td>
+				<?php foreach ($users as $user):?> 
+				<?php if($car['Car']['user_id'] == $user['User']['id']){?><td><?php echo $user['User']['username'];?></td> <?php } ?>
+				<?php endforeach; ?>
 			</tr>
+
 		</table>
 		<div class="pull-right">
 			<?php echo $this->Html->link('View Details', 'view/' . $car['Car']['id'], array('class' => 'btn btn-default')) ;?>
@@ -72,3 +76,4 @@
 <?php $num++; ?>
 <?php endforeach; ?>
 <?php unset($car); ?>
+<?php unset($user); ?>

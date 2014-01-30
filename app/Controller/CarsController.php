@@ -17,6 +17,10 @@ class CarsController extends AppController {
 	public function index() {
 
 		$this->set('cars', $this->Car->find('all'));
+		
+		$users = $this->Car->User->find('all');
+		
+		$this->set('users', $users);
 	}
 
 	//users and admin access

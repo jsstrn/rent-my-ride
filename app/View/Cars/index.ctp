@@ -13,6 +13,8 @@
 		<th>Transmission</th>
 		<th>Engine Type</th>
 		<th>Engine Capacity</th>
+		<th>License Plate</th>
+		<th>User</th>
 		<th>Actions</th>
 	</tr>
 
@@ -25,6 +27,10 @@
 		<td><?php echo $car['Car']['transmission']; ?></td>
 		<td><?php echo $car['Car']['engine_type']; ?></td>
 		<td><?php echo $car['Car']['engine_capacity']; ?></td>
+		<td><?php echo $car['Car']['license_plate']; ?></td>
+		<?php foreach ($users as $user):?> 
+				<?php if($car['Car']['user_id'] == $user['User']['id']){?><td><?php echo $user['User']['username'];?></td> <?php } ?>
+				<?php endforeach; ?>
 		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . " | " . 
 			$this->Html->link('Edit', 'edit/' . $car['Car']['id']) . " | " . 
 			$this->Form->postLink('Delete', 'delete/' . $car['Car']['id']); ?></td>

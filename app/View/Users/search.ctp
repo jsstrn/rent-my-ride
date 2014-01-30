@@ -46,8 +46,8 @@
 			<tr>
 				<td><strong>License</strong></td>
 				<td><?php echo $user['User']['license']; ?></td>
-				<td><strong>Ratings</strong></td>
-				<td>-</td>
+				<td><strong>Username</strong></td>
+				<td><?php echo $user['User']['username']; ?></td>
 			</tr>
 		</table>
 		<div class="pull-right">
