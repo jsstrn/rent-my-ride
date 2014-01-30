@@ -2,6 +2,13 @@
 
 class Picture extends AppModel {
 
+	public $belongsTo = array(
+		'Car' => array(
+			'className' => 'Car',
+			'foreignKey' => 'car_id'
+			)
+		);
+
 	public $validate = array(
 		'image' => array(
 			'validImage' => array(
