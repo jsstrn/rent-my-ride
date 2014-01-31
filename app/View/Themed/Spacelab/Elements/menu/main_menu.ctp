@@ -68,6 +68,7 @@
 				<li><a href="/rentmyride/cars/search">Find A Car</a></li>
 				<li><a href="/rentmyride/events">Check Avaliability Of Cars</a></li>
 				<li><a href="/rentmyride/cars/map">View All Cars Location</a></li>
+				<li><a href="/rentmyride/pictures">Add Photos To Your Car</a></li>
 				<li><a href="/rentmyride/reviews/add">Add Review To A Car</a></li>
 			</ul>
 			
