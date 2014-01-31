@@ -24,17 +24,5 @@
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<img
-				<?php
-					if (!$current_user['Picture']['path']) {
-						echo 'data-src="holder.js/200x200';
-					} else {
-						echo 'src="' . $this->webroot . $current_user['Picture']['path'] . '"';
-					}
-				?>>
-			</div>
-		</div>
 	</div>
 </div>
