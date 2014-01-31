@@ -69,7 +69,7 @@
 		<h2>Location map</h2>
 	</div>
 	<div class="col-md-12">
-		<div id="map-canvas" style="width: 1100px; height: 400px; margin: 0 auto;"/>
+		<div id="map-canvas" style="width: 1100px; height: 400px; margin: 0 auto;"></div>
 	</div>
 </div>
 
@@ -80,7 +80,8 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<p>Hello world</p>
+				<p>Hi, I'm <?php echo $car['User']['name'];?> and this is my ride! Feel free to rent my ride for only
+					$<?php echo $car['Car']['rate']; ?> per hour.</p>
 			</div>
 		</div>
 	</div>
