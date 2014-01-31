@@ -19,8 +19,12 @@ class CarsController extends AppController {
 		$this->set('cars', $this->Car->find('all'));
 		
 		$users = $this->Car->User->find('all');
+
+		$this->loadModel('Review');
+		$reviews = $this->Review->find('all');
 		
 		$this->set('users', $users);
+		$this->set('reviews', $reviews);
 	}
 
 	//users and admin access

@@ -14,6 +14,7 @@
 <br>
 <?php $num = 1; ?>
 <?php $counter = 0; ?>
+<?php $ratings_total = 0; ?>
 <?php foreach ($cars as $car): ?>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -48,13 +49,36 @@
 			<tr>
 				<td><strong>Transmission</strong></td>
 				<td><?php echo $car['Car']['transmission']; ?></td>
-				<td><strong>User</strong></td>
+				<td><strong>Owner</strong></td>
 				<?php foreach ($users as $user):?> 
 				<?php if($car['Car']['user_id'] == $user['User']['id']){?><td><?php echo $user['User']['username'];?></td> <?php } ?>
 				<?php endforeach; ?>
 			</tr>
 
 		</table>
+		<div class="well">
+			<?php foreach ($reviews as $review):?>
+			<?php if($car['Car']['id'] == $review['Review']['car_id'])
+			{
+				$ratings_total = $ratings_total + $review['Review']['ratings'];
+				$counter++;
+			}
+			endforeach;
+			$average_ratings = $ratings_total / $counter;
+			if($counter > 0)
+			{
+				echo '<center><strong>Ratings:</strong> ' . '<strong>' . $average_ratings . ' Stars' .
+				'</strong></center>'; 
+				$counter = 0;
+				$ratings_total = 0;
+				$average_ratings = 0;
+			}
+			else
+			{
+				echo '<center><strong>Ratings: 0 Stars</strong></center>';
+			}
+			?>
+		</div>
 		<div class="pull-right">
 			<?php echo $this->Html->link('View Details', 'view/' . $car['Car']['id'], array('class' => 'btn btn-default')) ;?>
 			<?php echo $this->Html->link('Book Now', array(

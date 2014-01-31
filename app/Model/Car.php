@@ -22,6 +22,13 @@ class Car extends AppModel {
 			)
 		);
 
+	public $hasMany = array(
+		'Review' => array(
+			'className' => 'Review',
+				'foreignKey' => 'car_id'
+			)
+		);
+
 	public $validate = array(
 		'license_plate' => array(
 			'alphaNumeric' => array(

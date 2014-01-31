@@ -14,11 +14,14 @@
 		<th>Engine Type</th>
 		<th>Engine Capacity</th>
 		<th>License Plate</th>
-		<th>User</th>
+		<th>Ratings</th>
+		<th>Owner</th>
 		<th>Actions</th>
 	</tr>
 
 	<?php $num = 1; ?>
+	<?php $counter = 0; ?>
+	<?php $ratings_total = 0; ?>
 	<?php foreach ($cars as $car): ?>
 	<tr>
 		<td><?php echo $num; ?></td>
@@ -28,6 +31,26 @@
 		<td><?php echo $car['Car']['engine_type']; ?></td>
 		<td><?php echo $car['Car']['engine_capacity']; ?></td>
 		<td><?php echo $car['Car']['license_plate']; ?></td>
+		<td><?php foreach ($reviews as $review):?>
+			<?php if($car['Car']['id'] == $review['Review']['car_id'])
+			{
+				$ratings_total = $ratings_total + $review['Review']['ratings'];
+				$counter++;
+			}
+			endforeach;
+			$average_ratings = $ratings_total / $counter;
+			if($counter > 0)
+			{
+				echo $average_ratings . ' Stars' ; 
+				$counter = 0;
+				$ratings_total = 0;
+				$average_ratings = 0;
+			}
+			else
+			{
+				echo '0 Stars';
+			}
+			?></td>
 		<?php foreach ($users as $user):?> 
 				<?php if($car['Car']['user_id'] == $user['User']['id']){?><td><?php echo $user['User']['username'];?></td> <?php } ?>
 				<?php endforeach; ?>

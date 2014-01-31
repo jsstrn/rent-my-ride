@@ -50,7 +50,7 @@
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-					<div><strong><?php echo h($reviews['Review']['title']) ?></strong><div align="right"><strong>Ratings: <?php echo h($reviews['Review']['ratings']) . ' Stars' ?></strong></div></div>
+					<div><strong><?php echo h($reviews['Review']['title']) ?></strong><div class="pull-right"><strong>Ratings: <?php echo h($reviews['Review']['ratings']) . ' Stars' ?></strong></div></div>
 					</div>
 					<div class="panel-body">
 						<p><?php echo h($reviews['Review']['body']) ?></p>
