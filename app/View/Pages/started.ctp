@@ -10,7 +10,7 @@ How to start renting? It is simply as "ABC"! Sign up for an account now and star
 
 <b>For Car Rental.</b></br>
 1. Sign up for an RMR account.</br>
-2. Choose your car by location></br>
+2. Choose your car by location</br>
 3. Book the time slot</br>
 4. Rent your ride!</br>
 5. Don't forget to leave a comment for the rented car.

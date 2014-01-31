@@ -47,7 +47,6 @@
 				<li><a href="/rentmyride/users/admin">Admin Panel</a></li>
 				<li><a href="/rentmyride/events/all">View All Events Booked</a></li>
 				<li><a href="/rentmyride/groups">List All Groups</a></li>
-				<li><a href="/rentmyride/uploads">List Uploads</a></li>
 			</ul>
 			
 		</li>
@@ -113,6 +112,7 @@
 			<ul class="dropdown-menu">
 				<li><a href="/rentmyride/users/profile/<?php echo $current_user['id']; ?>">My Profile</a></li>
 				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My Groups</a></li>
+				<li><a href="/rentmyride/uploads">Upload Profile Picture</a></li>
 				<li><a href="/rentmyride/users/search">Search Users</a></li>
 				<li><a href="/rentmyride/comments/support">Report A Problem</a></li>
 				<li class="divider"></li>
