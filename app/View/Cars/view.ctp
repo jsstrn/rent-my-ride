@@ -1,7 +1,11 @@
-<h1>Car details</h1>
-<hr></hr>
+<div class="page-header">
+	<h1>Car Profile</h1>
+</div>
 <div class='row'>
-	<div class="col-md-6">
+	<div class="page-header">
+		<h2>Car specifications</h2>
+	</div>
+	<div class="col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-body">
    				<table class='table'>
@@ -29,45 +33,80 @@
 					<?php foreach ($review as $reviews): ?>
 						<?php $total_ratings = $total_ratings + $reviews['Review']['ratings']; ?>
 						<?php endforeach; ?>
-						<?php echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>'; ?>
+						<?php if (!$average) {
+							echo '<center><h4>No Ratings Available</center></h4>';
+						} else {
+							echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>';
+						} 
+						?>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="col-md-6">
+	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<?php echo '<iframe width="520" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $car['Car']['postal_code'] . '"></iframe>'; ?>
+				<img class="center-block"
+				<?php
+					echo 'src="' . $this->webroot . $car['Picture']['path'] . '"';
+				?>>
 			</div>
 		</div>
 	</div>
 </div>
 
-	
-		<?php foreach ($review as $reviews): ?>
-		<div class='row'>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<div><strong><?php echo h($reviews['Review']['title']) ?></strong><div class="pull-right"><strong>Ratings: <?php echo h($reviews['Review']['ratings']) . ' Stars' ?></strong></div></div>
-					</div>
-					<div class="panel-body">
-						<p><?php echo h($reviews['Review']['body']) ?></p>
-						<hr></hr>
-						<p><small>Commented By: <?php echo h($reviews['Review']['fromsender'])?></small>&nbsp;&nbsp;
-						<small>Created On: <?php echo h($reviews['Review']['created'])?></small></p>
-						
-					</div>
+<div class="row">
+	<div class="page-header">
+		<h2>Location map</h2>
+	</div>
+	<div class="col-md-12">
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<p>Map will be located here. :)</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="page-header">
+		<h2>Owner</h2>
+	</div>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<p>Hello world</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="page-header">
+		<h2>Reviews</h2>
+	</div>
+	<?php foreach ($review as $reviews): ?>
+	<div class='row'>
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<div><strong><?php echo h($reviews['Review']['title']) ?></strong><div class="pull-right"><strong>Ratings: <?php echo h($reviews['Review']['ratings']) . ' Stars' ?></strong></div></div>
+				</div>
+				<div class="panel-body">
+					<p><?php echo h($reviews['Review']['body']) ?></p>
+					<hr></hr>
+					<p><small>Commented By: <?php echo h($reviews['Review']['fromsender'])?></small>&nbsp;&nbsp;
+					<small>Created On: <?php echo h($reviews['Review']['created'])?></small></p>
+					
 				</div>
 			</div>
 		</div>
-		<?php endforeach; ?>
-
-
+	</div>
+	<?php endforeach; ?>
+</div>
 
 <div class='row'>
-
 <?php if ($current_user['group_id'] == 1)
 		{
 		   echo $this->html->link('Back', array('action'=>'index')). " | " .
@@ -81,5 +120,3 @@
         }
         ?>
 </div>
-
-
