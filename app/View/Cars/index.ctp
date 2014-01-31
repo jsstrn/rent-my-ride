@@ -38,17 +38,15 @@
 				$counter++;
 			}
 			endforeach;
-			$average_ratings = $ratings_total / $counter;
-			if($counter > 0)
-			{
+
+			if ($counter == 0) {
+				echo '0 Stars';
+			} else {
+				$average_ratings = $ratings_total / $counter;
 				echo $average_ratings . ' Stars' ; 
 				$counter = 0;
 				$ratings_total = 0;
 				$average_ratings = 0;
-			}
-			else
-			{
-				echo '0 Stars';
 			}
 			?></td>
 		<?php foreach ($users as $user):?> 
