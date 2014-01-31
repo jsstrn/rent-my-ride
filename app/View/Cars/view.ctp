@@ -29,7 +29,15 @@
 					<?php foreach ($review as $reviews): ?>
 						<?php $total_ratings = $total_ratings + $reviews['Review']['ratings']; ?>
 						<?php endforeach; ?>
-						<?php echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>'; ?>
+						<?php if($average == 0)
+						{
+						   echo '<center><h3><strong>0 Stars</strong></h3></center>';
+						}
+						else
+						{
+							echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>';
+						}
+						?>
 				</div>
 			</div>
 		</div>

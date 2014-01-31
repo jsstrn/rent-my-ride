@@ -13,6 +13,7 @@
 		<th>Email</th>
 		<th>Mobile</th>
 		<th>License</th>
+		<th>Role</th>
 		<th>Actions</th>
 	</tr>
 
@@ -25,6 +26,15 @@
 		<td><?php echo $user['User']['email']; ?></td>
 		<td><?php echo $user['User']['mobile']; ?></td>
 		<td><?php echo $user['User']['license']; ?></td>
+		<?php if($user['User']['group_id'] == 1)
+		{
+			echo '<td>Admin</td>'; 
+		}
+		else
+		{
+			echo '<td>User</td>';
+		}
+		?>
 		<td><?php echo $this->Html->link('View', 'view/' . $user['User']['id']) . " | " . 
 			$this->Html->link('Edit', 'edit/' . $user['User']['id']) . " | " . 
 			$this->Form->postLink('Delete',

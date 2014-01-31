@@ -64,18 +64,19 @@
 				$counter++;
 			}
 			endforeach;
-			$average_ratings = $ratings_total / $counter;
-			if($counter > 0)
+			
+			if($counter == 0)
 			{
+				echo '<center><strong>Ratings: 0 Stars</strong></center>';
+			}
+			else
+			{
+				$average_ratings = $ratings_total / $counter;
 				echo '<center><strong>Ratings:</strong> ' . '<strong>' . $average_ratings . ' Stars' .
 				'</strong></center>'; 
 				$counter = 0;
 				$ratings_total = 0;
 				$average_ratings = 0;
-			}
-			else
-			{
-				echo '<center><strong>Ratings: 0 Stars</strong></center>';
 			}
 			?>
 		</div>

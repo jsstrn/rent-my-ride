@@ -49,6 +49,20 @@
 				<td><strong>Username</strong></td>
 				<td><?php echo $user['User']['username']; ?></td>
 			</tr>
+			<tr>
+				<td><strong>Role</strong></td>
+				<?php if($user['User']['group_id'] == 1)
+				{
+					echo '<td>Admin</td>'; 
+				}
+				else
+				{
+					echo '<td>User</td>';
+				}
+				?>
+				<td></td>
+				<td></td>
+			</tr>
 		</table>
 		<div class="pull-right">
 			<form action="">
