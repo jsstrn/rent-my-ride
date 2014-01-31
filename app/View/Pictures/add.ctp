@@ -5,7 +5,7 @@
 			<div class="panel-body">
 				<?php
 				echo $this->Form->create('Picture', array('type' => 'file'));
-				echo $this->Form->input($fieldName, array(
+				echo $this->Form->input('car_id', array(
 					'type' => 'select',
 					'label' => 'Select your car ',
 					'class' => 'form-control',

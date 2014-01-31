@@ -37,18 +37,17 @@ class PicturesController extends AppController {
 			$this->request->data['Picture']['name'] = $name;
 			$this->request->data['Picture']['type'] = $type;
 			$this->request->data['Picture']['size'] = $size;
-			$this->request->data['Picture']['user_id'] = $loggedIn;
 
-			/*
+			$carId = $this->request->data['Picture']['car_id'];
 
-			$userExists = $this->Upload->findByUserId($loggedIn);
+			$carExists = $this->Picture->findByCarId($carId);
 
-			if (!$userExists) {
+			if (!$carExists) {
 
-				$this->Upload->create();
+				$this->Picture->create();
 				move_uploaded_file($tmp_name, $path);
 
-				if ($this->Upload->save($this->request->data)) {
+				if ($this->Picture->save($this->request->data)) {
 					$this->Session->setFlash('Your file has been uploaded!', 'flash/success');
 					$this->redirect(array('action' => 'index'));
 
@@ -57,17 +56,16 @@ class PicturesController extends AppController {
 				}
 			} else {
 
-				$this->Upload->id = $userExists['Upload']['id'];
+				$this->Picture->id = $carExists['Picture']['id'];
 				move_uploaded_file($tmp_name, $path);
 
-				if ($this->Upload->save($this->request->data)) {
+				if ($this->Picture->save($this->request->data)) {
 				    $this->Session->setFlash('Your profile picture has been updated.', 'flash/success');
 				    return $this->redirect(array('action' => 'index'));
 				} else {
 					$this->Session->setFlash(__('Unable to update your profile picture.', 'flash/error'));
 				}
 			}
-			*/
 		}
 	}
 
