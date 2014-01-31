@@ -15,12 +15,7 @@ class Car extends AppModel {
 
 	var $actsAs = array('Searchable.Searchable');
 
-	public $hasMany = array(
-		'Picture' => array(
-			'className' => 'Picture',
-			'foreignKey' => 'car_id'
-			)
-		);
+	public $hasOne = 'Picture';
 
 	public $belongsTo = array(
 		'User' => array(

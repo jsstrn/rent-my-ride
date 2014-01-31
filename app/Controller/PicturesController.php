@@ -6,30 +6,40 @@ class PicturesController extends AppController {
 	public function index() {
 
 		$this->set('pictures', $this->Picture->find('all'));
+
 	}
 
 	public function add() {
 
-		$loggedIn = $this->Auth->user('id');
+		$currentUser = $this->Auth->user('id');
 
-		if (!$loggedIn) {
-			throw new NotFoundException(__('Please log in to upload your profile picture.'));
+		if (!$currentUser) {
+			throw new NotFoundException("Please log in to upload images.");
 		}
+
+		$this->loadModel('Car');
+		$myCars = $this->Car->find('list', array(
+			'fields' => array('Car.id', 'Car.license_plate'),
+			'conditions' => array('Car.user_id' => $currentUser),
+			));
+		$this->set('myCars', $myCars);
 
 		if ($this->request->is('POST')) {
 
-			$dir = 'img/uploads/';
+			$dir = 'img/pictures/';
 			$tmp_name = $_FILES['uploader']['tmp_name'];
 			$name = $_FILES['uploader']['name'];
 			$type = $_FILES['uploader']['type'];
 			$size = $_FILES['uploader']['size'];
 			$path = $dir . basename($_FILES['uploader']['name']);
 
-			$this->request->data['Upload']['path'] = $path;
-			$this->request->data['Upload']['name'] = $name;
-			$this->request->data['Upload']['type'] = $type;
-			$this->request->data['Upload']['size'] = $size;
-			$this->request->data['Upload']['user_id'] = $loggedIn;
+			$this->request->data['Picture']['path'] = $path;
+			$this->request->data['Picture']['name'] = $name;
+			$this->request->data['Picture']['type'] = $type;
+			$this->request->data['Picture']['size'] = $size;
+			$this->request->data['Picture']['user_id'] = $loggedIn;
+
+			/*
 
 			$userExists = $this->Upload->findByUserId($loggedIn);
 
@@ -57,6 +67,7 @@ class PicturesController extends AppController {
 					$this->Session->setFlash(__('Unable to update your profile picture.', 'flash/error'));
 				}
 			}
+			*/
 		}
 	}
 

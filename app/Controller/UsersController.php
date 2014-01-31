@@ -119,19 +119,6 @@ class UsersController extends AppController {
 		return $capture;
 	}
 
-	/*public function signup() {
-
-		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash('Thank you for signing up with Rent My Ride');
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash('Oops! Something went wrong. Please try again.');
-			}
-		}
-	}*/
-
 	public function login() {
 
 		if ($this->Session->read('Auth.User')) {
@@ -312,22 +299,7 @@ class UsersController extends AppController {
 			'conditions' => array('Car.brand' => 'honda')
 			)));
 
-	}
-
-	/*public function mail() {
-		App::uses('CakeEmail', 'Network/Email');
-		$email = new CakeEmail('gmail');
-        //$email->from('Team RMR');
-        $email->to('mohafizz@gmail.com');
-       // $email->attachments(array(''));
-        $email->subject('Account Confirmation');
-        $email->viewVars(array('username' => 'Joe'));
-        $email->template('welcome', 'default');
-        $email->emailFormat('both');
-        $email->send('Testing');
-        die('E-mail sent!');
-
-	}*/		
+	}	
 }
 
 ?>

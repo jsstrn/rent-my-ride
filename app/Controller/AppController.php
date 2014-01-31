@@ -35,7 +35,6 @@ class AppController extends Controller {
 
   public $theme = 'Spacelab';
 
-
 	public $components = array(
 		  'DebugKit.Toolbar',
 		  'Session',
@@ -67,8 +66,6 @@ class AppController extends Controller {
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
     }
-
-
 
 	//public function beforeFilter() {
 		//$this->Auth->allow('index', 'view');

@@ -5,12 +5,19 @@
 			<div class="panel-body">
 				<?php
 				echo $this->Form->create('Picture', array('type' => 'file'));
+				echo $this->Form->input($fieldName, array(
+					'type' => 'select',
+					'label' => 'Select your car ',
+					'class' => 'form-control',
+					'options' => $myCars,
+					));
 				?>
+				<br>
 				<input class='form-control' type='file' name='uploader'>
 			</div>
 			<div class="panel-footer text-right">
 				<?php 
-				echo $this->Form->submit('Upload Image', array('class'=>'btn btn-default'));
+				echo $this->Form->submit('Upload Image', array('class'=>'btn btn-primary'));
 				echo $this->Form->end();
 				?>
 			</div>
