@@ -80,8 +80,13 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<p>Hi, I'm <?php echo $car['User']['name'];?> and this is my ride! Feel free to rent my ride for only
-					$<?php echo $car['Car']['rate']; ?> per hour.</p>
+				<div class="col-md-3 center-block">
+					<img class="img-circle" src="holder.js/200x200">
+					<?php echo $image; ?>
+				</div>
+				<div class="col-md-9">
+				<p>Hi, I'm <?php echo $car['User']['name'];?> and this is my ride!</p>
+				<p>Feel free to rent my ride for only $<?php echo $car['Car']['rate']; ?> per hour.</p></div>
 			</div>
 		</div>
 	</div>

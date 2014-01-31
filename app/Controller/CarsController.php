@@ -31,25 +31,34 @@ class CarsController extends AppController {
 	
 	public function view($id = null) {
 
-		$this->loadModel('Review');
+		if (!$id) {
+			throw new NotFoundException(__('1 Invalid Request'));
+		}
+
 		$car = $this->Car->findById($id);
+
+		if (!$car) {
+			throw new NotFoundException(__('2 Invalid Request'));
+		}
+
+		$this->loadModel('Review');
 		$review = $this->Review->findAllByCarId($id);
 		$average = $this->Review->find('count', array(
         'conditions' => array('Review.car_id' => $id)
     	));
 
-		if (!$id) {
-			throw new NotFoundException(__('Invalid Request'));
-		}
-
-		if (!$car) {
-			throw new NotFoundException(__('Invalid Request'));
-		}
+    	$this->loadModel('Upload');
+    	$carId = $car['User']['id'];
+    	$this->Upload->find('list', array(
+    		'fields' => array('Upload.path', 'Upload.user_id'),
+    		'conditions' => array('Upload.user_id' => $carId)
+    		));
 
 		$this->set('car', $car);
 		$this->set('review', $review);
 		$this->set('total_ratings');
 		$this->set('average', $average);
+		$this->set('image', $image);
 
 	}
 
