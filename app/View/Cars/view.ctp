@@ -49,7 +49,11 @@
 			<div class="panel-body">
 				<img class="center-block"
 				<?php
+				if (!$car['Picture']['path']) {
+					echo 'data-src="holder.js/300x300"';
+				} else {
 					echo 'src="' . $this->webroot . $car['Picture']['path'] . '"';
+				}
 				?>>
 			</div>
 		</div>
