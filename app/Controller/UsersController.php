@@ -145,10 +145,10 @@ class UsersController extends AppController {
 		{
 
 			if(!empty($this->request->data))
-			{
+			{$pass = $this->request->data['User']['password'];
 				$this->request->data('User.group_id', '2');
 				$name = $this->request->data['User']['username'];
-				$pass = $this->request->data['User']['password'];
+				
 				$emailadd = $this->request->data['User']['email'];
 
 			
@@ -280,6 +280,8 @@ class UsersController extends AppController {
 		}
 
 		$this->set('user', $user);
+		//$this->set('cars_total', $this->User->Car->find('count'));$user['Car']['0']['brand']
+		//$this->set('cars_total', $this->User->find(['Car']));
 
 	}
 

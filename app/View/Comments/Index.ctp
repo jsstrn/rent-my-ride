@@ -21,7 +21,7 @@
 					<div class="tabbable">
 						<ul class="nav nav-tabs">
 					  		<li class="active">
-					    	<a href="#receive" data-toggle="tab">Received Comments&nbsp;&nbsp;<span class="badge pull-right"><?php echo $receieve; ?></span></a>
+					    	<a href="#receive" data-toggle="tab">Received Comments&nbsp;&nbsp;<span class="badge pull-right"><?php echo $receive; ?></span></a>
 					  		</li>
 					  		<li><a href="#sent" data-toggle="tab">Sent Comments&nbsp;&nbsp;<span class="badge pull-right"><?php echo $sent; ?></span></a></li>
 						</ul>

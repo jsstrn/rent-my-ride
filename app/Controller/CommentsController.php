@@ -21,7 +21,7 @@ class CommentsController extends AppController {
 
 		$this->set('n', $n);
 		$this->set('o', $o);
-		$this->set('receieve', $this->Comment->find('count', array(
+		$this->set('receive', $this->Comment->find('count', array(
        'conditions' => array('Comment.user_id' => $this->Auth->user('id')))));
 		$this->set('sent', $this->Comment->find('count', array('conditions' => array(
 			'Comment.fromsender' => $this->Auth->user('username')))));

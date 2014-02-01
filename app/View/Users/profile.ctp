@@ -4,7 +4,6 @@
 	    <a href="#profile" data-toggle="tab">Profile</a>
 	  </li>
 	  <li><a href="#cars" data-toggle="tab">Cars</a></li>
-	  <li><a href="#settings" data-toggle="tab">Settings</a></li>
 	  <li><a href="#maps" data-toggle="tab">Maps</a></li>
 	</ul>
 	
@@ -39,11 +38,24 @@
 					      		<div class="well">
 
 					      			<h4>Extra Info</h4>
+											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+											        <li class="active">
+											        	<a href="javascript:;">
+											        		<span class="badge pull-right"><?php count($user['Comment']); ?></span>
+											        		Home
+											        	</a>
+											        </li>
 
-									<p>This is your account page...</p>
+											        <li><a href="javascript:;">Profile</a></li>
+											        <li>
+											    <a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+											        		<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
+											        		Received Comments
+											        	</a>
+											        </li>
+											 </ul>
 										
-										
-									<p> To insert additional information here...or maybe user picture?</p>
+									<h4>Profile picture</h4>
 									<img class="featurette-image img-responsive center-block"
 									<?php
 									if (!$user['Upload']['path']) {
@@ -52,86 +64,82 @@
 										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 									}?>>
 					      		</div>
+
 						</div>
 					</div>	
 				</fieldset>
 			</form>
 			</div>
 
-			
-			
-
 			<div class="tab-pane" id="cars">
 				<form id="edit-profile2" class="form-horizontal col-md-12">
 					<fieldset>
-						<div class="row">
-								<div class="panel panel-default">
-						  			<div class="panel-heading">
-						    			<h3 class="panel-title">You have X cars</h3>
-						  			</div>
-						  			<div class="panel-body">
-								   				<div class="col-md-3">
-								   				<img src="holder.js/150x150" class="img-thumbnail center-block">
-								   				</div>
-								   		<div class="col-md-9">	
-										<table class="table table-hover">
-											<tr>
-												<td><strong>Brand</strong></td>
-												<td><?php echo h($user['Car']['0']['brand']); ?></td>
-												<td><strong>Model</strong></td>
-												<td><?php echo h($user['Car']['0']['model']); ?></td>
-											</tr>
-											<tr>
-												<td><strong>License plate</strong></td>
-												<td><?php echo h($user['Car']['0']['license_plate']); ?></td>
-												<td><strong>Engine Type</strong></td>
-												<td><?php echo h($user['Car']['0']['engine_type']); ?></td>
-											</tr>
-											<tr>
-												<td><strong>Transmission</strong></td>
-												<td><?php echo h($user['Car']['0']['transmission']); ?></td>
-												<td><strong>Capacity</strong></td>
-												<td><?php echo h($user['Car']['0']['engine_capacity']); ?></td>
-											</tr>
-											<tr>
-												<td><strong>Text</strong></td>
-												<td><?php echo h($user['Car']['0']['brand']); ?></td>
-												<td><strong>Price</strong></td>
-												<td><?php echo h($user['Car']['0']['rate']); ?></td>
-											</tr>
-										</table>
-										<div class="pull-right">
-											<button class="btn btn-default">View Details</button>
-										</div>
-										</div>
-									
-					  				
-									</div>
-								</div>	
-						</div>
-					</fieldset>
-				</form>
-			</div>
-
-			<div class="tab-pane" id="settings">
-				<form id="edit-profile3" class="form-horizontal col-md-8">
-					<fieldset>
-						<div class="row">
-							<div class="col-md-8 col-sm-6">
-								
-							</div>
+						<h3>You have <?php echo count($user['Car']);?> cars</h3>
 						
+							<div class="panel panel-default">
 
-							<div class="col-md-4 col-sm-6">
+								<?php $car = 1; ?> 
+								<div class="panel-heading">	
+					    			<h3 class="panel-title">Car #<?php echo $car; ?></h3>
+					  			</div>	  
+								
+								
+								<div class="row">	
+									<?php $num = 0; 
+									      $n = ($user['Car']); 
+									      foreach($n as $total): ?>
 
-						      		<div class="well">
-										<h4>Stacked Navigation</h4>
-											<br />
+										<div class="panel-body">
+							   				<div class="col-md-3">
+							   				<img src="holder.js/150x150" class="img-thumbnail center-block">
+							   				</div>
+							   			<div class="col-md-9">	
 
+									<table class="table table-hover">
+										
+										<tr>
+											<td><strong>Brand</strong></td>
+											<td><?php echo h($user['Car'][$num]['brand']); ?></td>
+											<td><strong>Price</strong></td>
+											<td><?php echo h($user['Car'][$num]['rate']); ?></td>
+										</tr>
+										<tr>
+											<td><strong>License plate</strong></td>
+											<td><?php echo h($user['Car'][$num]['license_plate']); ?></td>
+											<td><strong>Engine Type</strong></td>
+											<td><?php echo h($user['Car'][$num]['engine_type']); ?></td>
+										</tr>
+										<tr>
+											<td><strong>Transmission</strong></td>
+											<td><?php echo h($user['Car'][$num]['transmission']); ?></td>
+											<td><strong>Capacity</strong></td>
+											<td><?php echo h($user['Car'][$num]['engine_capacity']); ?></td>
+										</tr>
+										
+									<?php $car ++; 
+										  $num ++; 
+										  endforeach;
+										  unset($total); ?>
+
+									</table>
+
+									<div class="pull-right">
+										<button class="btn btn-default">View Details</button>
+									</div>
+									</div>
+								
+				  				
+								</div>
+							</div>	
+						<div class="col-md-4 col-sm-6">
+
+					      		<div class="well">
+
+					      			<h4>Extra Info</h4>
 											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
 											        <li class="active">
 											        	<a href="javascript:;">
-											        		<span class="badge pull-right"><?php echo $comments_total; ?></span>
+											        		<span class="badge pull-right"><?php //echo $receive; ?></span>
 											        		Home
 											        	</a>
 											        </li>
@@ -144,13 +152,22 @@
 											        	</a>
 											        </li>
 											 </ul>
-						      			
-						      		</div>
-							</div>
-						</div>	
+										
+									<h4>Profile picture</h4>
+									<img class="featurette-image img-responsive center-block"
+									<?php
+									if (!$user['Upload']['path']) {
+										echo 'data-src="holder.js/200x200"';
+									} else {
+										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+									}?>>
+					      		</div>
+						</div>
+						</div>
 					</fieldset>
 				</form>
 			</div>
+
 
 			<div class="tab-pane" id="maps">
 				<form id="edit-profile4" class="form-horizontal col-md-8">
