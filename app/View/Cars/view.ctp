@@ -81,8 +81,14 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="col-md-3 center-block">
-					<img class="img-circle" src="holder.js/200x200">
-					<?php echo $image; ?>
+					<img class="img-circle img-responsive"
+					<?php
+					if (!$image['Upload']['path']) {
+						echo 'data-src="holder.js/300x300"';
+					} else {
+						echo 'src="' . $this->webroot . $image['Upload']['path'] . '"';
+					}
+					?>>
 				</div>
 				<div class="col-md-9">
 				<p>Hi, I'm <?php echo $car['User']['name'];?> and this is my ride!</p>

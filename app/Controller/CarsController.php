@@ -47,12 +47,9 @@ class CarsController extends AppController {
         'conditions' => array('Review.car_id' => $id)
     	));
 
-    	$this->loadModel('Upload');
-    	$carId = $car['User']['id'];
-    	$this->Upload->find('list', array(
-    		'fields' => array('Upload.path', 'Upload.user_id'),
-    		'conditions' => array('Upload.user_id' => $carId)
-    		));
+		$this->loadModel('Upload');
+		$carId = $car['User']['id'];
+		$image = $this->Upload->findByUserId($carId);
 
 		$this->set('car', $car);
 		$this->set('review', $review);
