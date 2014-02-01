@@ -39,14 +39,18 @@
 
 					      			<h4>Extra Info</h4>
 											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-											        <li class="active">
-											        	<a href="javascript:;">
-											        		<span class="badge pull-right"><?php count($user['Comment']); ?></span>
-											        		Home
+											        <!-- <li class="active"> -->
+											        <li>
+											        	<a href="#cars" </a>
+											        		<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
+											        		Cars owned
 											        	</a>
 											        </li>
 
-											        <li><a href="javascript:;">Profile</a></li>
+											        <li><a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+											        		<span class="badge pull-right"><?php echo count($username); ?></span>
+											        		Sent Comments
+											        	</a></li>
 											        <li>
 											    <a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
 											        		<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
@@ -72,29 +76,27 @@
 			</div>
 
 			<div class="tab-pane" id="cars">
-				<form id="edit-profile2" class="form-horizontal col-md-12">
+				<form id="edit-profile2" >
 					<fieldset>
+						<div class="row">
+						<div class="col-md-8 col-sm-6">
 						<h3>You have <?php echo count($user['Car']);?> cars</h3>
 						
+							
 							<div class="panel panel-default">
-
-								<?php $car = 1; ?> 
+									<?php $car = 1; ?> 
+									<?php $num = 0; 
+								      	  $n = ($user['Car']); 
+								          foreach($n as $total): ?>
+								
 								<div class="panel-heading">	
 					    			<h3 class="panel-title">Car #<?php echo $car; ?></h3>
 					  			</div>	  
-								
-								
-								<div class="row">	
-									<?php $num = 0; 
-									      $n = ($user['Car']); 
-									      foreach($n as $total): ?>
-
-										<div class="panel-body">
-							   				<div class="col-md-3">
-							   				<img src="holder.js/150x150" class="img-thumbnail center-block">
-							   				</div>
-							   			<div class="col-md-9">	
-
+							
+					   				<div>
+					   				<center><img src="holder.js/150x150" class="img-thumbnail center-block"></center>
+					   				</div>
+							   		
 									<table class="table table-hover">
 										
 										<tr>
@@ -116,21 +118,16 @@
 											<td><?php echo h($user['Car'][$num]['engine_capacity']); ?></td>
 										</tr>
 										
+									</table>
+									
 									<?php $car ++; 
 										  $num ++; 
 										  endforeach;
 										  unset($total); ?>
+								 
+							</div>
+						</div>
 
-									</table>
-
-									<div class="pull-right">
-										<button class="btn btn-default">View Details</button>
-									</div>
-									</div>
-								
-				  				
-								</div>
-							</div>	
 						<div class="col-md-4 col-sm-6">
 
 					      		<div class="well">
@@ -138,17 +135,21 @@
 					      			<h4>Extra Info</h4>
 											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
 											        <li class="active">
-											        	<a href="javascript:;">
-											        		<span class="badge pull-right"><?php //echo $receive; ?></span>
-											        		Home
+											        
+											        	<a href="#cars" </a>
+											        		<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
+											        		Cars owned
 											        	</a>
 											        </li>
 
-											        <li><a href="javascript:;">Profile</a></li>
+											        <li><a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+											        		<span class="badge pull-right"><?php echo count($username); ?></span>
+											        		Sent Comments
+											        	</a></li>
 											        <li>
-											        	<a href="javascript:;">
-											        		<span class="badge pull-right">3</span>
-											        		Messages
+											    <a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+											        		<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
+											        		Received Comments
 											        	</a>
 											        </li>
 											 </ul>
@@ -162,8 +163,9 @@
 										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 									}?>>
 					      		</div>
+
 						</div>
-						</div>
+					</div>
 					</fieldset>
 				</form>
 			</div>

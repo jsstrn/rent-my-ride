@@ -1,4 +1,4 @@
-<div class="extra"; style="background-image: url(<?php echo $this->webroot ;?>img/main/carbonfiber.jpg); background-position: 100% repeat fixed;">
+<div class="extra"; style="background-color:#999999;">
 
 	<div class="container">
 
