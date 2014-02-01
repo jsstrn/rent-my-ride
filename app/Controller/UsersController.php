@@ -267,14 +267,14 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid Request'));
 		}
 
-		if ($this->request->is(array('post', 'put'))) {
-		    $this->User->id = $id;
-		    if ($this->User->save($this->request->data)) {
-		        $this->Session->setFlash('Your details have been updated.', 'flash/success');
-		        return $this->redirect(array('action' => 'index'));
-		    }
-		    $this->Session->setFlash('Unable to update your user details.', 'flash/error');
-		}
+		// if ($this->request->is(array('post', 'put'))) {
+		//     $this->User->id = $id;
+		//     if ($this->User->save($this->request->data)) {
+		//         $this->Session->setFlash('Your details have been updated.', 'flash/success');
+		//         return $this->redirect(array('action' => 'index'));
+		//     }
+		//     $this->Session->setFlash('Unable to update your user details.', 'flash/error');
+		// }
 
 		if (!$this->request->data) {
 		    $this->request->data = $user;
@@ -282,8 +282,6 @@ class UsersController extends AppController {
 
 		$this->set('user', $user);
 		$this->set('username', $username);
-		//$this->set('cars_total', $this->User->Car->find('count'));$user['Car']['0']['brand']
-		//$this->set('cars_total', $this->User->find(['Car']));
 
 	}
 
