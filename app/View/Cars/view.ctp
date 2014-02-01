@@ -139,6 +139,9 @@
 
 <script type="text/javascript">
 
+	var content = 	'<h5>Location: </h5>' + 
+					'<p><?php echo $car['Car']['formatted_address']; ?></p>';
+
   function initialize() {
 
     var position = new google.maps.LatLng(1.3024213, 103.839922);
@@ -163,6 +166,14 @@
       'map' : map,
       'icon' : image,
       'animation' : google.maps.Animation.DROP
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+        content: content,
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
     });
   }
 
