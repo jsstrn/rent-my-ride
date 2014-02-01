@@ -11,9 +11,13 @@
 
 	<?php $num = 1; ?>
 	<?php foreach ($uploads as $upload): ?>
-	<tr>
-		<td><img src="<?php echo $this->webroot . $upload['Upload']['path'];?>"></td>
-	</tr>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="well">
+				<img class="img-responsive" src="<?php echo $this->webroot . $upload['Upload']['path'];?>">
+			</div>			
+		</div>
+	</div>
 	<?php $num++; ?>
 	<?php endforeach; ?>
 	<?php unset($upload); ?>
