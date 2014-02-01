@@ -85,7 +85,7 @@ class UsersController extends AppController {
 		    $this->User->id = $id;
 		    if ($this->User->save($this->request->data)) {
 		        $this->Session->setFlash('Your details have been updated.', 'flash/success');
-		        return $this->redirect(array('action' => 'index'));
+		        return $this->redirect(array('action' => 'profile'));
 		    }
 		    $this->Session->setFlash('Unable to update your user details.', 'flash/error');
 		}
