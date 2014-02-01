@@ -145,8 +145,14 @@
     var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
 
     var mapOptions = {
-      'center' : new google.maps.LatLng(1.352083, 103.819836),
-      'zoom' : 12
+      'center' : new google.maps.LatLng(<?php echo $car['Car']['lat']; ?>, <?php echo $car['Car']['lng']; ?>),
+      'zoom' : 12,
+      'disableDefaultUI': true,
+      'scrollwheel': false,
+      'navigationControl': false,
+      'mapTypeControl': false,
+      'scaleControl': false,
+      'draggable': false,
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"),
