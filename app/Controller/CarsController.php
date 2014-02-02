@@ -48,9 +48,13 @@ class CarsController extends AppController {
     	));
 
 		$this->loadModel('Upload');
-		$carId = $car['User']['id'];
-		$image = $this->Upload->findByUserId($carId);
+		$userId = $car['User']['id'];
+		$image = $this->Upload->findByUserId($userId);
 
+		$this->loadModel('Event');
+		$events = $this->Event->findAllByCarId($id);
+
+		$this->set('events', $events);
 		$this->set('car', $car);
 		$this->set('review', $review);
 		$this->set('total_ratings');

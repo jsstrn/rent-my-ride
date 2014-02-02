@@ -2,6 +2,47 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
 </script>
 
+<script type="text/javascript">
+$(document).ready(function calc() {
+
+    $('#calendar').fullCalendar({
+        header: {
+        	left: 'prev,next today',
+        	center: 'title',
+        	right: 'month,agendaWeek,agendaDay'
+        },
+        firstDay: 1,
+        editable: false,
+        selectable: true,
+        eventColor: '#378006',
+        events: [
+
+        {
+            title: 'Today',
+            start: new Date(),
+            date: new Date(),
+            allDay: false,
+        },
+
+        <?php $count = 1; ?>
+        <?php foreach ($events as $event): ?>
+        <?php $datetime_start = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_start'] ); ?>
+        <?php $datetime_end = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_end'] ); ?>
+        <?php echo '{' ; ?>
+            <?php echo "title: \"" . 'Booked by ' . $event[$count]['User']['name'] . "\"," ; ?>
+            <?php echo "start: \"" . $datetime_start . "\"," ; ?>
+            <?php echo "end: \"" . $datetime_end . "\"," ; ?>
+            <?php echo "allDay: false"; ?>
+        <?php echo '},' ; ?>
+        <?php $count++; ?>
+        <?php endforeach; ?>
+        <?php unset($event); ?>
+
+        ]
+    })
+});
+</script>
+
 <div class="page-header">
 	<h1>Car Profile</h1>
 </div>
@@ -44,21 +85,6 @@
 						} 
 						?>
 				</div>
-				<div class='row'>
-				<?php if ($current_user['group_id'] == 1)
-				{
-		   			echo '&nbsp;&nbsp;' . $this->html->link('Back', array('action'=>'index')). " | " .
-		   			$this->html->link('Edit', array('action'=>'edit', $car['Car']['id'])). " | " . 
-           			$this->html->link('Delete', array('action'=>'delete', $car['Car']['id']), NULL, 'Are you sure you want to delete this Car?'); 
-        		}
-        		else
-       			{
-           			echo '&nbsp;&nbsp;' . $this->html->link('Back', array('action'=>'search')). " | " . 
-           			$this->html->link('Delete', array('action'=>'delete', $car['Car']['id']), NULL, 'Are you sure you want to delete this Car?'); 
-        		}
-        		?>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -110,6 +136,15 @@
 				<p>Feel free to rent my ride for only $<?php echo $car['Car']['rate']; ?> per hour.</p></div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="page-header">
+		<h2>Calendar</h2>
+	</div>
+	<div class="col-md-12">
+		<div id="calendar"></div>
 	</div>
 </div>
 
