@@ -82,12 +82,10 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-6">
 							<h3>You have <?php echo count($user['Car']);?> cars</h3>
-
 							<?php $car = 1;
 							$num = 0; 
 							$n = ($user['Car']);
 							foreach($n as $total): ?>
-							
 							<div class="panel panel-default"> 
 								<div class="panel-heading">	
 									<h3 class="panel-title">Car #<?php echo $car; ?></h3>
@@ -121,14 +119,14 @@
 										</table>
 									</div>
 								</div>
-						</div>
-						<?php $car ++; 
-						$num ++; 
-						endforeach;
-						unset($total); ?>
+							</div>
+							<?php $car ++; 
+							$num ++; 
+							endforeach;
+							unset($total); ?>
+						</div><!-- .col -->
 
 						<div class="col-md-4 col-sm-6">
-
 							<div class="well">
 
 								<h4>Extra Info</h4>
@@ -162,28 +160,26 @@
 									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 								}?>>
 							</div>
-
-						</div>
+						</div><!-- .col -->
 					</div>
-				</div>
-				</fieldset>
-			</form>
-		</div>
-
-
-		<div class="tab-pane" id="maps">
-			<form id="edit-profile4" class="form-horizontal col-md-8">
-				<fieldset>
-
-
-
-					<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-
-
-				</fieldset>
-			</form>
-		</div>
-
+			</fieldset>
+		</form>
 	</div>
+
+
+	<div class="tab-pane" id="maps">
+		<form id="edit-profile4" class="form-horizontal col-md-8">
+			<fieldset>
+
+
+
+				<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+
+
+			</fieldset>
+		</form>
+	</div>
+
+</div>
 </div>
 </br>
