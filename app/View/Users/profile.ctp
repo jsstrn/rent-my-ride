@@ -92,7 +92,6 @@
 								<div class="panel-heading">	
 									<h3 class="panel-title">Car #<?php echo $car; ?></h3>
 								</div>
-								<!-- <img class="img-responsive" src="<?php //echo $this->webroot . $picture['Picture']['path'];?>"> -->
 								<div class="panel-body">
 									<div class="col-md-3">
 										<div> </br>
@@ -166,6 +165,7 @@
 
 						</div>
 					</div>
+				</div>
 				</fieldset>
 			</form>
 		</div>
