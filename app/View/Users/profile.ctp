@@ -95,7 +95,7 @@
 								<div class="panel-body">
 									<div class="col-md-3">
 										<div> </br>
-											<img src="<?php echo $this->webroot . $picture['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
+											<img src="<?php echo $this->webroot . $picture[$num]['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
 										</div>
 									</div>
 									<div class="col-md-9">
