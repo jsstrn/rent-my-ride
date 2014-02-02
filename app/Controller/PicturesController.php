@@ -37,6 +37,7 @@ class PicturesController extends AppController {
 			$this->request->data['Picture']['name'] = $name;
 			$this->request->data['Picture']['type'] = $type;
 			$this->request->data['Picture']['size'] = $size;
+			$this->request->data['Picture']['user_id'] = $currentUser;
 
 			$carId = $this->request->data['Picture']['car_id'];
 
