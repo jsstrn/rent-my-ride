@@ -120,8 +120,8 @@
 										</table>
 										<div class="pull-right">
 											<?php echo $this->Html->link('Edit this car',
-											array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
-											array('class' => 'btn btn-primary')); ?>
+												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
+												array('class' => 'btn btn-primary')); ?>
 											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
 												'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
 										</div>
