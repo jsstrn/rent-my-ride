@@ -69,7 +69,6 @@
 									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 								}?>>
 							</div>
-
 						</div>
 					</div>	
 				</fieldset>
@@ -79,7 +78,7 @@
 		<div class="tab-pane" id="cars">
 			<form id="edit-profile2" >
 				<fieldset>
-					
+					<div class="row">
 						<div class="col-md-8 col-sm-6">
 							<h3>You have <?php echo count($user['Car']);?> cars</h3>
 
@@ -95,11 +94,9 @@
 								<div class="panel-body">
 									<div class="col-md-3">
 										<div> </br>
-<<<<<<< HEAD
-											<img src="<?php echo $this->webroot . $picture['Picture']['0']['path'];?>" class="img-thumbnail center-block img-responsive">
-=======
+
 											<img src="<?php echo $this->webroot . $picture[$num]['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
->>>>>>> 109376aae0a29520e7d28b4d41c34906f61e612a
+
 										</div>
 									</div>
 									<div class="col-md-9">
@@ -125,6 +122,7 @@
 										</table>
 									</div>
 								</div>
+							</div>
 						</div>
 						<?php $car ++; 
 						$num ++; 
@@ -166,28 +164,18 @@
 									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 								}?>>
 							</div>
-
 						</div>
 					</div>
-				
-				</fieldset>
-			</form>
-		</div>
-
-
-		<div class="tab-pane" id="maps">
-			<form id="edit-profile4" class="form-horizontal col-md-8">
-				<fieldset>
-
-
-
-					<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-
-
-				</fieldset>
-			</form>
-		</div>
-
+			</fieldset>
+		</form>
 	</div>
+	<div class="tab-pane" id="maps">
+		<form id="edit-profile4" class="form-horizontal col-md-8">
+			<fieldset>
+				<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+			</fieldset>
+		</form>
+	</div>
+</div>
 </div>
 </br>
