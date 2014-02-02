@@ -4,7 +4,7 @@
 			<a href="#profile" data-toggle="tab">Profile</a>
 		</li>
 		<li><a href="#cars" data-toggle="tab">Cars</a></li>
-		<li><a href="#maps" data-toggle="tab">Maps</a></li>
+		<li><a href="#maps" data-toggle="tab">My Car location</a></li>
 	</ul>
 	
 	<br>
@@ -103,7 +103,7 @@
 												<td><strong>Brand</strong></td>
 												<td><?php echo h($user['Car'][$num]['brand']); ?></td>
 												<td><strong>Price</strong></td>
-												<td><?php echo h($user['Car'][$num]['rate']); ?></td>
+												<td><?php echo '$'.h($user['Car'][$num]['rate']).'.00'; ?></td>
 											</tr>
 											<tr>
 												<td><strong>License plate</strong></td>
@@ -200,8 +200,59 @@
 
 
 
-					<?php echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+					<?php //echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
 
+					<script type="text/javascript"
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
+					</script>
+
+					<script type="text/javascript">
+
+					function initialize() {
+
+						var position = new google.maps.LatLng(1.3024213, 103.839922);
+						var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
+
+						var mapOptions = {
+							'center' : new google.maps.LatLng(1.352083, 103.819836),
+							'zoom' : 12
+						};
+
+						var map = new google.maps.Map(document.getElementById("map-canvas"),
+							mapOptions);
+
+						<?php $num = 0; 
+						$n = ($user['Car']);
+						foreach ($n as $car): ?>
+
+						var marker = new google.maps.Marker({
+							'position' : new google.maps.LatLng(<?php echo $user['Car'][$num]['lat']; ?>, <?php echo $user['Car'][$num]['lng']; ?>),
+							'map' : map,
+							'icon' : image,
+							'animation' : google.maps.Animation.DROP
+						});
+
+						var infowindow = new google.maps.InfoWindow({
+							content: '<?php echo $user['User']['username'] .' `s'; ?> Cars'
+						});
+
+						google.maps.event.addListener(marker, 'click', function() {
+							infowindow.open(marker.get('map'), marker);
+						});
+
+						<?php $num++; ?>
+						<?php endforeach; ?>
+						<?php unset($car); ?>
+
+					}
+
+					google.maps.event.addDomListener(window, 'load', initialize);
+					</script>
+
+					<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+
+
+<!-- 'Hello World Map <?php //echo $num; ?>'  -->
 
 				</fieldset>
 			</form>
