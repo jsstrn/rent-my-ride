@@ -113,10 +113,10 @@ class CarsController extends AppController {
 	    	$this->Car->id = $id;
 	        
 	        if ($this->Car->save($this->request->data)) {
-	            $this->Session->setFlash(__('Your car has been updated.', 'flash/success'));
-	            return $this->redirect(array('action' => 'index'));
+	            $this->Session->setFlash('Your car has been updated.', 'flash/success');
+	            return $this->redirect(array('controller' => 'pages', 'action' => '/'));
 	        }
-	        $this->Session->setFlash(__('Unable to update your car details.', 'flash/error'));
+	        $this->Session->setFlash('Unable to update your car details.', 'flash/error');
 	    }
 
 	    if (!$this->request->data) {

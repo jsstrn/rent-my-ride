@@ -79,8 +79,8 @@ function codeAddress() {
 		  		echo '<br>';
 		  		echo $this->Form->input('rate', array('class'=>'form-control'));
 		  		echo '<br>';
-		  		echo $this->Form->input('image', array('class'=>'form-control', 'type' => 'file'));
-		  		echo '<br>';
+		  		//echo $this->Form->input('image', array('class'=>'form-control', 'type' => 'file'));
+		  		//echo '<br>';
 		  		echo $this->Form->submit('Add Your Car', array('class'=>'btn btn-primary'));
 		  		echo '<br />';
 		  		echo $this->Form->button('Reset Form', array('type' => 'reset', 'class'=>'btn btn-danger'));
