@@ -95,7 +95,11 @@
 								<div class="panel-body">
 									<div class="col-md-3">
 										<div> </br>
+<<<<<<< HEAD
 											<img src="<?php echo $this->webroot . $picture['Picture']['0']['path'];?>" class="img-thumbnail center-block img-responsive">
+=======
+											<img src="<?php echo $this->webroot . $picture[$num]['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
+>>>>>>> 109376aae0a29520e7d28b4d41c34906f61e612a
 										</div>
 									</div>
 									<div class="col-md-9">
