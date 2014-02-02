@@ -79,7 +79,7 @@
 		<div class="tab-pane" id="cars">
 			<form id="edit-profile2" >
 				<fieldset>
-					<div class="row">
+					
 						<div class="col-md-8 col-sm-6">
 							<h3>You have <?php echo count($user['Car']);?> cars</h3>
 
@@ -95,7 +95,7 @@
 								<div class="panel-body">
 									<div class="col-md-3">
 										<div> </br>
-											<img src="<?php echo $this->webroot . $picture['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
+											<img src="<?php echo $this->webroot . $picture['Picture']['0']['path'];?>" class="img-thumbnail center-block img-responsive">
 										</div>
 									</div>
 									<div class="col-md-9">
@@ -165,7 +165,7 @@
 
 						</div>
 					</div>
-				</div>
+				
 				</fieldset>
 			</form>
 		</div>
