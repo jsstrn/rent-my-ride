@@ -280,8 +280,12 @@ class UsersController extends AppController {
 		    $this->request->data = $user;
 		}
 
+		$this->loadModel('Picture');
+		$picture = $this->Picture->findAllByUserId($id);
+
 		$this->set('user', $user);
 		$this->set('username', $username);
+		$this->set('picture', $picture);
 
 	}
 
