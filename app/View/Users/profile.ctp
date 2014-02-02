@@ -8,7 +8,7 @@
 	</ul>
 	
 	<br>
-	
+	<!-- Profile -->
 	<div class="tab-content">
 		<div class="tab-pane active" id="profile">
 			<form id="edit-profile">
@@ -74,7 +74,7 @@
 				</fieldset>
 			</form>
 		</div>
-
+		<!-- Car -->
 		<div class="tab-pane" id="cars">
 			<form id="edit-profile2" >
 				<fieldset>
@@ -118,9 +118,36 @@
 												<td><?php echo h($user['Car'][$num]['engine_capacity']); ?></td>
 											</tr></br>
 										</table>
+										<div class="pull-right">
+											<?php echo $this->Html->link('Edit this car',
+											array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
+											array('class' => 'btn btn-primary')); ?>
+											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
+												'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
+										</div>
 									</div>
 								</div>
 							</div>
+							<!-- Modal -->
+							<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							        <h4 class="modal-title" id="model-label">Confirmation</h4>
+							      </div>
+							      <div class="modal-body">
+							      	<p>Are you sure you want remove this car? This action cannot be undone.</p>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+							        <?php echo $this->Html->link('Remove this car',
+							        	array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
+							        	array('class' => 'btn btn-danger')); ?>
+							      </div>
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 							<?php $car ++; 
 							$num ++; 
 							endforeach;

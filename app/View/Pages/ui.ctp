@@ -25,6 +25,9 @@
   <i class="glyphicon glyphicon-star"></i> Starry
 </button>
 
+<i class="fa fa-star"></i>
+<i class="glyphicon glyphicon-star"></i>
+
 <br><br><hr><br>
 
 <h2>Dashboard</h2>

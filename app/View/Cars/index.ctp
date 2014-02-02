@@ -54,7 +54,8 @@
 				<?php endforeach; ?>
 		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . " | " . 
 			$this->Html->link('Edit', 'edit/' . $car['Car']['id']) . " | " . 
-			$this->Form->postLink('Delete', 'delete/' . $car['Car']['id']); ?></td>
+			$this->Form->postLink('Delete', array('action' => 'delete', $car['Car']['id']),
+				array('confirm' => 'Are you sure?')); ?></td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
