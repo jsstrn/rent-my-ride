@@ -37,7 +37,7 @@ function codeAddress() {
 					echo '<input class="form-control" id="address" type="text" placeholder="Type Your Car\'s Location" autofocus="true">';
 		  			echo '<br>';
 		  			echo $this->Form->create('Car', array('type' => 'post'));
-		  			echo '<textarea class="form-control" id="DisplayAddress" row="2" placeholder="Address" disabled></textarea>';
+		  			echo '<textarea class="form-control" id="DisplayAddress" row="2" placeholder="Address" style="display:none" disabled></textarea>';
 		  			echo '<br />';
 		  			echo $this->Form->input('formatted_address', $options = array('class'=>'form-control'));
 		  			echo $this->Form->input('lat', $options = array('class'=>'form-control', 'type'=>'hidden'));
