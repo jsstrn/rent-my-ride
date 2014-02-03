@@ -6,12 +6,7 @@ class User extends AppModel {
 
 	public $hasOne = 'Upload';
 
-	public $belongsTo = array(
-		'Group' => array(
-			'className' => 'Group',
-			'foreignKey' => 'group_id'
-			)
-		);
+	public $belongsTo = array('Group');
 
 	public $hasMany = array(
 		'Car' => array(
@@ -28,8 +23,8 @@ class User extends AppModel {
 			)
 		);
 
-	var $actsAs = array('Searchable.Searchable');
-    //public $actsAs = array('Acl' => array('type' => 'requester'));
+	//var $actsAs = array('Searchable.Searchable');
+    public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
         if (!$this->id && empty($this->data)) {
