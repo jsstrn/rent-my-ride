@@ -262,6 +262,7 @@ class UsersController extends AppController {
 
 		$user = $this->User->findById($id);
 		$username = $this->User->Comment->findAllByFromsender($this->Auth->User('username'));
+		$cars = $this->User->Car->findAllByUserId($id);
 
 		if (!$user) {
 			throw new NotFoundException(__('Invalid Request'));
@@ -284,6 +285,7 @@ class UsersController extends AppController {
 		$picture = $this->Picture->findAllByUserId($id);
 
 		$this->set('user', $user);
+		$this->set('cars', $cars);
 		$this->set('username', $username);
 		$this->set('picture', $picture);
 

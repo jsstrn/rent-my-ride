@@ -123,140 +123,150 @@
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
 												array('class' => 'btn btn-primary')); ?>
 											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
-												'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
+											'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
 										</div>
 									</div>
 								</div>
 							</div>
 							<!-- Modal -->
 							<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							        <h4 class="modal-title" id="model-label">Confirmation</h4>
-							      </div>
-							      <div class="modal-body">
-							      	<p>Are you sure you want remove this car? This action cannot be undone.</p>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-							        <?php echo $this->Html->link('Remove this car',
-							        	array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
-							        	array('class' => 'btn btn-danger')); ?>
-							      </div>
-							    </div><!-- /.modal-content -->
-							  </div><!-- /.modal-dialog -->
-							</div><!-- /.modal -->
-							<?php $car ++; 
-							$num ++; 
-							endforeach;
-							unset($total); ?>
-						</div><!-- .col -->
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title" id="model-label">Confirmation</h4>
+										</div>
+										<div class="modal-body">
+											<p>Are you sure you want remove this car? This action cannot be undone.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+											<?php echo $this->Html->link('Remove this car',
+												array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
+												array('class' => 'btn btn-danger')); ?>
+											</div>
+										</div><!-- /.modal-content -->
+									</div><!-- /.modal-dialog -->
+								</div><!-- /.modal -->
+								<?php $car ++; 
+								$num ++; 
+								endforeach;
+								unset($total); ?>
+							</div><!-- .col -->
 
-						<div class="col-md-4 col-sm-6">
-							<div class="well">
+							<div class="col-md-4 col-sm-6">
+								<div class="well">
 
-								<h4>Extra Info</h4>
-								<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-									<li class="active">
+									<h4>Extra Info</h4>
+									<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+										<li class="active">
 
-										<a href="#cars" </a>
-											<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
-											Cars owned
-										</a>
-									</li>
+											<a href="#cars" </a>
+												<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
+												Cars owned
+											</a>
+										</li>
 
-									<li><a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
-										<span class="badge pull-right"><?php echo count($username); ?></span>
-										Sent Comments
-									</a></li>
-									<li>
-										<a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
-											<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
-											Received Comments
-										</a>
-									</li>
-								</ul>
+										<li><a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+											<span class="badge pull-right"><?php echo count($username); ?></span>
+											Sent Comments
+										</a></li>
+										<li>
+											<a href="<?php echo Router::url(array('controller'=>'comments', 'action'=>'index'))?>">
+												<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
+												Received Comments
+											</a>
+										</li>
+									</ul>
 
-								<h4>Profile picture</h4>
-								<img class="featurette-image img-responsive center-block"
-								<?php
-								if (!$user['Upload']['path']) {
-									echo 'data-src="holder.js/200x200"';
-								} else {
-									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
-								}?>>
-							</div>
-						</div><!-- .col -->
-					</div>
-				</fieldset>
-			</form>
-		</div>
+									<h4>Profile picture</h4>
+									<img class="featurette-image img-responsive center-block"
+									<?php
+									if (!$user['Upload']['path']) {
+										echo 'data-src="holder.js/200x200"';
+									} else {
+										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+									}?>>
+								</div>
+							</div><!-- .col -->
+						</div>
+					</fieldset>
+				</form>
+			</div>
 
-		<div class="tab-pane" id="maps">
-			<form id="edit-profile4" class="form-horizontal col-md-8">
-				<fieldset>
-
-
-
-					<?php //echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-
-					<script type="text/javascript"
-					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
-					</script>
-
-					<script type="text/javascript">
-
-					function initialize() {
-
-						var position = new google.maps.LatLng(1.3024213, 103.839922);
-						var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
-
-						var mapOptions = {
-							'center' : new google.maps.LatLng(1.352083, 103.819836),
-							'zoom' : 12
-						};
-
-						var map = new google.maps.Map(document.getElementById("map-canvas"),
-							mapOptions);
-
-						<?php $num = 0; 
-						$n = ($user['Car']);
-						foreach ($n as $car): ?>
-
-						var marker = new google.maps.Marker({
-							'position' : new google.maps.LatLng(<?php echo $user['Car'][$num]['lat']; ?>, <?php echo $user['Car'][$num]['lng']; ?>),
-							'map' : map,
-							'icon' : image,
-							'animation' : google.maps.Animation.DROP
-						});
-
-						var infowindow = new google.maps.InfoWindow({
-							content: '<?php echo $user['User']['username'] .' `s'; ?> Cars'
-						});
-
-						google.maps.event.addListener(marker, 'click', function() {
-							infowindow.open(marker.get('map'), marker);
-						});
-
-						<?php $num++; ?>
-						<?php endforeach; ?>
-						<?php unset($car); ?>
-
-					}
-
-					google.maps.event.addDomListener(window, 'load', initialize);
-					</script>
-
-					<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+			<div class="tab-pane" id="maps">
+				<form id="edit-profile4" class="form-horizontal col-md-8">
+					<fieldset>
 
 
-<!-- 'Hello World Map <?php //echo $num; ?>'  -->
 
-				</fieldset>
-			</form>
+						<?php //echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
+
+						<script type="text/javascript"
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
+						</script>
+
+						<script type="text/javascript">
+
+						function initialize() {
+
+							var position = new google.maps.LatLng(1.3024213, 103.839922);
+							var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
+
+							var mapOptions = {
+								'center' : new google.maps.LatLng(1.352083, 103.819836),
+								'zoom' : 12
+							};
+
+							var map = new google.maps.Map(document.getElementById("map-canvas"),
+								mapOptions);
+
+							<?php $num = 0; 
+							foreach ($cars as $car): ?>
+
+							var marker = new google.maps.Marker({
+								'position' : new google.maps.LatLng(<?php echo $car['Car']['lat']; ?>, <?php echo $car['Car']['lng']; ?>),
+								'map' : map,
+								'icon' : image,
+								'animation' : google.maps.Animation.DROP
+							});
+
+							var infowindow = new google.maps.InfoWindow({
+								content: '<?php echo $user['User']['username'] .' `s'; ?> Cars'
+							});
+
+							google.maps.event.addListener(marker, 'click', function() {
+								infowindow.open(marker.get('map'), marker);
+							});
+
+							<?php $num++; ?>
+							<?php endforeach; ?>
+							<?php unset($car); ?>
+
+
+						}
+
+						google.maps.event.addDomListener(window, 'load', initialize);
+
+						
+							if (activeTab=='#maps') { 
+								google.maps.event.trigger(map, 'resize');
+								var center = new google.maps.LatLng(1.352083,103.819836);
+       							map.setCenter(center);
+								map.setZoom( map.getZoom() );
+							}
+						
+
+						</script>
+
+						<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+
+
+						<!-- 'Hello World Map <?php //echo $num; ?>'  -->
+
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
 </br>
