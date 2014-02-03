@@ -111,7 +111,3 @@ CakeLog::config('error', array(
 
 CakePlugin::loadAll();
 
-CakePlugin::load('PaypalIpn');
-
-CakePlugin::load('Like', array('routes' => true));
-
