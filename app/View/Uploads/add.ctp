@@ -19,7 +19,7 @@
 	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<img
+				<img class="img-responsive center-block"
 				<?php
 					if (!$current_user['Upload']['path']) {
 						echo 'data-src="holder.js/200x200';
