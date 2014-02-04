@@ -7,11 +7,11 @@ class CarsController extends AppController {
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');
 
-	public function beforeFilter() {
+	/*public function beforeFilter() {
 
 		parent::beforeFilter();
 		$this->Auth->allow('search'); //allows unregistered users to search 
-	}
+	}*/
 
 	// public access
 	public function index() {
@@ -118,7 +118,14 @@ class CarsController extends AppController {
 	        
 	        if ($this->Car->save($this->request->data)) {
 	            $this->Session->setFlash('Your car has been updated.', 'flash/success');
-	            return $this->redirect(array('controller' => 'pages', 'action' => '/'));
+	            if ($this->Auth->user('group_id') == 1)
+	            {
+	            	return $this->redirect(array('action' => 'index'));
+	        	}
+	        	else
+	        	{
+	        		return $this->redirect(array('action' => 'search'));
+	        	}
 	        }
 	        $this->Session->setFlash('Unable to update your car details.', 'flash/error');
 	    }
@@ -141,7 +148,14 @@ class CarsController extends AppController {
 
 		if ($this->Car->delete($id)) {
 			$this->Session->setFlash('Your car has been removed.', 'flash/success');
-			$this->redirect(array('action' => 'index'));
+			if ($this->Auth->user('group_id') == 1)
+	        {
+				$this->redirect(array('action' => 'index'));
+			}
+			else
+			{
+				$this->redirect(array('action' => 'search'));
+			}
 		}
 
 		// // experimenting with SQL transactions

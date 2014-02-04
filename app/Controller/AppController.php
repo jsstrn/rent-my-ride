@@ -61,8 +61,8 @@ class AppController extends Controller {
           'controller' => 'pages',
           'action' => '/'
         );
-        $this->Auth->allow();
-        // $this->Auth->allow('index', 'view', 'display');
+        //$this->Auth->allow();
+        $this->Auth->allow('display');
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
     }

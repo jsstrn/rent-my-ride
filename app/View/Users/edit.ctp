@@ -28,8 +28,15 @@
 		echo '</div>';
 			?>
 </br>
-<?php echo $this->html->link('Back', array('action'=>'index'));?>
-
+<?php if ($current_user['group_id'] == 1)
+{
+	echo $this->html->link('Back', array('action'=>'index'));
+}
+else
+{
+	echo $this->html->link('Back', array('action'=>'search'));
+}
+?>
 					</div>
 				</div>
 			</div>

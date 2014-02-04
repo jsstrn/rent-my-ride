@@ -12,7 +12,7 @@
 						<?php echo $this->Form->input('group_id', array(
 							'type' => 'select', 
 							'label' => 'Role', 
-							'options' => array('1' => 'Admin', '2' => 'User'),
+							'options' => $a,
 							'empty' => 'Choose one',
 							'required'=>'false',
 							'class' => 'form-control'

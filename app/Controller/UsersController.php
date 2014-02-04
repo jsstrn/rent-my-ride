@@ -43,6 +43,9 @@ class UsersController extends AppController {
 	// admin access only 
 	public function add() {
 	
+		$this->loadModel('Group');
+		$a = $this->Group->find('list', array('fields' => array('Group.id', 'Group.name')));
+		$this->set('a', $a);
 
 		if ($this->request->is('POST'))
 		{
@@ -85,7 +88,15 @@ class UsersController extends AppController {
 		    $this->User->id = $id;
 		    if ($this->User->save($this->request->data)) {
 		        $this->Session->setFlash('Your details have been updated.', 'flash/success');
-		        return $this->redirect(array('controller' => 'pages', 'action' => '/'));
+		        if ($this->Auth->user('group_id') == 1)
+		        {
+		        	return $this->redirect(array('action' => 'index'));
+		        }
+		        else
+		        {
+		        	return $this->redirect(array('action' => 'search'));
+		        }
+		        
 		    }
 		    $this->Session->setFlash('Unable to update your user details.', 'flash/error');
 		}
@@ -236,15 +247,30 @@ class UsersController extends AppController {
     	//allow Users to do the following...
    	 	$group->id = 2;
     	$this->Acl->deny($group, 'controllers');
-    	$this->Acl->allow($group, 'controllers/Posts/add');
-    	$this->Acl->allow($group, 'controllers/Posts/edit');
-    	$this->Acl->allow($group, 'controllers/Uploads/add');
-    	$this->Acl->allow($group, 'controllers/Users/search');
-		$this->Acl->allow($group, 'controllers/Users/upload'); 
-		$this->Acl->allow($group, 'controllers/Events/add');
-		$this->Acl->allow($group, 'controllers/Events/confirm');
+    	$this->Acl->allow($group, 'controllers/Comments/add');
+    	$this->Acl->allow($group, 'controllers/Comments/index');
+    	$this->Acl->allow($group, 'controllers/Comments/support');
+    	$this->Acl->allow($group, 'controllers/Events/add');
+		$this->Acl->allow($group, 'controllers/Events/index'); 
+		$this->Acl->allow($group, 'controllers/Events/payment');
 		$this->Acl->allow($group, 'controllers/Events/success');
+		$this->Acl->allow($group, 'controllers/Groups/index');
+		$this->Acl->allow($group, 'controllers/Cars/add');
+		$this->Acl->allow($group, 'controllers/Cars/edit');
+		$this->Acl->allow($group, 'controllers/Cars/map');
 		$this->Acl->allow($group, 'controllers/Cars/search');
+		$this->Acl->allow($group, 'controllers/Pictures/add');
+		$this->Acl->allow($group, 'controllers/Pictures/index');
+		$this->Acl->allow($group, 'controllers/Reviews/add');
+		$this->Acl->allow($group, 'controllers/Uploads/add');
+		$this->Acl->allow($group, 'controllers/Uploads/index');
+		$this->Acl->allow($group, 'controllers/Users/edit');
+		$this->Acl->allow($group, 'controllers/Users/profile');
+		$this->Acl->allow($group, 'controllers/Users/search');
+		$this->Acl->allow($group, 'controllers/Users/view');
+		$this->Acl->allow($group, 'controllers/Cars/view');
+		$this->Acl->allow($group, 'controllers/Comments/view');
+		$this->Acl->allow($group, 'controllers/Groups/view');
     	
     	//we add an exit to avoid an ugly "missing views" error message
     	echo "all done";

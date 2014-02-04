@@ -85,7 +85,14 @@ function codeAddress() {
 		  		echo '<br />';
 		  		echo $this->Form->button('Reset Form', array('type' => 'reset', 'class'=>'btn btn-danger'));
 		  		echo '<br /><br />';
-		  		echo '<button class="btn btn-default">' . $this->Html->link('Cancel', array('action' => 'index')) .'</button>';
+		  		if ($current_user['group_id'] == 1)
+				{
+		  			echo '<button class="btn btn-default">' . $this->Html->link('Cancel', array('action' => 'index')) .'</button>';
+		  		}
+		  		else
+		  		{
+		  			echo '<button class="btn btn-default">' . $this->Html->link('Cancel', array('action' => 'search')) .'</button>';
+		  		}
 		  		echo $this->Form->end();
 		  	?>
 		  </div><!-- .panel-body -->
