@@ -30,21 +30,37 @@
 <div class="row">
   <div class="col-lg-4 center-block">
     <img class="img-thumbnail img-responsive" src="<?php echo $this->webroot . 'img/main/man1.jpg' ;?>" alt="Generic placeholder image">
-    <h2>Robert Lamdha</h2>
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+    <h2>Robert Lam</h2>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <p class="lead">It's really easy to rent a car for the weekend. I highly recommend you try it.
+    </p>
+    <p><a class="btn btn-primary" href="<?php echo $this->webroot . 'users/register' ;?>" role="button">Sign up &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="img-thumbnail" src="<?php echo $this->webroot . 'img/main/woman.jpg' ;?>" alt="Generic placeholder image">
     <h2>Sarah Jacobs</h2>
-    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <p class="lead">Renting my car has given me a second source of income. And it's great for the environment too!</p>
+    <p><a class="btn btn-primary" href="<?php echo $this->webroot . 'users/register' ;?>" role="button">Sign up &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="img-thumbnail" src="<?php echo $this->webroot . 'img/main/man2.jpg' ;?>" alt="Generic placeholder image">
     <h2>Wilson Wong</h2>
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <p class="lead">I can rent a Ferarri for a day when I feel like pampering myself.</p>
+    <p><a class="btn btn-primary" href="<?php echo $this->webroot . 'users/register' ;?>" role="button">Sign up &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
 </div><!-- /.row -->
 </div>
