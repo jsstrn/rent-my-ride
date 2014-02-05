@@ -173,6 +173,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 											</tr></br>
 										</table>
 										<div class="pull-right">
+											<?php echo $this->Html->link('View Details', 'view/' . $user['Car'][$num]['id'], array('class' => 'btn btn-default')) ;?>
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
 												array('class' => 'btn btn-primary')); ?>
