@@ -104,12 +104,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										</a>
 									</li>
 
-									<li><a href="sent">
+									<li><a href="#sent">
 										<span class="badge pull-right"><?php echo count($username); ?></span>
 										Sent Comments
 									</a></li>
 									<li>
-										<a href="received">
+										<a href="#received">
 											<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
 											Received Comments
 										</a>
@@ -258,26 +258,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<fieldset>
 					<div class="row">
 						<div class="col-md-8 col-sm-6">
-							<h3>You have <?php echo count($user['Car']);?> cars</h3>
-							<?php $car = 1;
+							<h3>You have <?php echo count($user['Comment']);?> received comments</h3>
+							<?php $comment = 1;
 							$num = 0; 
-							$n = ($user['Car']);
+							$n = ($user['Comment']);
 							foreach($n as $total): ?>
 							<div class="panel panel-default"> 
 								<div class="panel-heading">	
-									<h3 class="panel-title">Car #<?php echo $car; ?></h3>
+									<h3 class="panel-title">Received Comments #<?php echo $comment; ?></h3>
 								</div>
 								<div class="panel-body">
-									<div class="col-md-3">
+									<div class="col-md-12">
 										<div> </br>
+										<table class="table table-hover">
+											<tr>
+											<th>Title</th>
+											<th>Body</th>
+											<th class="pull-right">Sender</th>
+											</tr>
 
-											<img src="<?php echo $this->webroot . $picture[$num]['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
+											<tr>
+											<td><?php echo $user['Comment'][$num]['title']; ?></td>
+											<td><?php echo $user['Comment'][$num]['body']; ?></td>
+											<td class="pull-right"><?php echo $user['Comment'][$num]['fromsender']; ?></td>
+										</table>	
 
 										</div>
-									</div>
-									<div class="col-md-9">
-										
-
 										<div class="pull-right">
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
@@ -308,7 +314,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										</div><!-- /.modal-content -->
 									</div><!-- /.modal-dialog -->
 								</div><!-- /.modal -->
-								<?php $car ++; 
+								<?php $comment ++; 
 								$num ++; 
 								endforeach;
 								unset($total); ?>
@@ -362,27 +368,31 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<fieldset>
 					<div class="row">
 						<div class="col-md-8 col-sm-6">
-							<h3>You have <?php echo count($user['Car']);?> cars</h3>
-							<?php $car = 1;
+							<h3>You have <?php echo count($username);?> sent comments</h3>
+							<?php $comment = 1;
 							$num = 0; 
-							$n = ($user['Car']);
+							$n = ($username);
 							foreach($n as $total): ?>
 							<div class="panel panel-default"> 
 								<div class="panel-heading">	
-									<h3 class="panel-title">Car #<?php echo $car; ?></h3>
+									<h3 class="panel-title">Sent Comments #<?php echo $comment; ?></h3>
 								</div>
 								<div class="panel-body">
-									<div class="col-md-3">
+									<div class="col-md-12">
 										<div> </br>
+										<table class="table table-striped">
+											<tr>
+											<th>Title</th>
+											<th>Body</th>
+											<th class="pull-right">Sender</th>
+											</tr>
 
-											<img src="<?php echo $this->webroot . $picture[$num]['Picture']['path'];?>" class="img-thumbnail center-block img-responsive">
-
+											<tr>
+											<td><?php echo $username[$num]['Comment']['title']; ?></td>
+											<td><?php echo $username[$num]['Comment']['body']; ?></td>
+											<td class="pull-right"><?php echo $username[$num]['Comment']['fromsender']; ?></td>
+										</table>	
 										</div>
-									</div>
-									<div class="col-md-9">
-										
-										
-
 										<div class="pull-right">
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
@@ -413,7 +423,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										</div><!-- /.modal-content -->
 									</div><!-- /.modal-dialog -->
 								</div><!-- /.modal -->
-								<?php $car ++; 
+								<?php $comment ++; 
 								$num ++; 
 								endforeach;
 								unset($total); ?>
