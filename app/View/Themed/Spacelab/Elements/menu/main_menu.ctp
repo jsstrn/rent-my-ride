@@ -95,7 +95,7 @@
 		<?php endif; ?>
 
 		<?php if (!$logged_in): ?>
-		<li><?php echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')); ?>
+		<li><?php echo $this->Html->link('Login | Signup', array('controller' => 'users', 'action' => 'login')); ?>
 		</li>
 		<?php endif; ?>
 
