@@ -44,6 +44,20 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 				} 
 				?>
 			</div>
+			<div class="pull-right">
+				<?php echo $this->Html->link('Submit Review', array(
+					'controller' => 'reviews',
+					'action' => 'add',
+					$car['Car']['id']),
+					array('class' => 'btn btn-primary'))
+				;?>
+				<?php echo $this->Html->link('Book Now', array(
+					'controller' => 'events',
+					'action' => 'add',
+					$car['Car']['id']),
+					array('class' => 'btn btn-success'))
+				;?>
+			</div>
 		</div>
 		<?php if ($current_user['group_id'] == 1)
 		{
