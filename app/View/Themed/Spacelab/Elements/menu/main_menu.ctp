@@ -110,11 +110,11 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/users/profile/<?php echo $current_user['id']; ?>">My Profile</a></li>
-				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My Groups</a></li>
-				<li><a href="/rentmyride/uploads">Upload Profile Picture</a></li>
-				<li><a href="/rentmyride/users/search">Search Users</a></li>
-				<li><a href="/rentmyride/comments/support">Report A Problem</a></li>
+				<li><a href="/rentmyride/users/profile/<?php echo $current_user['id']; ?>">My profile</a></li>
+				<li><a href="/rentmyride/groups/view/<?php echo $current_user['group_id']; ?>">My groups</a></li>
+				<li><a href="/rentmyride/uploads">Upload new photo</a></li>
+				<li><a href="/rentmyride/users/search">Search users</a></li>
+				<li><a href="/rentmyride/comments/support">Report an issue</a></li>
 				<li class="divider"></li>
 				<li><a href="/rentmyride/users/logout">Logout</a></li>
 			</ul>
