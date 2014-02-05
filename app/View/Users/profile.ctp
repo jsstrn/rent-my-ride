@@ -117,13 +117,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 								</ul>
 
 								<h4>Profile picture</h4>
-								<img class="featurette-image img-responsive center-block"
+								<img class="img-circle img-responsive"
 								<?php
 								if (!$user['Upload']['path']) {
-									echo 'src="' . $this->webroot . 'img/users/default.png"';
+									echo 'data-src="holder.js/300x300"';
 								} else {
 									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
-								}?>>
+								}
+								?>>
 							</div>
 						</div>
 					</div>	
@@ -238,13 +239,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									</ul>
 
 									<h4>Profile picture</h4>
-									<img class="featurette-image img-responsive center-block"
+									<img class="img-circle img-responsive"
 									<?php
 									if (!$user['Upload']['path']) {
-										echo 'data-src="holder.js/200x200"';
+										echo 'data-src="holder.js/300x300"';
 									} else {
 										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
-									}?>>
+									}
+									?>>
 								</div>
 							</div><!-- .col -->
 						</div>
@@ -253,232 +255,179 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			</div>
 
 			<!-- Received comments -->
-		<div class="tab-pane" id="received">
-			<form id="edit-profile2" >
-				<fieldset>
-					<div class="row">
-						<div class="col-md-8 col-sm-6">
-							<h3>You have <?php echo count($user['Comment']);?> received comments</h3>
-							<?php $comment = 1;
-							$num = 0; 
-							$n = ($user['Comment']);
-							foreach($n as $total): ?>
-							<div class="panel panel-default"> 
-								<div class="panel-heading">	
-									<h3 class="panel-title">Received Comments #<?php echo $comment; ?></h3>
-								</div>
-								<div class="panel-body">
-									<div class="col-md-12">
-										<div> </br>
-										<table class="table table-hover">
-											<tr>
-											<th>Title</th>
-											<th>Body</th>
-											<th class="pull-right">Sender</th>
-											</tr>
-
-											<tr>
-											<td><?php echo $user['Comment'][$num]['title']; ?></td>
-											<td><?php echo $user['Comment'][$num]['body']; ?></td>
-											<td class="pull-right"><?php echo $user['Comment'][$num]['fromsender']; ?></td>
-										</table>	
-
-										</div>
-										<div class="pull-right">
-											<?php echo $this->Html->link('Edit this car',
-												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
-												array('class' => 'btn btn-primary')); ?>
-											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
-											'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Modal -->
-							<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title" id="model-label">Confirmation</h4>
-										</div>
-										<div class="modal-body">
-											<p>Are you sure you want remove this car? This action cannot be undone.</p>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-											<?php echo $this->Html->link('Remove this car',
-												array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
-												array('class' => 'btn btn-danger')); ?>
-											</div>
-										</div><!-- /.modal-content -->
-									</div><!-- /.modal-dialog -->
-								</div><!-- /.modal -->
-								<?php $comment ++; 
-								$num ++; 
-								endforeach;
-								unset($total); ?>
-							</div><!-- .col -->
-
-							<div class="col-md-4 col-sm-6">
-								<div class="well">
-
-									<h4>Extra Info</h4>
-									<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-										<li>
-
-											<a href="#cars" </a>
-												<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
-												Cars owned
-											</a>
-										</li>
-										
-										<li>
-										    <a href="#sent" </a>
-											<span class="badge pull-right"><?php echo count($username); ?></span>
-											Sent Comments
-										</a></li>
-
-										<li class="active">
-											<a href="#received">
-												<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
-												Received Comments
-											</a>
-										</li>
-									</ul>
-
-									<h4>Profile picture</h4>
-									<img class="featurette-image img-responsive center-block"
-									<?php
-									if (!$user['Upload']['path']) {
-										echo 'data-src="holder.js/200x200"';
-									} else {
-										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
-									}?>>
-								</div>
-							</div><!-- .col -->
-						</div>
-					</fieldset>
-				</form>
-			</div>
-
-			<!-- Sent comments -->
-		<div class="tab-pane" id="sent">
-			<form id="edit-profile2" >
-				<fieldset>
-					<div class="row">
-						<div class="col-md-8 col-sm-6">
-							<h3>You have <?php echo count($username);?> sent comments</h3>
-							<?php $comment = 1;
-							$num = 0; 
-							$n = ($username);
-							foreach($n as $total): ?>
-							<div class="panel panel-default"> 
-								<div class="panel-heading">	
-									<h3 class="panel-title">Sent Comments #<?php echo $comment; ?></h3>
-								</div>
-								<div class="panel-body">
-									<div class="col-md-12">
-										<div> </br>
-										<table class="table table-striped">
-											<tr>
-											<th>Title</th>
-											<th>Body</th>
-											<th class="pull-right">Sender</th>
-											</tr>
-
-											<tr>
-											<td><?php echo $username[$num]['Comment']['title']; ?></td>
-											<td><?php echo $username[$num]['Comment']['body']; ?></td>
-											<td class="pull-right"><?php echo $username[$num]['Comment']['fromsender']; ?></td>
-										</table>	
-										</div>
-										<div class="pull-right">
-											<?php echo $this->Html->link('Edit this car',
-												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
-												array('class' => 'btn btn-primary')); ?>
-											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
-											'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Modal -->
-							<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title" id="model-label">Confirmation</h4>
-										</div>
-										<div class="modal-body">
-											<p>Are you sure you want remove this car? This action cannot be undone.</p>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-											<?php echo $this->Html->link('Remove this car',
-												array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
-												array('class' => 'btn btn-danger')); ?>
-											</div>
-										</div><!-- /.modal-content -->
-									</div><!-- /.modal-dialog -->
-								</div><!-- /.modal -->
-								<?php $comment ++; 
-								$num ++; 
-								endforeach;
-								unset($total); ?>
-							</div><!-- .col -->
-
-							<div class="col-md-4 col-sm-6">
-								<div class="well">
-
-									<h4>Extra Info</h4>
-									<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-										<li>
-
-											<a href="#cars" </a>
-												<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
-												Cars owned
-											</a>
-										</li>
-										
-										<li class="active">
-										    <a href="#sent" </a>
-											<span class="badge pull-right"><?php echo count($username); ?></span>
-											Sent Comments
-										</a></li>
-										<li>
-											<a href="#received">
-												<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
-												Received Comments
-											</a>
-										</li>
-									</ul>
-
-									<h4>Profile picture</h4>
-									<img class="featurette-image img-responsive center-block"
-									<?php
-									if (!$user['Upload']['path']) {
-										echo 'src="' . $this->webroot . 'img/users/default.png"';
-									} else {
-										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
-									}?>>
-								</div>
-							</div><!-- .col -->
-						</div>
-					</fieldset>
-				</form>
-			</div>
-
-			<div class="tab-pane" id="maps">
-				<form id="edit-profile4" class="form-horizontal col-md-8">
+			<div class="tab-pane" id="received">
+				<form id="edit-profile2" >
 					<fieldset>
+						<div class="row">
+							<div class="col-md-8 col-sm-6">
+								<h3>You have <?php echo count($user['Comment']);?> received comments</h3>
+								<?php $comment = 1;
+								$num = 0; 
+								$n = ($user['Comment']);
+								foreach($n as $total): ?>
+								<div class="panel panel-default"> 
+									<div class="panel-heading">	
+										<h3 class="panel-title">Received Comments #<?php echo $comment; ?></h3>
+									</div>
+									<div class="panel-body">
+										<div class="col-md-12">
+											<div> </br>
+												<table class="table table-hover">
+													<tr>
+														<th>Title</th>
+														<th>Body</th>
+														<th class="pull-right">Sender</th>
+													</tr>
 
-						<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+													<tr>
+														<td><?php echo $user['Comment'][$num]['title']; ?></td>
+														<td><?php echo $user['Comment'][$num]['body']; ?></td>
+														<td class="pull-right"><?php echo $user['Comment'][$num]['fromsender']; ?></td>
+													</table>	
+												</div>
+											</div>
+										</div>
+									</div>
+										<?php $comment ++; 
+										$num ++; 
+										endforeach;
+										unset($total); ?>
+									</div><!-- .col -->
 
-					</fieldset>
-				</form>
-			</div>
-		</div>
-	</div>
-</br>
+									<div class="col-md-4 col-sm-6">
+										<div class="well">
+
+											<h4>Extra Info</h4>
+											<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+												<li>
+
+													<a href="#cars" </a>
+														<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
+														Cars owned
+													</a>
+												</li>
+
+												<li>
+													<a href="#sent" </a>
+														<span class="badge pull-right"><?php echo count($username); ?></span>
+														Sent Comments
+													</a></li>
+
+													<li class="active">
+														<a href="#received">
+															<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
+															Received Comments
+														</a>
+													</li>
+												</ul>
+
+												<h4>Profile picture</h4>
+												<img class="img-circle img-responsive"
+												<?php
+												if (!$user['Upload']['path']) {
+													echo 'data-src="holder.js/300x300"';
+												} else {
+													echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+												}
+												?>>
+											</div>
+										</div><!-- .col -->
+									</div>
+								</fieldset>
+							</form>
+						</div>
+
+						<!-- Sent comments -->
+						<div class="tab-pane" id="sent">
+							<form id="edit-profile2" >
+								<fieldset>
+									<div class="row">
+										<div class="col-md-8 col-sm-6">
+											<h3>You have <?php echo count($username);?> sent comments</h3>
+											<?php $comment = 1;
+											$num = 0; 
+											$n = ($username);
+											foreach($n as $total): ?>
+											<div class="panel panel-default"> 
+												<div class="panel-heading">	
+													<h3 class="panel-title">Sent Comments #<?php echo $comment; ?></h3>
+												</div>
+												<div class="panel-body">
+													<div class="col-md-12">
+														<div> </br>
+															<table class="table table-striped">
+																<tr>
+																	<th>Title</th>
+																	<th>Body</th>
+																	<th class="pull-right">Sender</th>
+																</tr>
+
+																<tr>
+																	<td><?php echo $username[$num]['Comment']['title']; ?></td>
+																	<td><?php echo $username[$num]['Comment']['body']; ?></td>
+																	<td class="pull-right"><?php echo $username[$num]['Comment']['fromsender']; ?></td>
+																</table>	
+															</div>
+														</div>
+													</div>
+												</div>
+													<?php $comment ++; 
+													$num ++; 
+													endforeach;
+													unset($total); ?>
+												</div><!-- .col -->
+
+												<div class="col-md-4 col-sm-6">
+													<div class="well">
+
+														<h4>Extra Info</h4>
+														<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+															<li>
+
+																<a href="#cars" </a>
+																	<span class="badge pull-right"><?php echo count($user['Car']); ?></span>
+																	Cars owned
+																</a>
+															</li>
+
+															<li class="active">
+																<a href="#sent" </a>
+																	<span class="badge pull-right"><?php echo count($username); ?></span>
+																	Sent Comments
+																</a></li>
+																<li>
+																	<a href="#received">
+																		<span class="badge pull-right"><?php echo count($user['Comment']); ?></span>
+																		Received Comments
+																	</a>
+																</li>
+															</ul>
+
+															<h4>Profile picture</h4>
+															<img class="img-circle img-responsive"
+															<?php
+															if (!$user['Upload']['path']) {
+																echo 'data-src="holder.js/300x300"';
+															} else {
+																echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
+															}
+															?>>
+														</div>
+													</div><!-- .col -->
+												</div>
+											</fieldset>
+										</form>
+									</div>
+
+									<div class="tab-pane" id="maps">
+										<form id="edit-profile4" class="form-horizontal col-md-8">
+											<fieldset>
+
+												<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
+
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</br>
