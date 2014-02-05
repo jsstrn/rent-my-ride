@@ -21,12 +21,11 @@
 			<div class="panel-body">
 				<img class="img-responsive center-block"
 				<?php
-					if (!$current_user['Upload']['path']) {
-						echo 'data-src="holder.js/200x200';
-					} else {
-						echo 'src="' . $this->webroot . $current_user['Upload']['path'] . '"';
-					}
-				?>>
+				if (!$current_user['Upload']['path']) {
+					echo 'src="' . $this->webroot . 'img/users/default.png"';
+				} else {
+					echo 'src="' . $this->webroot . $current_user['Upload']['path'] . '"';
+				}?>>
 			</div>
 		</div>
 	</div>

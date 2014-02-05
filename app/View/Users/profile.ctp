@@ -118,7 +118,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 								<img class="featurette-image img-responsive center-block"
 								<?php
 								if (!$user['Upload']['path']) {
-									echo 'data-src="holder.js/200x200"';
+									echo 'src="' . $this->webroot . 'img/users/default.png"';
 								} else {
 									echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 								}?>>
@@ -173,7 +173,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 											</tr></br>
 										</table>
 										<div class="pull-right">
-											<?php echo $this->Html->link('View Details', 'view/' . $user['Car'][$num]['id'], array('class' => 'btn btn-default')) ;?>
+											<?php echo $this->Html->link('View Details', 'view/' . $user['Car'][$num]['id'], array('class' => 'btn btn-primary')) ;?>
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
 												array('class' => 'btn btn-primary')); ?>
@@ -238,7 +238,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									<img class="featurette-image img-responsive center-block"
 									<?php
 									if (!$user['Upload']['path']) {
-										echo 'data-src="holder.js/200x200"';
+										echo 'src="' . $this->webroot . 'img/users/default.png"';
 									} else {
 										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 									}?>>

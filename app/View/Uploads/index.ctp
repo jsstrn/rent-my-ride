@@ -14,7 +14,13 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="well">
-				<img class="img-responsive" src="<?php echo $this->webroot . $upload['Upload']['path'];?>">
+				<img class="img-responsive center-block"
+				<?php
+				if (!$upload['Upload']['path']) {
+					echo $this->webroot . 'img/users/default.png"';
+				} else {
+					echo 'src="' . $this->webroot . $upload['Upload']['path'] . '"';
+				}?>>
 			</div>			
 		</div>
 	</div>

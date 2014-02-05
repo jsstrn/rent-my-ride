@@ -22,8 +22,13 @@
   </div>
   <div class="panel-body">
    	<div class="col-md-3">
-   		<img data-src="holder.js/200x200" class="img-thumbnail center-block" src="<?php echo $upload['Car']['image'];?>">
-   		<?php // echo $car['Car']['image']; ?>
+   		<img class="img-responsive center-block"
+   		<?php
+   		if (!$cars[$num - 1]['Picture']['path']) {
+   			echo 'data-src="holder.js/200x200"';
+   		} else {
+   			echo 'src="' . $this->webroot . $cars[$num - 1]['Picture']['path'] . '"';
+   		}?>>
    	</div>
 
 	<div class="col-md-9">
