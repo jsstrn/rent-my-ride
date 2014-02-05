@@ -62,7 +62,7 @@ class AppController extends Controller {
           'action' => '/'
         );
         //$this->Auth->allow();
-        $this->Auth->allow('display');
+        $this->Auth->allow('display', 'register');
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
     }
