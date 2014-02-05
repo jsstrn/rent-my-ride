@@ -22,10 +22,9 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/pages/started">How To Get Started</a></li>
-				<li><a href="/rentmyride/pages/about">About Us</a></li>
-				<li><a href="/rentmyride/pages/contact">Contact Us</a></li>
-				<li><a href="/rentmyride/pages/gallery">Gallery</a></li>
+				<li><a href="/rentmyride/pages/started">How it works</a></li>
+				<li><a href="/rentmyride/pages/about">About us</a></li>
+				<li><a href="/rentmyride/pages/contact">Contact us</a></li>
 				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 			</ul>
 			
@@ -42,11 +41,11 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/cars">View All Cars</a></li>
-				<li><a href="/rentmyride/users">View All Users</a></li>
-				<li><a href="/rentmyride/users/admin">Admin Panel</a></li>
-				<li><a href="/rentmyride/events/all">View All Events Booked</a></li>
-				<li><a href="/rentmyride/groups">List All Groups</a></li>
+				<li><a href="/rentmyride/cars">Car Directory</a></li>
+				<li><a href="/rentmyride/users">User Directory</a></li>
+				<li><a href="/rentmyride/users/admin">Admin Dashboard</a></li>
+				<li><a href="/rentmyride/events/all">Events Listing</a></li>
+				<li><a href="/rentmyride/groups">Group Management</a></li>
 			</ul>
 			
 		</li>
@@ -64,12 +63,12 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/cars/add">Add A Car</a></li>
-				<li><a href="/rentmyride/cars/search">Find A Car</a></li>
-				<li><a href="/rentmyride/events">Check Avaliability Of Cars</a></li>
-				<li><a href="/rentmyride/cars/map">View All Cars Location</a></li>
-				<li><a href="/rentmyride/pictures">Add Photos To Your Car</a></li>
-				<li><a href="/rentmyride/reviews/add">Add Review To A Car</a></li>
+				<li><a href="/rentmyride/cars/add">List your car</a></li>
+				<li><a href="/rentmyride/cars/search">Search for cars</a></li>
+				<li><a href="/rentmyride/events">Calendar</a></li>
+				<li><a href="/rentmyride/cars/map">Map view</a></li>
+				<li><a href="/rentmyride/pictures">Add car photos</a></li>
+				<li><a href="/rentmyride/reviews/add">Review cars</a></li>
 			</ul>
 			
 		</li>
@@ -87,8 +86,8 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="/rentmyride/Comments/">View All Comments</a></li>
-				<li><a href="/rentmyride/Comments/add">Add A Comment</a></li>
+				<li><a href="/rentmyride/Comments/">View all comments</a></li>
+				<li><a href="/rentmyride/Comments/add">Add a comment</a></li>
 			</ul>
 			
 		</li>
