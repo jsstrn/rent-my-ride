@@ -176,7 +176,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 											</tr></br>
 										</table>
 										<div class="pull-right">
-											<?php echo $this->Html->link('View Details', 'view/' . $user['Car'][$num]['id'], array('class' => 'btn btn-primary')) ;?>
+											<?php echo $this->Html->link('View Details', array('controller' => 'cars', 'action' => 'view', $user['Car'][$num]['id']), array('class' => 'btn btn-primary')) ;?>
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
 												array('class' => 'btn btn-primary')); ?>
@@ -381,30 +381,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									</div>
 									<div class="col-md-9">
 										
-										<table class='table table-striped'>
-											<tr>
-											<th>#</th>
-											<th>Title</th>
-											<th>Body</th>
-											<th>Sender</th>
-											<th>Actions</th>
-											</tr>
-
-											<?php $num = 1; ?>
-											<?php foreach($n as $post): ?>
-											<tr>
-											<td><?php echo $num; ?></td>
-											<td><?php echo $post['Comment']['title']; ?></td>
-											<td><?php echo $post['Comment']['body']; ?></td>
-											<td><?php echo $post['Comment']['fromsender']; ?></td>
-											<td><?php echo $this->html->link('View', array('action'=>'view', $post['Comment']['id'])) . " | " . 
-											$this->Html->link('Delete', array('action' => 'delete', $post['Comment']['id']), NULL, 'Are you sure you want to delete this comment?'); ?></td>
-											</tr>
-											<?php $num ++; ?>
-											<?php endforeach; ?>
-											<?php unset($post); ?>
-
-										</table>	
+										
 
 										<div class="pull-right">
 											<?php echo $this->Html->link('Edit this car',
