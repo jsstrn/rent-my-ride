@@ -32,7 +32,6 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::Connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq'));
-	Router::Connect('/gallery/*', array('controller' => 'pages', 'action' => 'display', 'gallery'));
 	Router::Connect('/home', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::Connect('/about', array('controller' => 'pages', 'action' => 'display', 'about'));
 	//Router::Connect('/contact', array('controller' => 'pages', 'action' => 'display', 'contact'));				

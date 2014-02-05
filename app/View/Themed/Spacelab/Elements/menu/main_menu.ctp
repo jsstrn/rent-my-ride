@@ -24,7 +24,6 @@
 			<ul class="dropdown-menu">
 				<li><a href="/rentmyride/pages/started">How it works</a></li>
 				<li><a href="/rentmyride/pages/about">About us</a></li>
-				<li><a href="/rentmyride/pages/contact">Contact us</a></li>
 				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 			</ul>
 			
