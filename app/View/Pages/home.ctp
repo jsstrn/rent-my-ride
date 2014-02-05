@@ -63,5 +63,5 @@
     <p><a class="btn btn-primary" href="<?php echo $this->webroot . 'users/register' ;?>" role="button">Sign up &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
 </div><!-- /.row -->
-</div>
+
 
