@@ -2,47 +2,6 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
 </script>
 
-<script type="text/javascript">
-$(document).ready(function calc() {
-
-	$('#calendar').fullCalendar({
-		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay'
-		},
-		firstDay: 1,
-		editable: false,
-		selectable: true,
-		eventColor: '#378006',
-		events: [
-
-		{
-			title: 'Today',
-			start: new Date(),
-			date: new Date(),
-			allDay: false,
-		},
-
-		<?php $count = 1; ?>
-		<?php foreach ($events as $event): ?>
-		<?php $datetime_start = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_start'] ); ?>
-		<?php $datetime_end = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_end'] ); ?>
-		<?php echo '{' ; ?>
-		<?php echo "title: \"" . 'Booked by ' . $event[$count]['User']['name'] . "\"," ; ?>
-		<?php echo "start: \"" . $datetime_start . "\"," ; ?>
-		<?php echo "end: \"" . $datetime_end . "\"," ; ?>
-		<?php echo "allDay: false"; ?>
-		<?php echo '},' ; ?>
-		<?php $count++; ?>
-		<?php endforeach; ?>
-		<?php unset($event); ?>
-
-		]
-	})
-});
-</script>
-
 <div class="page-header">
 	<h1>Car Profile</h1>
 </div>
@@ -226,4 +185,45 @@ $(document).ready(function calc() {
 	}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+
+	<script type="text/javascript">
+	$(document).ready(function calc() {
+
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			firstDay: 1,
+			editable: false,
+			selectable: true,
+			eventColor: '#378006',
+			events: [
+
+			{
+				title: 'Today',
+				start: new Date(),
+				date: new Date(),
+				allDay: false,
+			},
+
+			<?php $count = 1; ?>
+			<?php foreach ($events as $event): ?>
+			<?php $datetime_start = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_start'] ); ?>
+			<?php $datetime_end = date( 'Y-m-d H:i:s', $event[$count]['Event']['datetime_end'] ); ?>
+			<?php echo '{' ; ?>
+			<?php echo "title: \"" . 'Booked by ' . $event[$count]['User']['name'] . "\"," ; ?>
+			<?php echo "start: \"" . $datetime_start . "\"," ; ?>
+			<?php echo "end: \"" . $datetime_end . "\"," ; ?>
+			<?php echo "allDay: false"; ?>
+			<?php echo '},' ; ?>
+			<?php $count++; ?>
+			<?php endforeach; ?>
+			<?php unset($event); ?>
+
+			]
+		})
+	});
 	</script>

@@ -1,3 +1,57 @@
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
+</script>
+
+<script type="text/javascript">
+
+function initialize() {
+
+	var position = new google.maps.LatLng(1.3024213, 103.839922);
+	var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
+
+	var mapOptions = {
+		'center' : new google.maps.LatLng(1.352083, 103.819836),
+		'zoom' : 12
+	};
+
+	var map = new google.maps.Map(document.getElementById("map-canvas"),
+		mapOptions);
+
+	<?php $num = 0; 
+	foreach ($cars as $car): ?>
+
+	var marker = new google.maps.Marker({
+		'position' : new google.maps.LatLng(<?php echo $car[$num]['Car']['lat']; ?>, <?php echo $car[$num]['Car']['lng']; ?>),
+		'map' : map,
+		'icon' : image,
+		'animation' : google.maps.Animation.DROP
+	});
+
+	var infowindow = new google.maps.InfoWindow({
+		content: '<?php echo $user['User']['username'] .' `s'; ?> Cars'
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(marker.get('map'), marker);
+	});
+
+	<?php $num++; ?>
+	<?php endforeach; ?>
+	<?php unset($car); ?>
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+/*if (activeTab == '#map-canvas') { 
+	google.maps.event.trigger(map, 'resize');
+	var center = new google.maps.LatLng(1.352083,103.819836);
+		map.setCenter(center);
+	map.setZoom( map.getZoom() );
+}*/
+
+</script>
+
 <div class="tabbable">
 	<ul class="nav nav-tabs">
 		<li class="active">
@@ -198,71 +252,7 @@
 				<form id="edit-profile4" class="form-horizontal col-md-8">
 					<fieldset>
 
-
-
-						<?php //echo '<iframe width="1109" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://gothere.sg/maps#q:' . $user['User']['postal_code'] . '"></iframe>'; ?>
-
-						<script type="text/javascript"
-						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXxcFOsHUxg&sensor=false">
-						</script>
-
-						<script type="text/javascript">
-
-						function initialize() {
-
-							var position = new google.maps.LatLng(1.3024213, 103.839922);
-							var image = "<?php echo $this->webroot ;?>img/map/pin-red.png";
-
-							var mapOptions = {
-								'center' : new google.maps.LatLng(1.352083, 103.819836),
-								'zoom' : 12
-							};
-
-							var map = new google.maps.Map(document.getElementById("map-canvas"),
-								mapOptions);
-
-							<?php $num = 0; 
-							foreach ($cars as $car): ?>
-
-							var marker = new google.maps.Marker({
-								'position' : new google.maps.LatLng(<?php echo $car['Car']['lat']; ?>, <?php echo $car['Car']['lng']; ?>),
-								'map' : map,
-								'icon' : image,
-								'animation' : google.maps.Animation.DROP
-							});
-
-							var infowindow = new google.maps.InfoWindow({
-								content: '<?php echo $user['User']['username'] .' `s'; ?> Cars'
-							});
-
-							google.maps.event.addListener(marker, 'click', function() {
-								infowindow.open(marker.get('map'), marker);
-							});
-
-							<?php $num++; ?>
-							<?php endforeach; ?>
-							<?php unset($car); ?>
-
-
-						}
-
-						google.maps.event.addDomListener(window, 'load', initialize);
-
-						
-							if (activeTab=='#maps') { 
-								google.maps.event.trigger(map, 'resize');
-								var center = new google.maps.LatLng(1.352083,103.819836);
-       							map.setCenter(center);
-								map.setZoom( map.getZoom() );
-							}
-						
-
-						</script>
-
 						<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
-
-
-						<!-- 'Hello World Map <?php //echo $num; ?>'  -->
 
 					</fieldset>
 				</form>

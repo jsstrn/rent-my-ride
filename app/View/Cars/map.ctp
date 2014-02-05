@@ -11,7 +11,8 @@
 
     var mapOptions = {
       'center' : new google.maps.LatLng(1.352083, 103.819836),
-      'zoom' : 12
+      'zoom' : 12,
+      'scrollwheel': false,
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"),
@@ -31,17 +32,18 @@
       content: 'Hello World Map <?php echo $num; ?>'
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(marker.get('map'), marker);
-    });
-
     <?php $num++; ?>
     <?php endforeach; ?>
     <?php unset($car); ?>
 
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(marker.get('map'), marker);
+    });
+
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 
 <div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
