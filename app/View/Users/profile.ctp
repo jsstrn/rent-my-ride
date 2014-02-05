@@ -425,6 +425,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 												<div id="map-canvas" style="width: 1100px; height: 700px; margin: 0 auto;"/>
 
+
+
 											</fieldset>
 										</form>
 									</div>
