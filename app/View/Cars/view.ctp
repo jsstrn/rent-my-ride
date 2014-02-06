@@ -42,8 +42,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 				} else {
 					$ave = $total_ratings / $average;
 					echo'<center><h3><strong>' . $ave . ' Stars' . '</center></h3></strong>';
-					switch ($ave) {
-						case ($ave >= 1) :
+					$rave = round($ave);
+					switch ($rave) {
+						case ($rave == 1) :
 							echo '<center>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
 							echo '<span class="glyphicon glyphicon-star-empty"></span>';
@@ -52,7 +53,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 							echo '<span class="glyphicon glyphicon-star-empty"></span>';
 							echo '</center>';
 							break;
-						case ($ave >= 2) :
+						case ($rave == 2) :
 							echo '<center>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
@@ -61,7 +62,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 							echo '<span class="glyphicon glyphicon-star-empty"></span>';
 							echo '</center>';
 							break;
-						case ($ave >= 3) :
+						case ($rave == 3) :
 							echo '<center>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
@@ -70,7 +71,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 							echo '<span class="glyphicon glyphicon-star-empty"></span>';
 							echo '</center>';
 							break;
-						case ($ave >= 4) :
+						case ($rave == 4) :
 							echo '<center>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
@@ -79,7 +80,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 							echo '<span class="glyphicon glyphicon-star-empty"></span>';
 							echo '</center>';
 							break;
-						case ($ave >= 5) :
+						case ($rave == 5) :
 							echo '<center>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
 							echo '<span class="glyphicon glyphicon-star"></span>';
