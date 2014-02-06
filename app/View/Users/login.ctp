@@ -5,7 +5,7 @@
 <?php echo $this->Html->css('signin'); ?>
 
 <div class="container">
-<form class="form-signin" role="form" action="<? echo $this->webroot . '/users/login' ;?>" id="UserLoginForm" method="post" accept-charset="utf-8">
+<form class="form-signin" role="form" action="<? echo $this->webroot . 'users/login' ;?>" id="UserLoginForm" method="post" accept-charset="utf-8">
 	<h2 class="form-signin-heading">Please login</h2>
 	<input type="text" id="UserUsername" name="data[User][username]" class="form-control" placeholder="Username" required autofocus>
 	<input type="password" id="userPassword" name="data[User][password]" class="form-control" placeholder="Password" required>
