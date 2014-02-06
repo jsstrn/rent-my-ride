@@ -29,7 +29,7 @@ if ($current_user['username']!= $post['Comment']['fromsender']) {
 
 <h3> <p class="serif">"<?php echo $post['Comment']['title']; ?>"</p></h3> </br>
 
-<div class="pull-right">
+<div>
 <h4> <p class="serif"><?php echo $post['Comment']['body']; ?></p></h4>
 </div>
 	
