@@ -217,17 +217,17 @@
 									<div class="panel-body">
 										<div class="col-md-12">
 											<div> </br>
-												<table class="table table-hover">
+												<table class="table table-striped">
 													<tr>
 														<th>Title</th>
 														<th>Body</th>
-														<th class="pull-right">Sender</th>
+														<th>Sender</th>
 													</tr>
 
 													<tr>
 														<td><?php echo $user['Comment'][$num]['title']; ?></td>
 														<td><?php echo $user['Comment'][$num]['body']; ?></td>
-														<td class="pull-right"><?php echo $user['Comment'][$num]['fromsender']; ?></td>
+														<td><?php echo $user['Comment'][$num]['fromsender']; ?></td>
 													</table>	
 												</div>
 											</div>
@@ -304,13 +304,13 @@
 																<tr>
 																	<th>Title</th>
 																	<th>Body</th>
-																	<th class="pull-right">Sender</th>
+																	<th>Sender</th>
 																</tr>
 
 																<tr>
 																	<td><?php echo $username[$num]['Comment']['title']; ?></td>
 																	<td><?php echo $username[$num]['Comment']['body']; ?></td>
-																	<td class="pull-right"><?php echo $username[$num]['Comment']['fromsender']; ?></td>
+																	<td><?php echo $username[$num]['Comment']['fromsender']; ?></td>
 																</table>	
 															</div>
 														</div>
