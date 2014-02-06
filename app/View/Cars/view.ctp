@@ -118,8 +118,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 					?>>
 				</div>
 				<div class="col-md-9">
-					<p>Hi, I'm <?php echo $car['User']['name'];?> and this is my ride!</p>
-					<p>Feel free to rent my ride for only $<?php echo $car['Car']['rate']; ?> per hour.</p></div>
+					<style>
+					p.serif{font-family:"Times New Roman",Times,serif;}
+					p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+					p.oblique {font-style:oblique;}
+					</style>
+					<h2><p class="serif">Hi, I'm <?php echo $car['User']['name'];?> and this is my ride!</p></h2> </br>
+					<h4><p class="sansserif">Feel free to rent my ride for only $<?php echo $car['Car']['rate']; ?> per hour!</p></h4></div>
 				</div>
 			</div>
 		</div>

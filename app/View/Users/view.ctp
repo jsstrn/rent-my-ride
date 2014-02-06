@@ -47,12 +47,10 @@
 
       		<div class="well">
 
-      			<h4>Extra Info</h4>
+      			<h4>Profile picture</h4>
 
 				<p>This is your account page...</p>
 					
-					
-				<p> To insert additional information here...or maybe user picture?</p>
 				<img class="featurette-image img-responsive"
 				<?php
 				if (!$user['Upload']['path']) {

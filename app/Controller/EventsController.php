@@ -7,10 +7,40 @@
 
 class EventsController extends AppController {
 
-	private function create() {
+	private function create($owners, $users) {
 		// this function will write a new entry to its Model
 		$this->Event->create();
 		if ($this->Event->save($this->request->data)) {
+			App::uses('CakeEmail', 'Network/Email');
+
+			foreach($users as $user){
+					
+				foreach($owners as $owner)
+				{
+
+					if($owner['Car']['user_id'] == $user['User']['id'])
+					{
+						$temp = $user['User']['username'];
+						$temp2 = $user['User']['email'];
+					}
+				}
+			}
+
+				$message = 'Hi ' . $this->Auth->User('username') . '/' . 
+				$temp . '<br /><br />' 
+				. 'The booking has been successfully registered. Please take down each 
+				others contact number so as to be able to reach each other easily.';
+				$email = new CakeEmail('gmail');
+				$email->from('rentmyride.nyp@gmail.com');
+				$email->to($this->Auth->User('email'));
+				$email->cc($temp2);
+				$email->subject('Booking Successful');
+				$email->emailFormat('html');
+				$email->send($message);
+				
+				
+       		$this->Session->setFlash('An email notification has been sent to car owner 
+       			and your email account.', 'flash/success');
 			$this->redirect(array('action' => 'payment'));
 		} else {
 			$this->Session->setFlash('Unable to place your booking. Try again later.');
@@ -60,6 +90,9 @@ class EventsController extends AppController {
 			$this->request->data['Event']['car_id'] = $car_id;
 			$this->request->data['Event']['user_id'] = $this->Auth->user('id');
 			$checkDates = $this->Event->findAllByCarId($car_id);
+			$this->loadModel('Car');
+			$owners = $this->Car->findAllById($car_id);
+			$users = $this->Event->User->find('all');
 
 			$this->set('checkDates', $checkDates);
 
@@ -77,13 +110,13 @@ class EventsController extends AppController {
 				$this->request->data['Event']['datetime_end'] = $datetime_end;
 
 				if (!$checkDates) {
-					$this->create();
+					$this->create($owners, $users);
 				} else {
 					$conflict = $this->checkEvents($checkDates, $datetime_start, $datetime_end);
 					if ($conflict > 0) {
 						$this->Session->setFlash('You cannot book this date and time. This date and time has already been booked.', 'flash/error');
 					} else {
-						$this->create();
+						$this->create($owners, $users);
 					}
 				}
 			}
