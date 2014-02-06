@@ -22,8 +22,8 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="<? echo $this->webroot . 'pages/started' ;?>">How it works</a></li>
-				<li><a href="<? echo $this->webroot . 'pages/about' ;?>">About us</a></li>
+				<li><a href="<?php echo $this->webroot . 'pages/started' ;?>">How it works</a></li>
+				<li><a href="<?php echo $this->webroot . 'pages/about' ;?>">About us</a></li>
 				<li><a href="/rentmyride/pages/faq">FAQ</a></li>
 				<li><a href="http://www.facebook.com/rentmyride.SG">Facebook page</a></li>
 			</ul>
@@ -41,7 +41,7 @@
 			</a>
 			
 			<ul class="dropdown-menu">
-				<li><a href="<? echo $this->webroot . '/cars' ;?>">Car Directory</a></li>
+				<li><a href="<?php echo $this->webroot . '/cars' ;?>">Car Directory</a></li>
 				<li><a href="/rentmyride/users">User Directory</a></li>
 				<li><a href="/rentmyride/users/admin">Admin Dashboard</a></li>
 				<li><a href="/rentmyride/events/all">Events Listing</a></li>
