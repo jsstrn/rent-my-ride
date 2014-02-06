@@ -22,6 +22,13 @@ class EventsController extends AppController {
 					{
 						$temp = $user['User']['username'];
 						$temp2 = $user['User']['email'];
+						$temp3 = $user['User']['address'];
+						$temp4 = $user['User']['mobile'];
+						$temp5 = $owner['Car']['brand'];
+						$temp6 = $owner['Car']['model'];
+						$temp7 = $owner['Car']['transmission'];
+						$temp8 = $owner['Car']['engine_type'];
+						$temp9 = $owner['Car']['license_plate'];
 					}
 				}
 			}
@@ -29,7 +36,66 @@ class EventsController extends AppController {
 				$message = 'Hi ' . $this->Auth->User('username') . '/' . 
 				$temp . '<br /><br />' 
 				. 'The booking has been successfully registered. Please take down each 
-				others contact number so as to be able to reach each other easily.';
+				others contact number so as to be able to reach each other easily.'
+				. '<br /><br />' . 'Below are the details:' . '<br /><br />' .
+				'<table border="1">
+				
+				<tr>
+				<th>Title</th>
+				<th>Details</th>
+				</tr>
+				
+				<tr>
+				<td>Owner:</td>
+				<td>'.$temp.'</td>
+				</tr>
+				
+				<tr>
+				<td>Address:</td>
+				<td>'.$temp3.'</td>
+				</tr>
+				
+				<tr>
+				<td>Email:</td>
+				<td>'.$temp2.'</td>
+				</tr>
+				
+				<tr>
+				<td>Mobile:</td>
+				<td>'.$temp4.'</td>
+				</tr>
+				
+				<tr>
+				<th>Title</th>
+				<th>Details</th>
+				</tr>
+				
+				<tr>
+				<td>Car Brand:</td>
+				<td>'.$temp5.'</td>
+				</tr>
+				
+				<tr>
+				<td>Car Model:</td>
+				<td>'.$temp6.'</td>
+				</tr>
+				
+				<tr>
+				<td>Car Transmission:</td>
+				<td>'.$temp7.'</td>
+				</tr>
+				
+				<tr>
+				<td>Car Engine Type:</td>
+				<td>'.$temp8.'</td>
+				</tr>
+				
+				<tr>
+				<td>License Plate:</td>
+				<td>'.$temp9.'</td>
+				</tr>
+
+				</table>';
 				$email = new CakeEmail('gmail');
 				$email->from('rentmyride.nyp@gmail.com');
 				$email->to($this->Auth->User('email'));
