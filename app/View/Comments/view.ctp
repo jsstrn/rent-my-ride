@@ -15,7 +15,7 @@ p.oblique {font-style:oblique;}
 <img class="img-circle img-responsive"
 <?php
 if ($current_user['username']!= $post['Comment']['fromsender']) {
-	echo $this->webroot . 'img/users/default.png"';
+	echo 'src="' . $this->webroot . 'img/users/default.png"';
 } else {
 	echo 'src="' . $this->webroot . $current_user['Upload']['path'] . '"';
 }
