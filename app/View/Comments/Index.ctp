@@ -9,7 +9,7 @@
       				<h2>View All Comments</h2>
   				</div> <!-- /widget-header -->
 
-  				<button class="btn btn-info" onclick="window.location.href='<?php echo Router::url(array('controller'=>'comments', 'action'=>'add'))?>'">Add a comment</button>
+  				<button class="btn btn-success" onclick="window.location.href='<?php echo Router::url(array('controller'=>'comments', 'action'=>'add'))?>'">Add a comment</button>
 
   				<br /><br /><br />
 
@@ -47,8 +47,8 @@
 								<td><?php echo $post['Comment']['title']; ?></td>
 								<td><?php echo $post['Comment']['body']; ?></td>
 								<td><?php echo $post['Comment']['fromsender']; ?></td>
-								<td><?php echo $this->html->link('View', array('action'=>'view', $post['Comment']['id'])) . " | " . 
-								$this->Html->link('Delete', array('action' => 'delete', $post['Comment']['id']), NULL, 'Are you sure you want to delete this comment?'); ?></td>
+								<td><?php echo $this->html->link(' View', array('action'=>'view', $post['Comment']['id']), array('class' => 'btn btn-info glyphicon glyphicon-eye-open')); ?>
+									<?php echo $this->Html->link(' Delete', array('action' => 'delete', $post['Comment']['id']), array('class' => 'btn btn-danger glyphicon glyphicon-trash'), NULL, 'Are you sure you want to delete this comment?'); ?></td>
 								</tr>
 								<?php $num ++; ?>
 								<?php endforeach; ?>
@@ -76,8 +76,8 @@
 								<td><?php echo $post['Comment']['title']; ?></td>
 								<td><?php echo $post['Comment']['body']; ?></td>
 								<td><?php echo $post['Comment']['fromsender']; ?></td>
-								<td><?php echo $this->html->link('View', array('action'=>'view', $post['Comment']['id'])) . " | " . 
-								$this->Html->link('Delete', array('action' => 'delete', $post['Comment']['id']), NULL, 'Are you sure you want to delete this comment?'); ?></td>
+								<td><?php echo $this->html->link(' View', array('action'=>'view', $post['Comment']['id']), array('class' => 'btn btn-info glyphicon glyphicon-eye-open')); ?> 
+								    <?php echo $this->Html->link(' Delete', array('action' => 'delete', $post['Comment']['id']), array('class' => 'btn btn-danger glyphicon glyphicon-trash'), NULL, 'Are you sure you want to delete this comment?'); ?></td>
 								</tr>
 								<?php $num ++; ?>
 								<?php endforeach; ?>
