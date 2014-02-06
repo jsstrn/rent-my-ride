@@ -145,7 +145,7 @@
 										<div class="modal-footer">
 											<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 											<?php echo $this->Html->link('Remove this car',
-												array('controller' => 'car', 'action' => 'delete', $user['Car'][$num]['id']) ,
+												array('controller' => 'cars', 'action' => 'delete', $user['Car'][$num]['id']) ,
 												array('class' => 'btn btn-danger')); ?>
 											</div>
 										</div><!-- /.modal-content -->

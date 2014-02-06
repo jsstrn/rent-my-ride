@@ -258,6 +258,7 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Cars/add');
 		$this->Acl->allow($group, 'controllers/Cars/edit');
 		$this->Acl->allow($group, 'controllers/Cars/map');
+		$this->Acl->allow($group, 'controllers/Cars/delete');
 		$this->Acl->allow($group, 'controllers/Cars/search');
 		$this->Acl->allow($group, 'controllers/Pictures/add');
 		$this->Acl->allow($group, 'controllers/Pictures/index');

@@ -68,9 +68,9 @@ class CarsController extends AppController {
 
 		if ($this->request->is('post')) {
 
-			$dir = 'img/cars/';
+			/*$dir = 'img/cars/';
 			$path = $dir . basename($_FILES['image']['name']);
-			$this->request->data['Car']['image'] = $path;
+			$this->request->data['Car']['image'] = $path;*/
 			$this->request->data['Car']['user_id'] = $this->Auth->user('id');
 
 			$this->Car->create();

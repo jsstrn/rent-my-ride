@@ -78,11 +78,7 @@ class Car extends AppModel {
 				'message' => 'Please enter the engine capacity of the car.',
 				'last' => 'true'
 				)
-			),
-		// 'image' => array(
-		// 	'rule' => array('extensions', array('jpg', 'jpeg', 'png', 'gif')),
-		// 	'message' => 'Please upload a valid image.'
-		// 	)
+			)
 		);
 }
 ?>
