@@ -31,7 +31,7 @@
 							echo $this->Form->input('postal_code', array('required'=>'false', 'class' => 'form-control', 'disabled' => 'true'));
 							echo '</br>';
 
-							echo $this->Html->link('Update', 'edit/' . $user['User']['id'], array('class' => 'btn btn-warning'));
+							echo $this->Html->link(' Update', 'edit/' . $user['User']['id'], array('class' => 'btn btn-warning glyphicon glyphicon-pencil'));
 							?>
 						</div>
 
@@ -122,12 +122,11 @@
 											</tr></br>
 										</table>
 										<div class="pull-right">
-											<?php echo $this->Html->link('View Details', array('controller' => 'cars', 'action' => 'view', $user['Car'][$num]['id']), array('class' => 'btn btn-info')) ;?>
-											<?php echo $this->Html->link('Edit this car',
+											<?php echo $this->Html->link(' View', array('controller' => 'cars', 'action' => 'view', $user['Car'][$num]['id']), array('class' => 'btn btn-info glyphicon glyphicon-eye-open')) ;?>
+											<?php echo $this->Html->link(' Edit',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
-												array('class' => 'btn btn-primary')); ?>
-											<?php echo $this->Html->link('Remove this car', 'cars/map', array('class' => 'btn btn-danger', 
-											'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
+												array('class' => 'btn btn-primary glyphicon glyphicon-pencil')); ?>
+											<?php echo $this->Html->link(' Remove', 'cars/map', array('class' => 'btn btn-danger glyphicon glyphicon-trash', 'data-toggle' => "modal", 'data-target' => "#modal-delete")); ?>
 										</div>
 									</div>
 								</div>

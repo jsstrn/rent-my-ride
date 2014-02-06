@@ -52,10 +52,12 @@
 		<?php foreach ($users as $user):?> 
 				<?php if($car['Car']['user_id'] == $user['User']['id']){?><td><?php echo $user['User']['username'];?></td> <?php } ?>
 				<?php endforeach; ?>
-		<td><?php echo $this->Html->link('View', 'view/' . $car['Car']['id']) . " | " . 
-			$this->Html->link('Edit', 'edit/' . $car['Car']['id']) . " | " . 
-			$this->Form->postLink('Delete', array('action' => 'delete', $car['Car']['id']),
-				array('confirm' => 'Are you sure?')); ?></td>
+		<td>
+			<?php echo $this->Html->link('', 'view/' . $car['Car']['id'], array('class' => 'glyphicon glyphicon-eye-open')) . " | " . 
+			$this->Html->link('', 'edit/' . $car['Car']['id'], array('class' => 'glyphicon glyphicon-pencil')) . " | " . 
+			$this->Form->postLink('', array('action' => 'delete', $car['Car']['id']),
+				array('confirm' => 'Are you sure?', 'class' => 'glyphicon glyphicon-trash')); ?>
+		</td>
 	</tr>
 	<?php $num++; ?>
 	<?php endforeach; ?>
