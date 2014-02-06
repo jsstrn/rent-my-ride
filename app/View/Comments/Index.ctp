@@ -9,7 +9,7 @@
       				<h2>View All Comments</h2>
   				</div> <!-- /widget-header -->
 
-  				<button class="btn btn-lg btn-default"><?php echo $this->Html->link('Add a comment', array('action' => 'add')); ?></button>
+  				<button class="btn btn-info" onclick="window.location.href='<?php echo Router::url(array('controller'=>'comments', 'action'=>'add'))?>'">Add a comment</button>
 
   				<br /><br /><br />
 

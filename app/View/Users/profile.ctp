@@ -177,7 +177,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 											</tr></br>
 										</table>
 										<div class="pull-right">
-											<?php echo $this->Html->link('View Details', array('controller' => 'cars', 'action' => 'view', $user['Car'][$num]['id']), array('class' => 'btn btn-primary')) ;?>
+											<?php echo $this->Html->link('View Details', array('controller' => 'cars', 'action' => 'view', $user['Car'][$num]['id']), array('class' => 'btn btn-info')) ;?>
 											<?php echo $this->Html->link('Edit this car',
 												array('controller' => 'cars', 'action' => 'edit', $user['Car'][$num]['id'] ),
 												array('class' => 'btn btn-primary')); ?>
