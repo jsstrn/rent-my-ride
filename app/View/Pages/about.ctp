@@ -12,7 +12,7 @@
 <p><b>Alnur Faisal - Develeoper</b></p>
 <div class="item">
 <img src="<?php echo $this->webroot; ?>img/about/teebeng.jpg" alt="Tee Beng">
-<p><b>Tee Beng - Outsourcer</b></p>
+<p><b>Peh Tee Beng - Database </b></p>
 <div class="item">
 <img src="<?php echo $this->webroot; ?>img/about/Ken.jpg" alt="Xiajun">
 <p><b>Xiajun - Designer</b></p>
