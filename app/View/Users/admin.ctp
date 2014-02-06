@@ -65,14 +65,14 @@
 	</div><!-- .col -->
 </div>
 
-<h2>Charts</h2>
+<h2>Reports</h2>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
+    <h3 class="panel-title">Number of cars</h3>
   </div>
   <div class="panel-body">
-    Panel content
+    This is the number of cars (sorted by brand) in our database.
     <hr>
     <div class="panel panel-default" id="chart1" style="width:800px; height:400px; margin:auto;"></div>
   </div>
@@ -80,10 +80,10 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
+    <h3 class="panel-title">Trendline</h3>
   </div>
   <div class="panel-body">
-    Panel content
+    The trendline shows which months are popular with our renters and which brands are most popular. 
     <hr>
     <div class="panel panel-default" id="chart2" style="width:800px; height:400px; margin:auto;"></div>
   </div>
@@ -122,28 +122,19 @@
 	    });
 	});
 
-
 	$(function () { 
 	    $('#chart2').highcharts({
 	        chart: {
-	            type: 'pie',
+	            type: 'spline',
 	        },
 	        plotOptions: {
-	            pie: {
-	                dataLabels: {
-	                    enabled: true,
-	                    distance: -50,
-	                    style: {
-	                        fontWeight: 'bold',
-	                        color: 'white',
-	                        textShadow: '0px 1px 2px black'
-	                    }
-	                },
-	                innerSize: '50%',
-	                startAngle: -90,
-	                endAngle: 90,
-	                center: ['50%', '75%']
-	            }
+	        	spline: {
+	        	    marker: {
+	        	        radius: 4,
+	        	        lineColor: '#666666',
+	        	        lineWidth: 1
+	        	    }
+	        	}
 	        },
 	        title: {
 	            text: 'Total Number of Cars'
@@ -152,19 +143,22 @@
 	            enabled: false
 	        },
 	        xAxis: {
-	            categories: ['BMW', 'Mercedes Benz', 'Audi']
+	            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 	        },
 	        yAxis: {
 	            title: {
-	                text: 'Number of cars'
+	                text: 'Bookings'
 	            }
 	        },
 	        series: [{
-	            name: 'Men',
-	            data: [1, 8, 4]
+	            name: 'Nissan',
+	            data: [3, 2, 1, 2, 4, 5, 3, 4, 9, 3, 6, 8]
 	        }, {
-	            name: 'Women',
-	            data: [5, 7, 3]
+	            name: 'Toyota',
+	            data: [5, 4, 3, 8, 8, 10, 8, 5, 5, 10, 11, 12]
+	        }, {
+	            name: 'Honda',
+	            data: [3, 4, 4, 9, 9, 12, 8, 7, 7, 15, 12, 15]
 	        }]
 	    });
 	});
