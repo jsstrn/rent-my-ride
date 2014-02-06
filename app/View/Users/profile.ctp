@@ -187,7 +187,7 @@
 									<img class="img-circle img-responsive"
 									<?php
 									if (!$user['Upload']['path']) {
-										echo 'data-src="holder.js/300x300"';
+										echo 'src="' . $this->webroot . 'img/users/default.png"';
 									} else {
 										echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 									}
@@ -270,7 +270,7 @@
 												<img class="img-circle img-responsive"
 												<?php
 												if (!$user['Upload']['path']) {
-													echo 'data-src="holder.js/300x300"';
+													echo 'src="' . $this->webroot . 'img/users/default.png"';
 												} else {
 													echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 												}
@@ -352,7 +352,7 @@
 															<img class="img-circle img-responsive"
 															<?php
 															if (!$user['Upload']['path']) {
-																echo 'data-src="holder.js/300x300"';
+																echo 'src="' . $this->webroot . 'img/users/default.png"';
 															} else {
 																echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
 															}

@@ -22,7 +22,7 @@
    		<img class="img-responsive center-block"
    		<?php
    		if (!$user['Upload']['path']) {
-   			echo 'data-src="holder.js/200x200"';
+   			echo 'src="' . $this->webroot . 'img/users/default.png"';
    		} else {
    			echo 'src="' . $this->webroot . $user['Upload']['path'] . '"';
    		}?>>
