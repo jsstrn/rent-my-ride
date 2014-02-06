@@ -7,7 +7,7 @@
       <span class="sr-only">Toggle navigation</span>
       <i class="glyphicon glyphicon-th-large"></i>
     </button>
-    <a class="navbar-brand" href="/">Rent My Ride</a>
+    <a class="navbar-brand" href="<?php echo $this->webroot;?>">Rent My Ride</a>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
