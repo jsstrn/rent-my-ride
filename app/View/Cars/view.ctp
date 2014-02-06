@@ -40,7 +40,57 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5AkVMzStH2F21VpFIMfg3tXx
 				<?php if (!$average) {
 					echo '<center><h4>No Ratings Available</center></h4>';
 				} else {
-					echo'<center><h3><strong>' . $total_ratings / $average . ' Stars' . '</center></h3></strong>';
+					$ave = $total_ratings / $average;
+					echo'<center><h3><strong>' . $ave . ' Stars' . '</center></h3></strong>';
+					switch ($ave) {
+						case ($ave >= 1) :
+							echo '<center>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '</center>';
+							break;
+						case ($ave >= 2) :
+							echo '<center>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '</center>';
+							break;
+						case ($ave >= 3) :
+							echo '<center>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '</center>';
+							break;
+						case ($ave >= 4) :
+							echo '<center>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star-empty"></span>';
+							echo '</center>';
+							break;
+						case ($ave >= 5) :
+							echo '<center>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '<span class="glyphicon glyphicon-star"></span>';
+							echo '</center>';
+							break;
+						default:
+							break;
+					}
 				} 
 				?>
 			</div>

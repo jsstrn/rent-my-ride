@@ -58,7 +58,7 @@
     <span class="glyphicon glyphicon-star"></span>
     <span class="glyphicon glyphicon-star"></span>
     <span class="glyphicon glyphicon-star-empty"></span>
-    <p class="lead">I can rent a Ferarri for a day when I feel like pampering myself.</p>
+    <p class="lead">I don't have to buy a Ferrari when I can just rent one for a day when I feel like pampering myself.</p>
     <p><a class="btn btn-primary" href="<?php echo $this->webroot . 'users/register' ;?>" role="button">Sign up &raquo;</a></p>
   </div><!-- /.col-md-4 -->
 </div><!-- /.row -->
