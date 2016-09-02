@@ -1,7 +1,7 @@
 Rent My Ride
 =======
 
-Rent My Ride is a final year project by students at Nanyang Polytechnic. We're using CakePHP as a framework, leveraging on MVC principles.
+Rent My Ride is a pre-Uber social car rental service build with the CakePHP framework.
 
 Useful Links
 ----------------
