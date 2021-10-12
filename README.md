@@ -1,7 +1,7 @@
 Rent My Ride
 =======
 
-Rent My Ride is a pre-Uber social car rental service build with the CakePHP framework.
+Rent My Ride is a pre-Uber social car rental service built with the CakePHP framework.
 
 Useful Links
 ----------------
